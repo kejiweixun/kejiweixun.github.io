@@ -1,0 +1,109 @@
+{
+  "iPhone/iPad": {
+    "features": [
+      "App Store：App",
+      "App Store：游戏",
+      "Apple CarPlay 车载",
+      "Apple Music",
+      "Apple Pay",
+      "Apple TV App",
+      "Siri",
+      "Siri：体育",
+      "Siri：餐厅信息",
+      "Siri：餐厅评论",
+      "Siri：词典",
+      "Siri：计算和换算",
+      "地图：标准",
+      "地图：卫星图像",
+      "地图：方向指引",
+      "地图：逐向导航",
+      "地图：路况信息",
+      "地图：车道导航",
+      "地图：公共交通",
+      "地图：附近",
+      "超宽频"
+    ],
+    "unavailable": [
+      "Apple Arcade",
+      "Apple News",
+      "Apple News+",
+      "Siri：Twitter 整合",
+      "Siri：餐厅预订",
+      "Siri：电影",
+      "Siri：电影放映时间",
+      "iTunes Store：音乐",
+      "iTunes Store：电影",
+      "iTunes Store：电视节目",
+      "地图：限速",
+      "地图：俯瞰",
+      "地图：商场室内地图",
+      "聚焦搜索建议"
+    ]
+  },
+  "Mac": {
+    "features": [
+      "Mac App Store：App",
+      "Mac App Store：游戏",
+      "Apple Music",
+      "Siri",
+      "Siri：体育",
+      "Siri：餐厅信息",
+      "Siri：餐厅评论",
+      "Siri：词典",
+      "Siri：计算和换算",
+      "地图：标准",
+      "地图：卫星图像",
+      "地图：方向指引",
+      "地图：路况信息",
+      "地图：公交"
+    ],
+    "unavailable": [
+      "Apple News",
+      "Apple News+",
+      "Apple Pay",
+      "Mac App Store: Apple Arcade",
+      "iTunes Store：音乐",
+      "iTunes Store：电影",
+      "iTunes Store：电视节目",
+      "Siri: 赛车",
+      "Siri：Twitter 整合",
+      "Siri：Facebook 整合",
+      "Siri：餐厅预订",
+      "Siri：电影信息",
+      "Siri：电影评论",
+      "Siri：电影放映时间",
+      "地图：俯瞰",
+      "地图：附近",
+      "聚焦：搜索建议",
+      "股市: Apple 新闻和热门报道"
+    ]
+  },
+  "Apple Watch": {
+    "features": [
+      "Apple Pay：Apple Pay",
+      "Apple Pay：App 内付款",
+      "Apple 地图：导航：附近",
+      "Apple 地图：导航：方向指引",
+      "Apple 地图：导航：逐向导航",
+      "Siri：Siri",
+      "Siri：Siri 语音回应",
+      "Siri：嘿 Siri",
+      "Siri：抬腕对话",
+      "品牌服务：涂文字",
+      "品牌服务：听写功能",
+      "品牌服务：广播",
+      "品牌服务：空气质量指数",
+      "Apple Music：Apple Music",
+      "品牌服务：全球紧急呼救电话",
+      "播客：播客"
+    ],
+    "unavailable": [
+      "品牌服务：心电图",
+      "品牌服务：心律不齐通知",
+      "品牌服务：对讲机",
+      "品牌服务：新闻",
+      "品牌服务：学生卡",
+      "有声读物：有声读物"
+    ]
+  }
+}

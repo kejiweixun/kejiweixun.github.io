@@ -1,0 +1,91 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><style data-href="/styles.c0432cf3a910c922a1c2.css">*{box-sizing:border-box}html{font-size:16px}body,html{min-height:100vh}body{position:relative;margin:0 auto;max-width:800px;padding-bottom:5vh}code[class*=language-],pre[class*=language-]{color:#000;background:none;text-shadow:0 1px #fff;font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;font-size:.9em;text-align:left;white-space:pre;word-spacing:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-ms-hyphens:none;hyphens:none}code[class*=language-]::selection,code[class*=language-] ::selection,pre[class*=language-]::selection,pre[class*=language-] ::selection{text-shadow:none;background:#b3d4fc}@media print{code[class*=language-],pre[class*=language-]{text-shadow:none}}pre[class*=language-]{padding:.4rem .8rem;margin:.2rem 0;overflow:scroll}:not(pre)>code[class*=language-],pre[class*=language-]{background:transparent}:not(pre)>code[class*=language-]{padding:.1rem .4rem;border-radius:.3em;white-space:normal;background:#eee}.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#708090}.token.punctuation{color:#999}.namespace{opacity:.7}.token.boolean,.token.constant,.token.deleted,.token.number,.token.property,.token.symbol,.token.tag{color:#905}.token.attr-name,.token.builtin,.token.char,.token.inserted,.token.selector,.token.string{color:#690}.language-css .token.string,.style .token.string,.token.entity,.token.operator,.token.url{color:#9a6e3a;background:hsla(0,0%,100%,.5)}.token.atrule,.token.attr-value,.token.keyword{color:#07a}.token.class-name,.token.function{color:#dd4a68}.token.important,.token.regex,.token.variable{color:#e90}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}.gatsby-highlight{border:1px solid #ccc;border-radius:.3rem}</style><meta name="generator" content="Gatsby 2.17.17"/><title data-react-helmet="true">科技微讯 - macOS 批量压缩图片, 开源免费, 无需联网</title><meta data-react-helmet="true" name="description" content="macOS 批量压缩图片建议用 ImageOptim, 有多种压缩算法, 支持压缩 jpeg, png, gif, svg 等格式的图片, 操作也简单. "/><link rel="icon" href="/icons/icon-48x48.png?v=4c0423507dcd35ec43b7d51998e0f191"/><link rel="manifest" href="/manifest.webmanifest"/><meta name="theme-color" content="#DE5E56"/><style type="text/css">.gatsby-resp-image-image{width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;color:transparent;}</style><link rel="preconnect dns-prefetch" href="https://www.google-analytics.com"/><link rel="sitemap" type="application/xml" href="/sitemap.xml"/><link as="script" rel="preload" href="/webpack-runtime-063dfcec93a571c11e60.js"/><link as="script" rel="preload" href="/styles-742f71dca9c96ccdb39c.js"/><link as="script" rel="preload" href="/app-7f94717855e71cafdb7d.js"/><link as="script" rel="preload" href="/commons-a4104f36cd7abdaa78b4.js"/><link as="script" rel="preload" href="/component---src-template-blog-post-template-js-00adf4838d528b2ee459.js"/><link as="fetch" rel="preload" href="/page-data/blog/macos-images-batch-compression/page-data.json" crossorigin="anonymous"/></head><body><noscript id="gatsby-noscript">This app works best with JavaScript enabled.</noscript><div id="___gatsby"><div style="outline:none" tabindex="-1" role="group" id="gatsby-focus-wrapper"><style data-emotion-css="j9vm3q">.css-j9vm3q{font-size:1rem;padding:0.3rem 0;border-bottom:3px solid #af6ec3;background-image:url(/static/logo-fbe2a7c09efce730ce95fa3630c1b196.png);background-size:70px;background-repeat:no-repeat;background-position:-25px -20px;}.css-j9vm3q img{width:80px;border-radius:50%;position:absolute;top:-1.8rem;left:-2rem;}.css-j9vm3q ul{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;list-style-type:none;padding-left:3rem;margin:0;}.css-j9vm3q ul li{margin-right:1rem;}.css-j9vm3q a{-webkit-text-decoration:none;text-decoration:none;color:black;font-weight:900;}</style><nav class="css-j9vm3q"><ul><li><a href="/">首页</a></li><li><a href="/about/">关于</a></li></ul></nav><style data-emotion-css="1sacuq3">.css-1sacuq3{width:95%;margin:1rem auto;}</style><main class="css-1sacuq3"><article><header><style data-emotion-css="11ycep3">.css-11ycep3{margin:1rem 0 0.5rem 0;font-size:1.6rem;}</style><h1 class="css-11ycep3">macOS 批量压缩图片, 开源免费, 无需联网</h1><style data-emotion-css="jt987x">.css-jt987x{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;font-size:0.8rem;color:grey;margin-bottom:2rem;}.css-jt987x p:first-of-type{margin-right:1rem;}.css-jt987x a{color:grey;}.css-jt987x a:hover{-webkit-text-decoration:none;text-decoration:none;}</style><address class="css-jt987x"><p>作者: <a href="/about/">科技微讯</a></p><p>日期: <time dateTime="2019/10/16">2019/10/16</time></p></address></header><style data-emotion-css="cpjfn3">.css-cpjfn3{line-height:1.5;margin-bottom:5rem;}.css-cpjfn3 h2{margin-top:2rem;}.css-cpjfn3 h3{margin-top:2.5rem;}.css-cpjfn3 p{text-align:justify;word-break:break-all;}.css-cpjfn3 .task-list-item{list-style-type:none;}.css-cpjfn3 ul{padding-left:0.5rem;list-style-position:inside;}.css-cpjfn3 ul li{margin:0.3rem 0;}.css-cpjfn3 table{margin:2rem auto;border-collapse:collapse;line-height:1.8;}.css-cpjfn3 table td,.css-cpjfn3 table th{border:1px solid black;padding:0 0.4rem;}.css-cpjfn3 table th{background:#ddd;}.css-cpjfn3 blockquote{margin:0;border-left:2px solid grey;}.css-cpjfn3 blockquote p{margin-left:1rem;}.css-cpjfn3 a{color:black;-webkit-text-decoration:underline;text-decoration:underline;}.css-cpjfn3 a:hover{-webkit-text-decoration:none;text-decoration:none;}</style><section class="css-cpjfn3"><p>macOS 批量压缩图片建议用 ImageOptim, 它免费, <a href="https://github.com/ImageOptim/ImageOptim">开源</a>, 无广告, 无需联网, 可在其<a href="https://imageoptim.com/mac">官网下载</a>.</p>
+<p>ImageOptim 支持压缩 jpeg, png, gif, svg 等格式的图片, 操作简单, 把图片拖到应用窗口即开始压缩, 压缩完成后会显示图片体积以及压缩比率.
+<span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; color: grey; margin: 0; padding: 0 max-width: 800px;"
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 44.12213740458015%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAAAsSAAALEgHS3X78AAAB0ElEQVQoz5WOv4saQRTHzWS6kCaWKXJpL33QBKIiFw8UCyvZQBoh1/gHCNaeqFj5H2ihYJEEzpPzBxzJOsJibCQqm1h4cHfbrdG4/pjdnbzZeHsIafLgw5t5b+bD1+HY1dtXj/Hr45f48PAF9ng82O/3W/h8PhyLxXA0GsXBYBC7XC5rz8+BQAC73W784eQEh8NhdOdykPPLNzK5+CYNifRD/imNx2NpNBrZvdvtSp1ORxoMBpIsy3t7oDscDr/3+/2ULaxdfnynqFdMuVXYbDZj6/WaUUpt+P1utlwura6qKlMUxZ71er1zUP1Nedb+LMxWKlvMf1N4qK9WK3273d5Dqc1S0/TNZquDRP81n/P9hkFNJpNPoMKW8OsXUTB0kxmmQU3T1HlRYE+6g3LxrvPa7ITXNzf3wna7/Z4PefTFYsEgIdM0jcH7f2IYBgOpDa/pdHphCwuFwpEoiqRcLpNisUiq1SqpVCqk0WiQVqtFms3mHhCA1Ot1UqvV+F4E+nA/tYTxeJw7HwFPgefAwX/C/zwDnjidzodWwmQy6YB0KBQKIa/XiwRBQJFIBKVSKZTL5VAmk0HZbNaCn/P5PII/KJFIWPt0Oo1KpdID7voD2yWqTZhB970AAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <picture>
+        <source
+          srcset="/static/59e6ff66bce5048fbf3a075322146a9a/f2fbe/imageoptiom-1.webp 200w,
+/static/59e6ff66bce5048fbf3a075322146a9a/e227a/imageoptiom-1.webp 400w,
+/static/59e6ff66bce5048fbf3a075322146a9a/0cbce/imageoptiom-1.webp 800w,
+/static/59e6ff66bce5048fbf3a075322146a9a/6bc95/imageoptiom-1.webp 1200w,
+/static/59e6ff66bce5048fbf3a075322146a9a/6bb76/imageoptiom-1.webp 1310w"
+          sizes="(max-width: 800px) 100vw, 800px"
+          type="image/webp"
+        />
+        <source
+          srcset="/static/59e6ff66bce5048fbf3a075322146a9a/9ec3c/imageoptiom-1.png 200w,
+/static/59e6ff66bce5048fbf3a075322146a9a/c7805/imageoptiom-1.png 400w,
+/static/59e6ff66bce5048fbf3a075322146a9a/8ff1e/imageoptiom-1.png 800w,
+/static/59e6ff66bce5048fbf3a075322146a9a/6ff5e/imageoptiom-1.png 1200w,
+/static/59e6ff66bce5048fbf3a075322146a9a/2bcdc/imageoptiom-1.png 1310w"
+          sizes="(max-width: 800px) 100vw, 800px"
+          type="image/png"
+        />
+        <img
+          class="gatsby-resp-image-image"
+          src="/static/59e6ff66bce5048fbf3a075322146a9a/8ff1e/imageoptiom-1.png"
+          alt="imageoptiom 1"
+          title="imageoptiom 1"
+          loading="lazy"
+        />
+      </picture>
+    </span></p>
+<p>有很多压缩算法可选, 有些算法很慢, 取消勾选 PNGOUT 和 Zopfli 能大幅提高压缩速度, 虽然可能会降低压缩比率. 启用 "有损压缩" 可以提高压缩比率, 在 "优化速度" 处可以调整压缩速度.
+<span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; color: grey; margin: 0; padding: 0 max-width: 800px;"
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 65.16129032258064%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAABYlAAAWJQFJUiTwAAAChklEQVQ4y62Sz28SQRTHOet1+4foX6F/gUnjVWNMvJg0JKWHhsZ40tQ0EUpNrL148KKJqbILdA1sgYUtsOXHAguzC7SL/JDSbjl0k3m+2ZRV6tVJPpnZfW++7/tmxufDwT+8fyvw8t7Si7dvuJ3wNhcOh7jXm1vcp91NLrX3jPM/f8o9evyE29gIcpFIhAuFQi7hcNid8d8Scts3H42U+MroHoNukDODGDYxDLvbMe16q2fHc4atFFRbVUt2uVy2DYwRQtz5mmmv1wOMbXmCFa3+zrZnQNqE9vt9OD21gLTqkMzV4KN4Ajo5gcFPC3AzsDjDsizMO4Vut0tnsxlUq9U9T/BYVSNnZ7+gcKRcFUslSkibJuUqFcUDKksHVEolaSqVopIkUVmWaTabpeiI6rpONU1zhsMhVCqVXU+wWlYj/fElfIlKzqGUBBOdSIoGQiwBvCAAzwuQSCQgGo1CPp+HXC4HiqKwNRN2xuPxDcGKGrFGNnyNZRwxEQesDIVjDQ7TaUgj6A4ymQygQ3ZWoKqqSwm7QSFnNBoxwQ+eYA0FT0aX8JnPOD8OYtBs6qA3NKjX67huugUYrVbLW19/00ajMXf4R7CCLQ8nl/AtJjlKXnYPP18oQzYru45wE9RqNbdAu912ha+hiDOZTBYF2Rlao3PgRfkqfShhkk7TRxr9HuWpIAg0Ho/T/f19vCSROWIX4YIFKBZyBoPB4hmii53z8wvQW22HOWAOTYNgW0235TmsTXyDC2C+M51OFx0Wi8Vt++ICOqZ51el06Bz2xm7yd5xhmqYriJf03hNcWVm5EwwGl1dXAw/W1tY8AoHAP/wdn+esr68v+/3+u64YAPj+12BavwF4lLZ6TRtykgAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <picture>
+        <source
+          srcset="/static/d035d6e132cd2f8c9ef48e550909ce0e/f2fbe/imageoptiom-2.webp 200w,
+/static/d035d6e132cd2f8c9ef48e550909ce0e/e227a/imageoptiom-2.webp 400w,
+/static/d035d6e132cd2f8c9ef48e550909ce0e/0cbce/imageoptiom-2.webp 800w,
+/static/d035d6e132cd2f8c9ef48e550909ce0e/6bc95/imageoptiom-2.webp 1200w,
+/static/d035d6e132cd2f8c9ef48e550909ce0e/0c82c/imageoptiom-2.webp 1550w"
+          sizes="(max-width: 800px) 100vw, 800px"
+          type="image/webp"
+        />
+        <source
+          srcset="/static/d035d6e132cd2f8c9ef48e550909ce0e/9ec3c/imageoptiom-2.png 200w,
+/static/d035d6e132cd2f8c9ef48e550909ce0e/c7805/imageoptiom-2.png 400w,
+/static/d035d6e132cd2f8c9ef48e550909ce0e/8ff1e/imageoptiom-2.png 800w,
+/static/d035d6e132cd2f8c9ef48e550909ce0e/6ff5e/imageoptiom-2.png 1200w,
+/static/d035d6e132cd2f8c9ef48e550909ce0e/84aa4/imageoptiom-2.png 1550w"
+          sizes="(max-width: 800px) 100vw, 800px"
+          type="image/png"
+        />
+        <img
+          class="gatsby-resp-image-image"
+          src="/static/d035d6e132cd2f8c9ef48e550909ce0e/8ff1e/imageoptiom-2.png"
+          alt="imageoptiom 2"
+          title="imageoptiom 2"
+          loading="lazy"
+        />
+      </picture>
+    </span></p></section></article><section id="isso-thread" data-title="macOS 批量压缩图片, 开源免费, 无需联网" data-isso-id="blog/macos-images-batch-compression/"></section></main></div></div><script>
+  
+  
+  if(true) {
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  }
+  if (typeof ga === "function") {
+    ga('create', 'UA-60007929-1', 'auto', {});
+      
+      
+      
+      
+      
+      }</script><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/blog/macos-images-batch-compression/";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"app":["/app-7f94717855e71cafdb7d.js"],"component---node-modules-gatsby-plugin-offline-app-shell-js":["/component---node-modules-gatsby-plugin-offline-app-shell-js-c8f4ca6175399afc2590.js"],"component---src-template-blog-post-template-js":["/component---src-template-blog-post-template-js-00adf4838d528b2ee459.js"],"component---src-pages-404-js":["/component---src-pages-404-js-27287c5e3a62bee12020.js"],"component---src-pages-about-js":["/component---src-pages-about-js-6a4943976aa00eef8aac.js"],"component---src-pages-apple-features-availability-js":["/component---src-pages-apple-features-availability-js-799ff76ba8b8aa7ce90d.js"],"component---src-pages-index-js":["/component---src-pages-index-js-ccc309eaaada1a187256.js"],"component---src-pages-ios-beta-profile-js":["/component---src-pages-ios-beta-profile-js-f23d000d264938c8f8bd.js"],"component---src-pages-ios-version-history-js":["/component---src-pages-ios-version-history-js-3b629f2a95d1199c5825.js"]};/*]]>*/</script><script src="/component---src-template-blog-post-template-js-00adf4838d528b2ee459.js" async=""></script><script src="/commons-a4104f36cd7abdaa78b4.js" async=""></script><script src="/app-7f94717855e71cafdb7d.js" async=""></script><script src="/styles-742f71dca9c96ccdb39c.js" async=""></script><script src="/webpack-runtime-063dfcec93a571c11e60.js" async=""></script></body></html>
