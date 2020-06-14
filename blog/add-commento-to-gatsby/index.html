@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><style data-href="/styles.c0432cf3a910c922a1c2.css">*{box-sizing:border-box}html{font-size:16px}body,html{min-height:100vh}body{position:relative;margin:0 auto;max-width:800px;padding-bottom:5vh}code[class*=language-],pre[class*=language-]{color:#000;background:none;text-shadow:0 1px #fff;font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;font-size:.9em;text-align:left;white-space:pre;word-spacing:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-ms-hyphens:none;hyphens:none}code[class*=language-]::selection,code[class*=language-] ::selection,pre[class*=language-]::selection,pre[class*=language-] ::selection{text-shadow:none;background:#b3d4fc}@media print{code[class*=language-],pre[class*=language-]{text-shadow:none}}pre[class*=language-]{padding:.4rem .8rem;margin:.2rem 0;overflow:scroll}:not(pre)>code[class*=language-],pre[class*=language-]{background:transparent}:not(pre)>code[class*=language-]{padding:.1rem .4rem;border-radius:.3em;white-space:normal;background:#eee}.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#708090}.token.punctuation{color:#999}.namespace{opacity:.7}.token.boolean,.token.constant,.token.deleted,.token.number,.token.property,.token.symbol,.token.tag{color:#905}.token.attr-name,.token.builtin,.token.char,.token.inserted,.token.selector,.token.string{color:#690}.language-css .token.string,.style .token.string,.token.entity,.token.operator,.token.url{color:#9a6e3a;background:hsla(0,0%,100%,.5)}.token.atrule,.token.attr-value,.token.keyword{color:#07a}.token.class-name,.token.function{color:#dd4a68}.token.important,.token.regex,.token.variable{color:#e90}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}.gatsby-highlight{border:1px solid #ccc;border-radius:.3rem}</style><meta name="generator" content="Gatsby 2.17.17"/><title data-react-helmet="true">科技微讯 - 给 gatsby 网站添加评论系统 commento</title><meta data-react-helmet="true" name="description" content="commento 是一款开源评论系统, 这篇文章介绍如何把 commento 部署到自己的服务器, 并添加到 gatsby 等静态博客中."/><link rel="icon" href="/icons/icon-48x48.png?v=4c0423507dcd35ec43b7d51998e0f191"/><link rel="manifest" href="/manifest.webmanifest"/><meta name="theme-color" content="#DE5E56"/><style type="text/css">.gatsby-resp-image-image{width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;color:transparent;}</style><link rel="preconnect dns-prefetch" href="https://www.google-analytics.com"/><link rel="sitemap" type="application/xml" href="/sitemap.xml"/><link as="script" rel="preload" href="/webpack-runtime-063dfcec93a571c11e60.js"/><link as="script" rel="preload" href="/styles-742f71dca9c96ccdb39c.js"/><link as="script" rel="preload" href="/app-7f94717855e71cafdb7d.js"/><link as="script" rel="preload" href="/commons-a4104f36cd7abdaa78b4.js"/><link as="script" rel="preload" href="/component---src-template-blog-post-template-js-00adf4838d528b2ee459.js"/><link as="fetch" rel="preload" href="/page-data/blog/add-commento-to-gatsby/page-data.json" crossorigin="anonymous"/></head><body><noscript id="gatsby-noscript">This app works best with JavaScript enabled.</noscript><div id="___gatsby"><div style="outline:none" tabindex="-1" role="group" id="gatsby-focus-wrapper"><style data-emotion-css="j9vm3q">.css-j9vm3q{font-size:1rem;padding:0.3rem 0;border-bottom:3px solid #af6ec3;background-image:url(/static/logo-fbe2a7c09efce730ce95fa3630c1b196.png);background-size:70px;background-repeat:no-repeat;background-position:-25px -20px;}.css-j9vm3q img{width:80px;border-radius:50%;position:absolute;top:-1.8rem;left:-2rem;}.css-j9vm3q ul{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;list-style-type:none;padding-left:3rem;margin:0;}.css-j9vm3q ul li{margin-right:1rem;}.css-j9vm3q a{-webkit-text-decoration:none;text-decoration:none;color:black;font-weight:900;}</style><nav class="css-j9vm3q"><ul><li><a href="/">首页</a></li><li><a href="/about/">关于</a></li></ul></nav><style data-emotion-css="1sacuq3">.css-1sacuq3{width:95%;margin:1rem auto;}</style><main class="css-1sacuq3"><article><header><style data-emotion-css="11ycep3">.css-11ycep3{margin:1rem 0 0.5rem 0;font-size:1.6rem;}</style><h1 class="css-11ycep3">给 gatsby 网站添加评论系统 commento</h1><style data-emotion-css="jt987x">.css-jt987x{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;font-size:0.8rem;color:grey;margin-bottom:2rem;}.css-jt987x p:first-of-type{margin-right:1rem;}.css-jt987x a{color:grey;}.css-jt987x a:hover{-webkit-text-decoration:none;text-decoration:none;}</style><address class="css-jt987x"><p>作者: <a href="/about/">科技微讯</a></p><p>日期: <time dateTime="2019/10/24">2019/10/24</time></p></address></header><style data-emotion-css="cpjfn3">.css-cpjfn3{line-height:1.5;margin-bottom:5rem;}.css-cpjfn3 h2{margin-top:2rem;}.css-cpjfn3 h3{margin-top:2.5rem;}.css-cpjfn3 p{text-align:justify;word-break:break-all;}.css-cpjfn3 .task-list-item{list-style-type:none;}.css-cpjfn3 ul{padding-left:0.5rem;list-style-position:inside;}.css-cpjfn3 ul li{margin:0.3rem 0;}.css-cpjfn3 table{margin:2rem auto;border-collapse:collapse;line-height:1.8;}.css-cpjfn3 table td,.css-cpjfn3 table th{border:1px solid black;padding:0 0.4rem;}.css-cpjfn3 table th{background:#ddd;}.css-cpjfn3 blockquote{margin:0;border-left:2px solid grey;}.css-cpjfn3 blockquote p{margin-left:1rem;}.css-cpjfn3 a{color:black;-webkit-text-decoration:underline;text-decoration:underline;}.css-cpjfn3 a:hover{-webkit-text-decoration:none;text-decoration:none;}</style><section class="css-cpjfn3"><h2>都有哪些评论系统</h2>
+<!DOCTYPE html><html lang="zh-CN"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><style data-href="/styles.c0432cf3a910c922a1c2.css">*{box-sizing:border-box}html{font-size:16px}body,html{min-height:100vh}body{position:relative;margin:0 auto;max-width:800px;padding-bottom:5vh}code[class*=language-],pre[class*=language-]{color:#000;background:none;text-shadow:0 1px #fff;font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;font-size:.9em;text-align:left;white-space:pre;word-spacing:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-ms-hyphens:none;hyphens:none}code[class*=language-]::selection,code[class*=language-] ::selection,pre[class*=language-]::selection,pre[class*=language-] ::selection{text-shadow:none;background:#b3d4fc}@media print{code[class*=language-],pre[class*=language-]{text-shadow:none}}pre[class*=language-]{padding:.4rem .8rem;margin:.2rem 0;overflow:scroll}:not(pre)>code[class*=language-],pre[class*=language-]{background:transparent}:not(pre)>code[class*=language-]{padding:.1rem .4rem;border-radius:.3em;white-space:normal;background:#eee}.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#708090}.token.punctuation{color:#999}.namespace{opacity:.7}.token.boolean,.token.constant,.token.deleted,.token.number,.token.property,.token.symbol,.token.tag{color:#905}.token.attr-name,.token.builtin,.token.char,.token.inserted,.token.selector,.token.string{color:#690}.language-css .token.string,.style .token.string,.token.entity,.token.operator,.token.url{color:#9a6e3a;background:hsla(0,0%,100%,.5)}.token.atrule,.token.attr-value,.token.keyword{color:#07a}.token.class-name,.token.function{color:#dd4a68}.token.important,.token.regex,.token.variable{color:#e90}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}.gatsby-highlight{border:1px solid #ccc;border-radius:.3rem}</style><meta name="generator" content="Gatsby 2.23.3"/><title data-react-helmet="true">科技微讯 - 给 gatsby 网站添加评论系统 commento</title><meta data-react-helmet="true" name="description" content="commento 是一款开源评论系统, 这篇文章介绍如何把 commento 部署到自己的服务器, 并添加到 gatsby 等静态博客中."/><link rel="icon" href="/favicon-32x32.png?v=148cfb262ef641558120de298d7bd030"/><link rel="manifest" href="/manifest.webmanifest"/><meta name="theme-color" content="#DE5E56"/><link rel="preconnect dns-prefetch" href="https://www.google-analytics.com"/><link rel="sitemap" type="application/xml" href="/sitemap.xml"/><link as="script" rel="preload" href="/webpack-runtime-e1be408938727f9afbd0.js"/><link as="script" rel="preload" href="/framework-59a9ef51c55d9b62f7de.js"/><link as="script" rel="preload" href="/styles-09367947dddffb36886c.js"/><link as="script" rel="preload" href="/app-b69741a13bfa09202ab5.js"/><link as="script" rel="preload" href="/3dec524e950c0aa58708094517bbdd0d717e6b54-51a8ce17e82345bd5e2f.js"/><link as="script" rel="preload" href="/component---src-template-blog-post-template-js-6a6182f37d130d433ff4.js"/><link as="fetch" rel="preload" href="/page-data/blog/add-commento-to-gatsby/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/app-data.json" crossorigin="anonymous"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><style data-emotion-css="j9vm3q">.css-j9vm3q{font-size:1rem;padding:0.3rem 0;border-bottom:3px solid #af6ec3;background-image:url(/static/logo-fbe2a7c09efce730ce95fa3630c1b196.png);background-size:70px;background-repeat:no-repeat;background-position:-25px -20px;}.css-j9vm3q img{width:80px;border-radius:50%;position:absolute;top:-1.8rem;left:-2rem;}.css-j9vm3q ul{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;list-style-type:none;padding-left:3rem;margin:0;}.css-j9vm3q ul li{margin-right:1rem;}.css-j9vm3q a{-webkit-text-decoration:none;text-decoration:none;color:black;font-weight:900;}</style><nav class="css-j9vm3q"><ul><li><a href="/">首页</a></li><li><a href="/about/">关于</a></li></ul></nav><style data-emotion-css="1sacuq3">.css-1sacuq3{width:95%;margin:1rem auto;}</style><main class="css-1sacuq3"><article><header><style data-emotion-css="11ycep3">.css-11ycep3{margin:1rem 0 0.5rem 0;font-size:1.6rem;}</style><h1 class="css-11ycep3">给 gatsby 网站添加评论系统 commento</h1><style data-emotion-css="jt987x">.css-jt987x{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;font-size:0.8rem;color:grey;margin-bottom:2rem;}.css-jt987x p:first-of-type{margin-right:1rem;}.css-jt987x a{color:grey;}.css-jt987x a:hover{-webkit-text-decoration:none;text-decoration:none;}</style><address class="css-jt987x"><p>作者: <a href="/about/">科技微讯</a></p><p>日期: <time dateTime="2019/10/24">2019/10/24</time></p></address></header><style data-emotion-css="cpjfn3">.css-cpjfn3{line-height:1.5;margin-bottom:5rem;}.css-cpjfn3 h2{margin-top:2rem;}.css-cpjfn3 h3{margin-top:2.5rem;}.css-cpjfn3 p{text-align:justify;word-break:break-all;}.css-cpjfn3 .task-list-item{list-style-type:none;}.css-cpjfn3 ul{padding-left:0.5rem;list-style-position:inside;}.css-cpjfn3 ul li{margin:0.3rem 0;}.css-cpjfn3 table{margin:2rem auto;border-collapse:collapse;line-height:1.8;}.css-cpjfn3 table td,.css-cpjfn3 table th{border:1px solid black;padding:0 0.4rem;}.css-cpjfn3 table th{background:#ddd;}.css-cpjfn3 blockquote{margin:0;border-left:2px solid grey;}.css-cpjfn3 blockquote p{margin-left:1rem;}.css-cpjfn3 a{color:black;-webkit-text-decoration:underline;text-decoration:underline;}.css-cpjfn3 a:hover{-webkit-text-decoration:none;text-decoration:none;}</style><section class="css-cpjfn3"><h2>都有哪些评论系统</h2>
 <p>gatsby 不同于 wordpress, 后者自带评论功能, 前者需要自己搭建评论系统. 我上个月刚刚用 gatsby 重构了 kejiweixun.com, 接着尝试用 staticman 搭建评论系统, 不过 staticman 的使用体验无论对用户还是对博主而言都并不友好.</p>
 <p>之所以受部分用户推荐, 主要是它有一个很特别的功能: 用户的评论会作为一个 pull request 提交到你的 github repo, 评论可以自动和文章合并, 成为文章正文的一部分. 于是评论也可以被搜索引擎搜索到, 并且只要你的文章不丢失, 评论就不会丢失. 但我觉得它最大的优点也是它最大的缺点, 这意味着读者评论后不能马上看到自己的评论, 可能会给读者带来疑惑, 这个问题似乎有解决方法, 但我不懂...所以 staticman 被我放弃了.</p>
 <p>其实网上有很多评论系统可选择, 主要是通过 js 动态展示在文章底部, 评论和文章正文是分离的, 评论放在一个单独的数据库中. 例如很流行但比较臃肿并且可能会在评论区展示广告的的 Disqus, gatsby 官方还提到了 JustComments, <a href="https://www.talkyard.io/">TalkYard</a>, <a href="https://github.com/gitalk/gitalk">Gitalk</a> 等, 我后来还了解到 <a href="https://github.com/umputun/remark">Remark42</a>, <a href="https://github.com/schn4ck/schnack">schnack</a>, <a href="https://github.com/utterance/utterances">utterances</a>, <a href="https://posativ.org/isso/">Isso</a> 等等, 大多是开源免费的.</p>
@@ -21,7 +21,7 @@
     <span class="token key atrule">ports</span><span class="token punctuation">:</span>
       <span class="token punctuation">-</span> 8080<span class="token punctuation">:</span><span class="token number">8080</span>
     <span class="token key atrule">environment</span><span class="token punctuation">:</span>
-      <span class="token key atrule">COMMENTO_ORIGIN</span><span class="token punctuation">:</span> localhost<span class="token punctuation">:</span><span class="token number">8080 </span><span class="token comment">#根据实际情况填写</span>
+      <span class="token key atrule">COMMENTO_ORIGIN</span><span class="token punctuation">:</span> localhost<span class="token punctuation">:</span><span class="token number">8080</span> <span class="token comment">#根据实际情况填写</span>
       <span class="token key atrule">COMMENTO_PORT</span><span class="token punctuation">:</span> <span class="token number">8080</span>
       <span class="token key atrule">COMMENTO_POSTGRES</span><span class="token punctuation">:</span> postgres<span class="token punctuation">:</span>//postgres<span class="token punctuation">:</span>postgres@db<span class="token punctuation">:</span>5432/commento<span class="token punctuation">?</span>sslmode=disable
     <span class="token key atrule">depends_on</span><span class="token punctuation">:</span>
@@ -75,39 +75,40 @@
 <p>在浏览器访问这个域名, 就可以看到评论系统了:</p>
 <p><span
       class="gatsby-resp-image-wrapper"
-      style="position: relative; display: block; margin-left: auto; margin-right: auto; color: grey; margin: 0; padding: 0 max-width: 800px;"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; color: grey; margin: 0; padding: 0"
     >
       <span
     class="gatsby-resp-image-background-image"
-    style="padding-bottom: 38.911704312114985%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAAAsSAAALEgHS3X78AAAAnUlEQVQoz52RvQ7CMAyE/fo8C2LIQ0RZurN0YmFkaJ2E5ueIgUoVVRLgpFOkxD7ri0lrDaUUjDFIKUGUc8avWnvIew9mhpxy+a9FznnQ55Raca9GHGME1RpXyTfMbAuFhSsULWSJoG1Oa/LTJbxHQcsSYK1DCKEa2kMWHfUFh9P5hZzek5s42L/nzXbH64xhvH23lN52hdDxhLud8ABWnXbLEumPqQAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+    style="padding-bottom: 38.99999999999999%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAAAsSAAALEgHS3X78AAAAnUlEQVQoz52RvQ7CMAyE/fo8C2LIQ0RZurN0YmFkaJ2E5ueIgUoVVRLgpFOkxD7ri0lrDaUUjDFIKUGUc8avWnvIew9mhpxy+a9FznnQ55Raca9GHGME1RpXyTfMbAuFhSsULWSJoG1Oa/LTJbxHQcsSYK1DCKEa2kMWHfUFh9P5hZzek5s42L/nzXbH64xhvH23lN52hdDxhLud8ABWnXbLEumPqQAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
   ></span>
   <picture>
         <source
-          srcset="/static/aa517cef78792d0f6a97d082be0ea283/f2fbe/commento1.webp 200w,
-/static/aa517cef78792d0f6a97d082be0ea283/e227a/commento1.webp 400w,
-/static/aa517cef78792d0f6a97d082be0ea283/0cbce/commento1.webp 800w,
-/static/aa517cef78792d0f6a97d082be0ea283/6bc95/commento1.webp 1200w,
-/static/aa517cef78792d0f6a97d082be0ea283/ded3f/commento1.webp 1600w,
-/static/aa517cef78792d0f6a97d082be0ea283/16c6d/commento1.webp 1948w"
+          srcset="/static/aa517cef78792d0f6a97d082be0ea283/ba381/commento1.webp 200w,
+/static/aa517cef78792d0f6a97d082be0ea283/7f61c/commento1.webp 400w,
+/static/aa517cef78792d0f6a97d082be0ea283/d00b9/commento1.webp 800w,
+/static/aa517cef78792d0f6a97d082be0ea283/92f8c/commento1.webp 1200w,
+/static/aa517cef78792d0f6a97d082be0ea283/fad48/commento1.webp 1600w,
+/static/aa517cef78792d0f6a97d082be0ea283/312c9/commento1.webp 1948w"
           sizes="(max-width: 800px) 100vw, 800px"
           type="image/webp"
         />
         <source
-          srcset="/static/aa517cef78792d0f6a97d082be0ea283/9ec3c/commento1.png 200w,
-/static/aa517cef78792d0f6a97d082be0ea283/c7805/commento1.png 400w,
-/static/aa517cef78792d0f6a97d082be0ea283/8ff1e/commento1.png 800w,
-/static/aa517cef78792d0f6a97d082be0ea283/6ff5e/commento1.png 1200w,
-/static/aa517cef78792d0f6a97d082be0ea283/2f950/commento1.png 1600w,
-/static/aa517cef78792d0f6a97d082be0ea283/45be5/commento1.png 1948w"
+          srcset="/static/aa517cef78792d0f6a97d082be0ea283/772e8/commento1.png 200w,
+/static/aa517cef78792d0f6a97d082be0ea283/e17e5/commento1.png 400w,
+/static/aa517cef78792d0f6a97d082be0ea283/5a190/commento1.png 800w,
+/static/aa517cef78792d0f6a97d082be0ea283/c1b63/commento1.png 1200w,
+/static/aa517cef78792d0f6a97d082be0ea283/29007/commento1.png 1600w,
+/static/aa517cef78792d0f6a97d082be0ea283/6e52c/commento1.png 1948w"
           sizes="(max-width: 800px) 100vw, 800px"
           type="image/png"
         />
         <img
           class="gatsby-resp-image-image"
-          src="/static/aa517cef78792d0f6a97d082be0ea283/8ff1e/commento1.png"
+          src="/static/aa517cef78792d0f6a97d082be0ea283/5a190/commento1.png"
           alt="commento1"
           title="commento1"
           loading="lazy"
+          style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
         />
       </picture>
     </span></p>
@@ -194,39 +195,40 @@
 <p>commento 支持匿名评论, 也可以通过 twitter, google, github 三种方式登录后再评论, 我暂时添加了 google 和 github 两种登录方式, 如下所示:</p>
 <p><span
       class="gatsby-resp-image-wrapper"
-      style="position: relative; display: block; margin-left: auto; margin-right: auto; color: grey; margin: 0; padding: 0 max-width: 800px;"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; color: grey; margin: 0; padding: 0"
     >
       <span
     class="gatsby-resp-image-background-image"
-    style="padding-bottom: 46.12676056338028%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAAAsSAAALEgHS3X78AAABZElEQVQoz21Sy07DMBDs/yLBF1RcOfMFHPkGJFQhDqgnOPE4cUhpaVrHTeJHEjsZdjdJWwqWJruxd8c7u550XQcGL7a+quF8tYdpImxoESkk0Mc63q8HW0lejJHOoviTkXBEYRx0XmJXGGRkk5dnfM6fcHc/w+zhEXlp5Yxj2D/Nn/yuECitkwRJJCS3N3i9vsLZ+QWm00v4Osg5o7Qex+tASD9t2yKEIBWOCVzhNsuhdCFgv6+MKzRy+VuSY/6h8L7Ie8n8yfMCzrk9YUkwziMfpPUXlMh2BVmq3FR9HBFuiwpL5aCK6kC4Wq6gVIaq4kArhGw9Nb1pGtlnsG99g7X2IpcJ/5VsLZGQjLpuhIj7x1A7g69UI/lWgsVaUxtIqrFDD52QtMdDYeZ0nSJJFiTbQ5MslsZ9SjURbg1WqkeyMdhos5/0SPhnyiylHsBvy5O8EKIMqjtG18pejK28vUj+6foBH4i0tRdC2H4AAAAASUVORK5CYII='); background-size: cover; display: block;"
+    style="padding-bottom: 46%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAAAsSAAALEgHS3X78AAABZElEQVQoz21Sy07DMBDs/yLBF1RcOfMFHPkGJFQhDqgnOPE4cUhpaVrHTeJHEjsZdjdJWwqWJruxd8c7u550XQcGL7a+quF8tYdpImxoESkk0Mc63q8HW0lejJHOoviTkXBEYRx0XmJXGGRkk5dnfM6fcHc/w+zhEXlp5Yxj2D/Nn/yuECitkwRJJCS3N3i9vsLZ+QWm00v4Osg5o7Qex+tASD9t2yKEIBWOCVzhNsuhdCFgv6+MKzRy+VuSY/6h8L7Ie8n8yfMCzrk9YUkwziMfpPUXlMh2BVmq3FR9HBFuiwpL5aCK6kC4Wq6gVIaq4kArhGw9Nb1pGtlnsG99g7X2IpcJ/5VsLZGQjLpuhIj7x1A7g69UI/lWgsVaUxtIqrFDD52QtMdDYeZ0nSJJFiTbQ5MslsZ9SjURbg1WqkeyMdhos5/0SPhnyiylHsBvy5O8EKIMqjtG18pejK28vUj+6foBH4i0tRdC2H4AAAAASUVORK5CYII='); background-size: cover; display: block;"
   ></span>
   <picture>
         <source
-          srcset="/static/5af58d4ae954329733b2ac76b50ecc5a/f2fbe/commento2.webp 200w,
-/static/5af58d4ae954329733b2ac76b50ecc5a/e227a/commento2.webp 400w,
-/static/5af58d4ae954329733b2ac76b50ecc5a/0cbce/commento2.webp 800w,
-/static/5af58d4ae954329733b2ac76b50ecc5a/6bc95/commento2.webp 1200w,
-/static/5af58d4ae954329733b2ac76b50ecc5a/ded3f/commento2.webp 1600w,
-/static/5af58d4ae954329733b2ac76b50ecc5a/9db15/commento2.webp 1704w"
+          srcset="/static/5af58d4ae954329733b2ac76b50ecc5a/ba381/commento2.webp 200w,
+/static/5af58d4ae954329733b2ac76b50ecc5a/7f61c/commento2.webp 400w,
+/static/5af58d4ae954329733b2ac76b50ecc5a/d00b9/commento2.webp 800w,
+/static/5af58d4ae954329733b2ac76b50ecc5a/92f8c/commento2.webp 1200w,
+/static/5af58d4ae954329733b2ac76b50ecc5a/fad48/commento2.webp 1600w,
+/static/5af58d4ae954329733b2ac76b50ecc5a/c01d7/commento2.webp 1704w"
           sizes="(max-width: 800px) 100vw, 800px"
           type="image/webp"
         />
         <source
-          srcset="/static/5af58d4ae954329733b2ac76b50ecc5a/9ec3c/commento2.png 200w,
-/static/5af58d4ae954329733b2ac76b50ecc5a/c7805/commento2.png 400w,
-/static/5af58d4ae954329733b2ac76b50ecc5a/8ff1e/commento2.png 800w,
-/static/5af58d4ae954329733b2ac76b50ecc5a/6ff5e/commento2.png 1200w,
-/static/5af58d4ae954329733b2ac76b50ecc5a/2f950/commento2.png 1600w,
-/static/5af58d4ae954329733b2ac76b50ecc5a/08b59/commento2.png 1704w"
+          srcset="/static/5af58d4ae954329733b2ac76b50ecc5a/772e8/commento2.png 200w,
+/static/5af58d4ae954329733b2ac76b50ecc5a/e17e5/commento2.png 400w,
+/static/5af58d4ae954329733b2ac76b50ecc5a/5a190/commento2.png 800w,
+/static/5af58d4ae954329733b2ac76b50ecc5a/c1b63/commento2.png 1200w,
+/static/5af58d4ae954329733b2ac76b50ecc5a/29007/commento2.png 1600w,
+/static/5af58d4ae954329733b2ac76b50ecc5a/09b15/commento2.png 1704w"
           sizes="(max-width: 800px) 100vw, 800px"
           type="image/png"
         />
         <img
           class="gatsby-resp-image-image"
-          src="/static/5af58d4ae954329733b2ac76b50ecc5a/8ff1e/commento2.png"
+          src="/static/5af58d4ae954329733b2ac76b50ecc5a/5a190/commento2.png"
           alt="commento2"
           title="commento2"
           loading="lazy"
+          style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
         />
       </picture>
     </span></p>
@@ -257,7 +259,7 @@
 <p>其他配置选项可以继续参考<a href="https://docs.commento.io/configuration/frontend/">官方文档</a>.</p>
 <h2>总结</h2>
 <p>评论系统终于搞掂啦, 大家评论试试? commento 我不知道自己会用多久, 不想用的时候可以把评论导出为 json 文件, 轻松备份.</p>
-<p>20191025 更新: 只用了不到一天, 我已经<a href="https://kejiweixun.com/blog/how-to-deploy-isso-comment-system-gatsby">换成 isso 了</a>.</p></section></article><section id="isso-thread" data-title="给 gatsby 网站添加评论系统 commento" data-isso-id="blog/add-commento-to-gatsby/"></section></main></div></div><script>
+<p>20191025 更新: 只用了不到一天, 我已经<a href="https://kejiweixun.com/blog/how-to-deploy-isso-comment-system-gatsby">换成 isso 了</a>.</p></section></article><section id="isso-thread" data-title="给 gatsby 网站添加评论系统 commento" data-isso-id="blog/add-commento-to-gatsby/"></section></main></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script>
   
   
   if(true) {
@@ -273,4 +275,4 @@
       
       
       
-      }</script><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/blog/add-commento-to-gatsby/";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"app":["/app-7f94717855e71cafdb7d.js"],"component---node-modules-gatsby-plugin-offline-app-shell-js":["/component---node-modules-gatsby-plugin-offline-app-shell-js-c8f4ca6175399afc2590.js"],"component---src-template-blog-post-template-js":["/component---src-template-blog-post-template-js-00adf4838d528b2ee459.js"],"component---src-pages-404-js":["/component---src-pages-404-js-27287c5e3a62bee12020.js"],"component---src-pages-about-js":["/component---src-pages-about-js-6a4943976aa00eef8aac.js"],"component---src-pages-apple-features-availability-js":["/component---src-pages-apple-features-availability-js-799ff76ba8b8aa7ce90d.js"],"component---src-pages-index-js":["/component---src-pages-index-js-ccc309eaaada1a187256.js"],"component---src-pages-ios-beta-profile-js":["/component---src-pages-ios-beta-profile-js-f23d000d264938c8f8bd.js"],"component---src-pages-ios-version-history-js":["/component---src-pages-ios-version-history-js-3b629f2a95d1199c5825.js"]};/*]]>*/</script><script src="/component---src-template-blog-post-template-js-00adf4838d528b2ee459.js" async=""></script><script src="/commons-a4104f36cd7abdaa78b4.js" async=""></script><script src="/app-7f94717855e71cafdb7d.js" async=""></script><script src="/styles-742f71dca9c96ccdb39c.js" async=""></script><script src="/webpack-runtime-063dfcec93a571c11e60.js" async=""></script></body></html>
+      }</script><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/blog/add-commento-to-gatsby/";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"app":["/app-b69741a13bfa09202ab5.js"],"component---cache-caches-gatsby-plugin-offline-app-shell-js":["/component---cache-caches-gatsby-plugin-offline-app-shell-js-c25716df4fbb2532700a.js"],"component---src-pages-404-js":["/component---src-pages-404-js-c9e1966a23ace7c826bc.js"],"component---src-pages-about-js":["/component---src-pages-about-js-59b4230bb74996afac49.js"],"component---src-pages-apple-features-availability-js":["/component---src-pages-apple-features-availability-js-7187e05c1cd638c24dad.js"],"component---src-pages-index-js":["/component---src-pages-index-js-6b51ff9be05ac468a25d.js"],"component---src-pages-ios-beta-profile-js":["/component---src-pages-ios-beta-profile-js-50caa60c6d9f937c1549.js"],"component---src-pages-ios-version-history-js":["/component---src-pages-ios-version-history-js-156ae75be694ec01ebf5.js"],"component---src-template-blog-post-template-js":["/component---src-template-blog-post-template-js-6a6182f37d130d433ff4.js"]};/*]]>*/</script><script src="/component---src-template-blog-post-template-js-6a6182f37d130d433ff4.js" async=""></script><script src="/3dec524e950c0aa58708094517bbdd0d717e6b54-51a8ce17e82345bd5e2f.js" async=""></script><script src="/app-b69741a13bfa09202ab5.js" async=""></script><script src="/styles-09367947dddffb36886c.js" async=""></script><script src="/framework-59a9ef51c55d9b62f7de.js" async=""></script><script src="/webpack-runtime-e1be408938727f9afbd0.js" async=""></script></body></html>

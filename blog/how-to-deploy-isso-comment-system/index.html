@@ -1,41 +1,42 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><style data-href="/styles.c0432cf3a910c922a1c2.css">*{box-sizing:border-box}html{font-size:16px}body,html{min-height:100vh}body{position:relative;margin:0 auto;max-width:800px;padding-bottom:5vh}code[class*=language-],pre[class*=language-]{color:#000;background:none;text-shadow:0 1px #fff;font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;font-size:.9em;text-align:left;white-space:pre;word-spacing:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-ms-hyphens:none;hyphens:none}code[class*=language-]::selection,code[class*=language-] ::selection,pre[class*=language-]::selection,pre[class*=language-] ::selection{text-shadow:none;background:#b3d4fc}@media print{code[class*=language-],pre[class*=language-]{text-shadow:none}}pre[class*=language-]{padding:.4rem .8rem;margin:.2rem 0;overflow:scroll}:not(pre)>code[class*=language-],pre[class*=language-]{background:transparent}:not(pre)>code[class*=language-]{padding:.1rem .4rem;border-radius:.3em;white-space:normal;background:#eee}.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#708090}.token.punctuation{color:#999}.namespace{opacity:.7}.token.boolean,.token.constant,.token.deleted,.token.number,.token.property,.token.symbol,.token.tag{color:#905}.token.attr-name,.token.builtin,.token.char,.token.inserted,.token.selector,.token.string{color:#690}.language-css .token.string,.style .token.string,.token.entity,.token.operator,.token.url{color:#9a6e3a;background:hsla(0,0%,100%,.5)}.token.atrule,.token.attr-value,.token.keyword{color:#07a}.token.class-name,.token.function{color:#dd4a68}.token.important,.token.regex,.token.variable{color:#e90}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}.gatsby-highlight{border:1px solid #ccc;border-radius:.3rem}</style><meta name="generator" content="Gatsby 2.17.17"/><title data-react-helmet="true">科技微讯 - 开源评论系统 isso 部署方法</title><meta data-react-helmet="true" name="description" content="isso 是一款开源且免费的轻量评论系统, 功能简单界面简洁, 这篇文章介绍如何在服务器部署 isso, 并添加到 gatsby 等静态博客中."/><link rel="icon" href="/icons/icon-48x48.png?v=4c0423507dcd35ec43b7d51998e0f191"/><link rel="manifest" href="/manifest.webmanifest"/><meta name="theme-color" content="#DE5E56"/><style type="text/css">.gatsby-resp-image-image{width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;color:transparent;}</style><link rel="preconnect dns-prefetch" href="https://www.google-analytics.com"/><link rel="sitemap" type="application/xml" href="/sitemap.xml"/><link as="script" rel="preload" href="/webpack-runtime-063dfcec93a571c11e60.js"/><link as="script" rel="preload" href="/styles-742f71dca9c96ccdb39c.js"/><link as="script" rel="preload" href="/app-7f94717855e71cafdb7d.js"/><link as="script" rel="preload" href="/commons-a4104f36cd7abdaa78b4.js"/><link as="script" rel="preload" href="/component---src-template-blog-post-template-js-00adf4838d528b2ee459.js"/><link as="fetch" rel="preload" href="/page-data/blog/how-to-deploy-isso-comment-system/page-data.json" crossorigin="anonymous"/></head><body><noscript id="gatsby-noscript">This app works best with JavaScript enabled.</noscript><div id="___gatsby"><div style="outline:none" tabindex="-1" role="group" id="gatsby-focus-wrapper"><style data-emotion-css="j9vm3q">.css-j9vm3q{font-size:1rem;padding:0.3rem 0;border-bottom:3px solid #af6ec3;background-image:url(/static/logo-fbe2a7c09efce730ce95fa3630c1b196.png);background-size:70px;background-repeat:no-repeat;background-position:-25px -20px;}.css-j9vm3q img{width:80px;border-radius:50%;position:absolute;top:-1.8rem;left:-2rem;}.css-j9vm3q ul{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;list-style-type:none;padding-left:3rem;margin:0;}.css-j9vm3q ul li{margin-right:1rem;}.css-j9vm3q a{-webkit-text-decoration:none;text-decoration:none;color:black;font-weight:900;}</style><nav class="css-j9vm3q"><ul><li><a href="/">首页</a></li><li><a href="/about/">关于</a></li></ul></nav><style data-emotion-css="1sacuq3">.css-1sacuq3{width:95%;margin:1rem auto;}</style><main class="css-1sacuq3"><article><header><style data-emotion-css="11ycep3">.css-11ycep3{margin:1rem 0 0.5rem 0;font-size:1.6rem;}</style><h1 class="css-11ycep3">开源评论系统 isso 部署方法</h1><style data-emotion-css="jt987x">.css-jt987x{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;font-size:0.8rem;color:grey;margin-bottom:2rem;}.css-jt987x p:first-of-type{margin-right:1rem;}.css-jt987x a{color:grey;}.css-jt987x a:hover{-webkit-text-decoration:none;text-decoration:none;}</style><address class="css-jt987x"><p>作者: <a href="/about/">科技微讯</a></p><p>日期: <time dateTime="2019/10/25">2019/10/25</time></p></address></header><style data-emotion-css="cpjfn3">.css-cpjfn3{line-height:1.5;margin-bottom:5rem;}.css-cpjfn3 h2{margin-top:2rem;}.css-cpjfn3 h3{margin-top:2.5rem;}.css-cpjfn3 p{text-align:justify;word-break:break-all;}.css-cpjfn3 .task-list-item{list-style-type:none;}.css-cpjfn3 ul{padding-left:0.5rem;list-style-position:inside;}.css-cpjfn3 ul li{margin:0.3rem 0;}.css-cpjfn3 table{margin:2rem auto;border-collapse:collapse;line-height:1.8;}.css-cpjfn3 table td,.css-cpjfn3 table th{border:1px solid black;padding:0 0.4rem;}.css-cpjfn3 table th{background:#ddd;}.css-cpjfn3 blockquote{margin:0;border-left:2px solid grey;}.css-cpjfn3 blockquote p{margin-left:1rem;}.css-cpjfn3 a{color:black;-webkit-text-decoration:underline;text-decoration:underline;}.css-cpjfn3 a:hover{-webkit-text-decoration:none;text-decoration:none;}</style><section class="css-cpjfn3"><h2>为什么用 isso</h2>
+<!DOCTYPE html><html lang="zh-CN"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><style data-href="/styles.c0432cf3a910c922a1c2.css">*{box-sizing:border-box}html{font-size:16px}body,html{min-height:100vh}body{position:relative;margin:0 auto;max-width:800px;padding-bottom:5vh}code[class*=language-],pre[class*=language-]{color:#000;background:none;text-shadow:0 1px #fff;font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;font-size:.9em;text-align:left;white-space:pre;word-spacing:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-ms-hyphens:none;hyphens:none}code[class*=language-]::selection,code[class*=language-] ::selection,pre[class*=language-]::selection,pre[class*=language-] ::selection{text-shadow:none;background:#b3d4fc}@media print{code[class*=language-],pre[class*=language-]{text-shadow:none}}pre[class*=language-]{padding:.4rem .8rem;margin:.2rem 0;overflow:scroll}:not(pre)>code[class*=language-],pre[class*=language-]{background:transparent}:not(pre)>code[class*=language-]{padding:.1rem .4rem;border-radius:.3em;white-space:normal;background:#eee}.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#708090}.token.punctuation{color:#999}.namespace{opacity:.7}.token.boolean,.token.constant,.token.deleted,.token.number,.token.property,.token.symbol,.token.tag{color:#905}.token.attr-name,.token.builtin,.token.char,.token.inserted,.token.selector,.token.string{color:#690}.language-css .token.string,.style .token.string,.token.entity,.token.operator,.token.url{color:#9a6e3a;background:hsla(0,0%,100%,.5)}.token.atrule,.token.attr-value,.token.keyword{color:#07a}.token.class-name,.token.function{color:#dd4a68}.token.important,.token.regex,.token.variable{color:#e90}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}.gatsby-highlight{border:1px solid #ccc;border-radius:.3rem}</style><meta name="generator" content="Gatsby 2.23.3"/><title data-react-helmet="true">科技微讯 - 开源评论系统 isso 部署方法</title><meta data-react-helmet="true" name="description" content="isso 是一款开源且免费的轻量评论系统, 功能简单界面简洁, 这篇文章介绍如何在服务器部署 isso, 并添加到 gatsby 等静态博客中."/><link rel="icon" href="/favicon-32x32.png?v=148cfb262ef641558120de298d7bd030"/><link rel="manifest" href="/manifest.webmanifest"/><meta name="theme-color" content="#DE5E56"/><link rel="preconnect dns-prefetch" href="https://www.google-analytics.com"/><link rel="sitemap" type="application/xml" href="/sitemap.xml"/><link as="script" rel="preload" href="/webpack-runtime-e1be408938727f9afbd0.js"/><link as="script" rel="preload" href="/framework-59a9ef51c55d9b62f7de.js"/><link as="script" rel="preload" href="/styles-09367947dddffb36886c.js"/><link as="script" rel="preload" href="/app-b69741a13bfa09202ab5.js"/><link as="script" rel="preload" href="/3dec524e950c0aa58708094517bbdd0d717e6b54-51a8ce17e82345bd5e2f.js"/><link as="script" rel="preload" href="/component---src-template-blog-post-template-js-6a6182f37d130d433ff4.js"/><link as="fetch" rel="preload" href="/page-data/blog/how-to-deploy-isso-comment-system/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/app-data.json" crossorigin="anonymous"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><style data-emotion-css="j9vm3q">.css-j9vm3q{font-size:1rem;padding:0.3rem 0;border-bottom:3px solid #af6ec3;background-image:url(/static/logo-fbe2a7c09efce730ce95fa3630c1b196.png);background-size:70px;background-repeat:no-repeat;background-position:-25px -20px;}.css-j9vm3q img{width:80px;border-radius:50%;position:absolute;top:-1.8rem;left:-2rem;}.css-j9vm3q ul{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;list-style-type:none;padding-left:3rem;margin:0;}.css-j9vm3q ul li{margin-right:1rem;}.css-j9vm3q a{-webkit-text-decoration:none;text-decoration:none;color:black;font-weight:900;}</style><nav class="css-j9vm3q"><ul><li><a href="/">首页</a></li><li><a href="/about/">关于</a></li></ul></nav><style data-emotion-css="1sacuq3">.css-1sacuq3{width:95%;margin:1rem auto;}</style><main class="css-1sacuq3"><article><header><style data-emotion-css="11ycep3">.css-11ycep3{margin:1rem 0 0.5rem 0;font-size:1.6rem;}</style><h1 class="css-11ycep3">开源评论系统 isso 部署方法</h1><style data-emotion-css="jt987x">.css-jt987x{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;font-size:0.8rem;color:grey;margin-bottom:2rem;}.css-jt987x p:first-of-type{margin-right:1rem;}.css-jt987x a{color:grey;}.css-jt987x a:hover{-webkit-text-decoration:none;text-decoration:none;}</style><address class="css-jt987x"><p>作者: <a href="/about/">科技微讯</a></p><p>日期: <time dateTime="2019/10/25">2019/10/25</time></p></address></header><style data-emotion-css="cpjfn3">.css-cpjfn3{line-height:1.5;margin-bottom:5rem;}.css-cpjfn3 h2{margin-top:2rem;}.css-cpjfn3 h3{margin-top:2.5rem;}.css-cpjfn3 p{text-align:justify;word-break:break-all;}.css-cpjfn3 .task-list-item{list-style-type:none;}.css-cpjfn3 ul{padding-left:0.5rem;list-style-position:inside;}.css-cpjfn3 ul li{margin:0.3rem 0;}.css-cpjfn3 table{margin:2rem auto;border-collapse:collapse;line-height:1.8;}.css-cpjfn3 table td,.css-cpjfn3 table th{border:1px solid black;padding:0 0.4rem;}.css-cpjfn3 table th{background:#ddd;}.css-cpjfn3 blockquote{margin:0;border-left:2px solid grey;}.css-cpjfn3 blockquote p{margin-left:1rem;}.css-cpjfn3 a{color:black;-webkit-text-decoration:underline;text-decoration:underline;}.css-cpjfn3 a:hover{-webkit-text-decoration:none;text-decoration:none;}</style><section class="css-cpjfn3"><h2>为什么用 isso</h2>
 <p>在上一篇文章我写了安装 commento 的<a href="https://kejiweixun.com/blog/add-commento-to-gatsby/">方法</a>, commento 界面还算好看, 可自定义配置的选项也很多, 但似乎不太适合国内用户使用, 首先它暂时只支持英文, "匿名" 写成了 "anonimously comment", 占了好多空间, 有点讨厌, 我可能有点强迫症吧... 除了匿名, 它还支持通过 google, github, twitter, gitlab, 以及邮箱登录评论, 这很好, 可惜在国内不实用, 而且对于小型个人博客的随机访客, 有多少人愿意登录评论呢.</p>
 <p>isso 没有注册登录的概念, 功能简单界面简洁, 是我更喜欢的类型. 默认就是匿名评论, 当然读者也可以提供自己的邮箱地址, 如果有必要, 博主可通过邮箱联系读者. 虽然简单, 但也支持评论回复, 支持点赞, 支持在一定时间内修改或删除自己的评论, 也支持 markdown, 支持反垃圾, 支持评论审核. isso 还提供了一个简单的后台管理系统, 如下:</p>
 <p><span
       class="gatsby-resp-image-wrapper"
-      style="position: relative; display: block; margin-left: auto; margin-right: auto; color: grey; margin: 0; padding: 0 max-width: 800px;"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; color: grey; margin: 0; padding: 0"
     >
       <span
     class="gatsby-resp-image-background-image"
-    style="padding-bottom: 52.654867256637175%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsSAAALEgHS3X78AAABa0lEQVQoz42Si46CMBBF+/+/ttmsRqMrCAoFeZYC5WmEu0yNie+15JahLdO5p2UiE6jrCtTGcXypd+16HTscQohUoCwrDMPVIox3Pw0fbcbm4Q8CsUIWzaGkAWuzxd7aI40EfNeHY7sIvAAqV8jz/EFFUcB1Xfi+jziOwdZyCbudYZ9/YVd8Y3mYY+HNYCRrLPgMq3CJTbKCk9tI0/RBQggEQYAois4J/cQDPzqwCgu7ygbvdzDlL+zKxLbYwO1sGHIFt95NWMqnUkpBlUrHjDopJNI41SqyEk3VolENju0RfdPrdz19D9eQbwCfmQ/Tw8IwBPc4TNPULJIk0aVLOW2STnESIy/y6SbUT0/7MtYPPfyGg5H/S9ld16GqKmRZpoFnMtMxgae5/64WOWAXDlQVJWnb9qW1d8lIp/EE5jgODMPQopgQUEVknU6uaZoba4/47ixzzvXRUxLiROzIHlVL459YvcwP0+X/A1DETsr27fMcAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+    style="padding-bottom: 52.5%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsSAAALEgHS3X78AAABa0lEQVQoz42Si46CMBBF+/+/ttmsRqMrCAoFeZYC5WmEu0yNie+15JahLdO5p2UiE6jrCtTGcXypd+16HTscQohUoCwrDMPVIox3Pw0fbcbm4Q8CsUIWzaGkAWuzxd7aI40EfNeHY7sIvAAqV8jz/EFFUcB1Xfi+jziOwdZyCbudYZ9/YVd8Y3mYY+HNYCRrLPgMq3CJTbKCk9tI0/RBQggEQYAois4J/cQDPzqwCgu7ygbvdzDlL+zKxLbYwO1sGHIFt95NWMqnUkpBlUrHjDopJNI41SqyEk3VolENju0RfdPrdz19D9eQbwCfmQ/Tw8IwBPc4TNPULJIk0aVLOW2STnESIy/y6SbUT0/7MtYPPfyGg5H/S9ld16GqKmRZpoFnMtMxgae5/64WOWAXDlQVJWnb9qW1d8lIp/EE5jgODMPQopgQUEVknU6uaZoba4/47ixzzvXRUxLiROzIHlVL459YvcwP0+X/A1DETsr27fMcAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
   ></span>
   <picture>
         <source
-          srcset="/static/3283d79e3b0004ca652bb2f45baa6ea6/f2fbe/isso1.webp 200w,
-/static/3283d79e3b0004ca652bb2f45baa6ea6/e227a/isso1.webp 400w,
-/static/3283d79e3b0004ca652bb2f45baa6ea6/0cbce/isso1.webp 800w,
-/static/3283d79e3b0004ca652bb2f45baa6ea6/6bc95/isso1.webp 1200w,
-/static/3283d79e3b0004ca652bb2f45baa6ea6/ded3f/isso1.webp 1600w,
-/static/3283d79e3b0004ca652bb2f45baa6ea6/bd945/isso1.webp 1808w"
+          srcset="/static/3283d79e3b0004ca652bb2f45baa6ea6/ba381/isso1.webp 200w,
+/static/3283d79e3b0004ca652bb2f45baa6ea6/7f61c/isso1.webp 400w,
+/static/3283d79e3b0004ca652bb2f45baa6ea6/d00b9/isso1.webp 800w,
+/static/3283d79e3b0004ca652bb2f45baa6ea6/92f8c/isso1.webp 1200w,
+/static/3283d79e3b0004ca652bb2f45baa6ea6/fad48/isso1.webp 1600w,
+/static/3283d79e3b0004ca652bb2f45baa6ea6/b86f1/isso1.webp 1808w"
           sizes="(max-width: 800px) 100vw, 800px"
           type="image/webp"
         />
         <source
-          srcset="/static/3283d79e3b0004ca652bb2f45baa6ea6/9ec3c/isso1.png 200w,
-/static/3283d79e3b0004ca652bb2f45baa6ea6/c7805/isso1.png 400w,
-/static/3283d79e3b0004ca652bb2f45baa6ea6/8ff1e/isso1.png 800w,
-/static/3283d79e3b0004ca652bb2f45baa6ea6/6ff5e/isso1.png 1200w,
-/static/3283d79e3b0004ca652bb2f45baa6ea6/2f950/isso1.png 1600w,
-/static/3283d79e3b0004ca652bb2f45baa6ea6/ec8fa/isso1.png 1808w"
+          srcset="/static/3283d79e3b0004ca652bb2f45baa6ea6/772e8/isso1.png 200w,
+/static/3283d79e3b0004ca652bb2f45baa6ea6/e17e5/isso1.png 400w,
+/static/3283d79e3b0004ca652bb2f45baa6ea6/5a190/isso1.png 800w,
+/static/3283d79e3b0004ca652bb2f45baa6ea6/c1b63/isso1.png 1200w,
+/static/3283d79e3b0004ca652bb2f45baa6ea6/29007/isso1.png 1600w,
+/static/3283d79e3b0004ca652bb2f45baa6ea6/f98ee/isso1.png 1808w"
           sizes="(max-width: 800px) 100vw, 800px"
           type="image/png"
         />
         <img
           class="gatsby-resp-image-image"
-          src="/static/3283d79e3b0004ca652bb2f45baa6ea6/8ff1e/isso1.png"
+          src="/static/3283d79e3b0004ca652bb2f45baa6ea6/5a190/isso1.png"
           alt="isso1"
           title="isso1"
           loading="lazy"
+          style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
         />
       </picture>
     </span></p>
@@ -114,37 +115,38 @@
 <p>这时你应该在命令行工具看到两个域名, 其中一个应该是 <code class="language-text">http://localhost:5000</code>, 在浏览器访问这个域名, 你就可以打开 index.html 这个页面了, 界面如下:</p>
 <p><span
       class="gatsby-resp-image-wrapper"
-      style="position: relative; display: block; margin-left: auto; margin-right: auto; color: grey; margin: 0; padding: 0 max-width: 800px;"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; color: grey; margin: 0; padding: 0"
     >
       <span
     class="gatsby-resp-image-background-image"
-    style="padding-bottom: 46.31432545201669%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAAAsSAAALEgHS3X78AAAA5klEQVQoz52SXQqDMBCEc/9zeAFv4Isn6IMPQkELFm2N//+aqZNCSaWW1oUh7sZ8O3EVjuPAtm1YlgXXdcFQSh2WiKIInufB933EcfwGPBKiLEtkWfZx8x9ny7I8HXZdhzRNNTRJElRVBTZpmuYF3cJ52JR5Gw0kpO97DMOg17qu0bYt5nnGOI76mStzagtkjSbyPH8Ci6LQB9iJOd2yNk2TzqWUGsqcMt0yCAzDEEEQQCi1Wl670Bn1bRi/DEqklxNkfEZ0va5XrXS3vW/3aVDbmmjKO25JAc+vIXPzhf0pb38tc+8BqQ3AeOXaxEsAAAAASUVORK5CYII='); background-size: cover; display: block;"
+    style="padding-bottom: 46.5%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAAAsSAAALEgHS3X78AAAA5klEQVQoz52SXQqDMBCEc/9zeAFv4Isn6IMPQkELFm2N//+aqZNCSaWW1oUh7sZ8O3EVjuPAtm1YlgXXdcFQSh2WiKIInufB933EcfwGPBKiLEtkWfZx8x9ny7I8HXZdhzRNNTRJElRVBTZpmuYF3cJ52JR5Gw0kpO97DMOg17qu0bYt5nnGOI76mStzagtkjSbyPH8Ci6LQB9iJOd2yNk2TzqWUGsqcMt0yCAzDEEEQQCi1Wl670Bn1bRi/DEqklxNkfEZ0va5XrXS3vW/3aVDbmmjKO25JAc+vIXPzhf0pb38tc+8BqQ3AeOXaxEsAAAAASUVORK5CYII='); background-size: cover; display: block;"
   ></span>
   <picture>
         <source
-          srcset="/static/c9c47f3bc418f49115d85df3e2e86570/f2fbe/isso2.webp 200w,
-/static/c9c47f3bc418f49115d85df3e2e86570/e227a/isso2.webp 400w,
-/static/c9c47f3bc418f49115d85df3e2e86570/0cbce/isso2.webp 800w,
-/static/c9c47f3bc418f49115d85df3e2e86570/6bc95/isso2.webp 1200w,
-/static/c9c47f3bc418f49115d85df3e2e86570/f94f8/isso2.webp 1438w"
+          srcset="/static/c9c47f3bc418f49115d85df3e2e86570/ba381/isso2.webp 200w,
+/static/c9c47f3bc418f49115d85df3e2e86570/7f61c/isso2.webp 400w,
+/static/c9c47f3bc418f49115d85df3e2e86570/d00b9/isso2.webp 800w,
+/static/c9c47f3bc418f49115d85df3e2e86570/92f8c/isso2.webp 1200w,
+/static/c9c47f3bc418f49115d85df3e2e86570/e12b1/isso2.webp 1438w"
           sizes="(max-width: 800px) 100vw, 800px"
           type="image/webp"
         />
         <source
-          srcset="/static/c9c47f3bc418f49115d85df3e2e86570/9ec3c/isso2.png 200w,
-/static/c9c47f3bc418f49115d85df3e2e86570/c7805/isso2.png 400w,
-/static/c9c47f3bc418f49115d85df3e2e86570/8ff1e/isso2.png 800w,
-/static/c9c47f3bc418f49115d85df3e2e86570/6ff5e/isso2.png 1200w,
-/static/c9c47f3bc418f49115d85df3e2e86570/c591e/isso2.png 1438w"
+          srcset="/static/c9c47f3bc418f49115d85df3e2e86570/772e8/isso2.png 200w,
+/static/c9c47f3bc418f49115d85df3e2e86570/e17e5/isso2.png 400w,
+/static/c9c47f3bc418f49115d85df3e2e86570/5a190/isso2.png 800w,
+/static/c9c47f3bc418f49115d85df3e2e86570/c1b63/isso2.png 1200w,
+/static/c9c47f3bc418f49115d85df3e2e86570/a6ec4/isso2.png 1438w"
           sizes="(max-width: 800px) 100vw, 800px"
           type="image/png"
         />
         <img
           class="gatsby-resp-image-image"
-          src="/static/c9c47f3bc418f49115d85df3e2e86570/8ff1e/isso2.png"
+          src="/static/c9c47f3bc418f49115d85df3e2e86570/5a190/isso2.png"
           alt="isso2"
           title="isso2"
           loading="lazy"
+          style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
         />
       </picture>
     </span></p>
@@ -245,7 +247,7 @@
 <span class="token selector">[guard]</span>
 <span class="token constant">enabled</span> <span class="token attr-value"><span class="token punctuation">=</span> true</span></code></pre></div>
 <h2>总结</h2>
-<p>isso 的数据库文件保存在宿主本地, 即服务器或你的电脑, 在我的例子中, 保存在我的腾讯云服务器的 <code class="language-text">~/docker/isso/db</code> 文件夹中, 注意备份, 这个文件如果丢失了, 所有评论数据都会丢失.</p></section></article><section id="isso-thread" data-title="开源评论系统 isso 部署方法" data-isso-id="blog/how-to-deploy-isso-comment-system/"></section></main></div></div><script>
+<p>isso 的数据库文件保存在宿主本地, 即服务器或你的电脑, 在我的例子中, 保存在我的腾讯云服务器的 <code class="language-text">~/docker/isso/db</code> 文件夹中, 注意备份, 这个文件如果丢失了, 所有评论数据都会丢失.</p></section></article><section id="isso-thread" data-title="开源评论系统 isso 部署方法" data-isso-id="blog/how-to-deploy-isso-comment-system/"></section></main></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script>
   
   
   if(true) {
@@ -261,4 +263,4 @@
       
       
       
-      }</script><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/blog/how-to-deploy-isso-comment-system/";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"app":["/app-7f94717855e71cafdb7d.js"],"component---node-modules-gatsby-plugin-offline-app-shell-js":["/component---node-modules-gatsby-plugin-offline-app-shell-js-c8f4ca6175399afc2590.js"],"component---src-template-blog-post-template-js":["/component---src-template-blog-post-template-js-00adf4838d528b2ee459.js"],"component---src-pages-404-js":["/component---src-pages-404-js-27287c5e3a62bee12020.js"],"component---src-pages-about-js":["/component---src-pages-about-js-6a4943976aa00eef8aac.js"],"component---src-pages-apple-features-availability-js":["/component---src-pages-apple-features-availability-js-799ff76ba8b8aa7ce90d.js"],"component---src-pages-index-js":["/component---src-pages-index-js-ccc309eaaada1a187256.js"],"component---src-pages-ios-beta-profile-js":["/component---src-pages-ios-beta-profile-js-f23d000d264938c8f8bd.js"],"component---src-pages-ios-version-history-js":["/component---src-pages-ios-version-history-js-3b629f2a95d1199c5825.js"]};/*]]>*/</script><script src="/component---src-template-blog-post-template-js-00adf4838d528b2ee459.js" async=""></script><script src="/commons-a4104f36cd7abdaa78b4.js" async=""></script><script src="/app-7f94717855e71cafdb7d.js" async=""></script><script src="/styles-742f71dca9c96ccdb39c.js" async=""></script><script src="/webpack-runtime-063dfcec93a571c11e60.js" async=""></script></body></html>
+      }</script><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/blog/how-to-deploy-isso-comment-system/";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"app":["/app-b69741a13bfa09202ab5.js"],"component---cache-caches-gatsby-plugin-offline-app-shell-js":["/component---cache-caches-gatsby-plugin-offline-app-shell-js-c25716df4fbb2532700a.js"],"component---src-pages-404-js":["/component---src-pages-404-js-c9e1966a23ace7c826bc.js"],"component---src-pages-about-js":["/component---src-pages-about-js-59b4230bb74996afac49.js"],"component---src-pages-apple-features-availability-js":["/component---src-pages-apple-features-availability-js-7187e05c1cd638c24dad.js"],"component---src-pages-index-js":["/component---src-pages-index-js-6b51ff9be05ac468a25d.js"],"component---src-pages-ios-beta-profile-js":["/component---src-pages-ios-beta-profile-js-50caa60c6d9f937c1549.js"],"component---src-pages-ios-version-history-js":["/component---src-pages-ios-version-history-js-156ae75be694ec01ebf5.js"],"component---src-template-blog-post-template-js":["/component---src-template-blog-post-template-js-6a6182f37d130d433ff4.js"]};/*]]>*/</script><script src="/component---src-template-blog-post-template-js-6a6182f37d130d433ff4.js" async=""></script><script src="/3dec524e950c0aa58708094517bbdd0d717e6b54-51a8ce17e82345bd5e2f.js" async=""></script><script src="/app-b69741a13bfa09202ab5.js" async=""></script><script src="/styles-09367947dddffb36886c.js" async=""></script><script src="/framework-59a9ef51c55d9b62f7de.js" async=""></script><script src="/webpack-runtime-e1be408938727f9afbd0.js" async=""></script></body></html>

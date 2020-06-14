@@ -1,15 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+<url> <loc>https://kejiweixun.com/blog/rebuild-my-website/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://kejiweixun.com/blog/macos-images-batch-compression/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://kejiweixun.com/blog/dataoke-download-error/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://kejiweixun.com/blog/run-multiple-docker-container-on-one-server/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://kejiweixun.com/blog/deploy-gatsby-website-with-docker/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://kejiweixun.com/blog/add-commento-to-gatsby/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://kejiweixun.com/blog/how-to-deploy-isso-comment-system/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://kejiweixun.com/blog/some-really-useful-macos-bash-commands/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://kejiweixun.com/blog/wx-request-400-bad-request/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://kejiweixun.com/blog/gatsby-content-security-policy/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://kejiweixun.com/blog/some-really-useful-macos-bash-commands/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://kejiweixun.com/blog/how-to-deploy-isso-comment-system/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://kejiweixun.com/blog/add-commento-to-gatsby/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://kejiweixun.com/blog/deploy-gatsby-website-with-docker/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://kejiweixun.com/blog/run-multiple-docker-container-on-one-server/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://kejiweixun.com/blog/dataoke-download-error/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://kejiweixun.com/blog/macos-images-batch-compression/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://kejiweixun.com/blog/rebuild-my-website/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://kejiweixun.com/blog/wechat-miniprogram-gongzainicheng/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://kejiweixun.com/blog/wechat-miniprogram-pingchangtu/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://kejiweixun.com/blog/how-to-install-and-use-wireguard/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://kejiweixun.com/blog/just-order-china-made-tesla-model-3-long-range/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://kejiweixun.com/blog/compress-pdf-file-using-ghostscript-or-imagemagick-or-nodejs/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://kejiweixun.com/blog/how-to-schedule-backup-mongodb-docker-data/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://kejiweixun.com/blog/wechat-miniprogram-cloud-function-timeout-solution/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://kejiweixun.com/about/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://kejiweixun.com/apple-features-availability/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://kejiweixun.com/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
