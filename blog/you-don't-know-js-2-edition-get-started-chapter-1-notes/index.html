@@ -1,0 +1,126 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><style data-href="/styles.c0432cf3a910c922a1c2.css">*{box-sizing:border-box}html{font-size:16px}body,html{min-height:100vh}body{position:relative;margin:0 auto;max-width:800px;padding-bottom:5vh}code[class*=language-],pre[class*=language-]{color:#000;background:none;text-shadow:0 1px #fff;font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;font-size:.9em;text-align:left;white-space:pre;word-spacing:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-ms-hyphens:none;hyphens:none}code[class*=language-]::selection,code[class*=language-] ::selection,pre[class*=language-]::selection,pre[class*=language-] ::selection{text-shadow:none;background:#b3d4fc}@media print{code[class*=language-],pre[class*=language-]{text-shadow:none}}pre[class*=language-]{padding:.4rem .8rem;margin:.2rem 0;overflow:scroll}:not(pre)>code[class*=language-],pre[class*=language-]{background:transparent}:not(pre)>code[class*=language-]{padding:.1rem .4rem;border-radius:.3em;white-space:normal;background:#eee}.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#708090}.token.punctuation{color:#999}.namespace{opacity:.7}.token.boolean,.token.constant,.token.deleted,.token.number,.token.property,.token.symbol,.token.tag{color:#905}.token.attr-name,.token.builtin,.token.char,.token.inserted,.token.selector,.token.string{color:#690}.language-css .token.string,.style .token.string,.token.entity,.token.operator,.token.url{color:#9a6e3a;background:hsla(0,0%,100%,.5)}.token.atrule,.token.attr-value,.token.keyword{color:#07a}.token.class-name,.token.function{color:#dd4a68}.token.important,.token.regex,.token.variable{color:#e90}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}.gatsby-highlight{border:1px solid #ccc;border-radius:.3rem}</style><meta name="generator" content="Gatsby 2.23.3"/><title data-react-helmet="true">科技微讯 - YDKJS 2nd 1-1 笔记</title><meta data-react-helmet="true" name="description"/><link rel="icon" href="/favicon-32x32.png?v=148cfb262ef641558120de298d7bd030"/><link rel="manifest" href="/manifest.webmanifest"/><meta name="theme-color" content="#DE5E56"/><link rel="preconnect dns-prefetch" href="https://www.google-analytics.com"/><link rel="sitemap" type="application/xml" href="/sitemap.xml"/><link as="script" rel="preload" href="/webpack-runtime-e1be408938727f9afbd0.js"/><link as="script" rel="preload" href="/framework-59a9ef51c55d9b62f7de.js"/><link as="script" rel="preload" href="/styles-09367947dddffb36886c.js"/><link as="script" rel="preload" href="/app-b69741a13bfa09202ab5.js"/><link as="script" rel="preload" href="/3dec524e950c0aa58708094517bbdd0d717e6b54-51a8ce17e82345bd5e2f.js"/><link as="script" rel="preload" href="/component---src-template-blog-post-template-js-6a6182f37d130d433ff4.js"/><link as="fetch" rel="preload" href="/page-data/blog/you-don&#x27;t-know-js-2-edition-get-started-chapter-1-notes/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/app-data.json" crossorigin="anonymous"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><style data-emotion-css="j9vm3q">.css-j9vm3q{font-size:1rem;padding:0.3rem 0;border-bottom:3px solid #af6ec3;background-image:url(/static/logo-fbe2a7c09efce730ce95fa3630c1b196.png);background-size:70px;background-repeat:no-repeat;background-position:-25px -20px;}.css-j9vm3q img{width:80px;border-radius:50%;position:absolute;top:-1.8rem;left:-2rem;}.css-j9vm3q ul{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;list-style-type:none;padding-left:3rem;margin:0;}.css-j9vm3q ul li{margin-right:1rem;}.css-j9vm3q a{-webkit-text-decoration:none;text-decoration:none;color:black;font-weight:900;}</style><nav class="css-j9vm3q"><ul><li><a href="/">首页</a></li><li><a href="/about/">关于</a></li></ul></nav><style data-emotion-css="1sacuq3">.css-1sacuq3{width:95%;margin:1rem auto;}</style><main class="css-1sacuq3"><article><header><style data-emotion-css="11ycep3">.css-11ycep3{margin:1rem 0 0.5rem 0;font-size:1.6rem;}</style><h1 class="css-11ycep3">YDKJS 2nd 1-1 笔记</h1><style data-emotion-css="jt987x">.css-jt987x{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;font-size:0.8rem;color:grey;margin-bottom:2rem;}.css-jt987x p:first-of-type{margin-right:1rem;}.css-jt987x a{color:grey;}.css-jt987x a:hover{-webkit-text-decoration:none;text-decoration:none;}</style><address class="css-jt987x"><p>作者: <a href="/about/">科技微讯</a></p><p>日期: <time dateTime="2020/06/16">2020/06/16</time></p></address></header><style data-emotion-css="cpjfn3">.css-cpjfn3{line-height:1.5;margin-bottom:5rem;}.css-cpjfn3 h2{margin-top:2rem;}.css-cpjfn3 h3{margin-top:2.5rem;}.css-cpjfn3 p{text-align:justify;word-break:break-all;}.css-cpjfn3 .task-list-item{list-style-type:none;}.css-cpjfn3 ul{padding-left:0.5rem;list-style-position:inside;}.css-cpjfn3 ul li{margin:0.3rem 0;}.css-cpjfn3 table{margin:2rem auto;border-collapse:collapse;line-height:1.8;}.css-cpjfn3 table td,.css-cpjfn3 table th{border:1px solid black;padding:0 0.4rem;}.css-cpjfn3 table th{background:#ddd;}.css-cpjfn3 blockquote{margin:0;border-left:2px solid grey;}.css-cpjfn3 blockquote p{margin-left:1rem;}.css-cpjfn3 a{color:black;-webkit-text-decoration:underline;text-decoration:underline;}.css-cpjfn3 a:hover{-webkit-text-decoration:none;text-decoration:none;}</style><section class="css-cpjfn3"><p>You Don't know JS 第二版 Get Started <a href="https://github.com/getify/You-Dont-Know-JS/blob/2nd-ed/get-started/ch1.md">第一章</a>笔记.</p>
+<p>TC39 是制定 ECMAScript 标准的委员会, 由 50-100 位成员组成, 这些成员来自各大科技公司, 他们通常隔一个月见一次面, 一次面通常持续三天. ECMAScript 标准的制定需要经过 <a href="https://tc39.es/process-document/">5 个步骤</a>, 从 stage 0 到 stage 4. stage 0 大概是指 TC39 的某位成员觉得某个主意很棒, 并把这个主意写成 proposal 提交给委员会. </p>
+<p>这意味着所有普通程序员在社交网络/博客等地方提出的主意甚至都没有进入 stage 0 阶段, 除非这个主意被 TC39 的某位成员看到并认同, 且愿意去为之努力, 这个主意才进入 stage 0. 当然, TC39 在 github 列出了所有 <a href="https://github.com/tc39/proposals">proposal</a>, 允许所有用户参与讨论. 从 stage 0 到 stage 4 可能要几个月到几年的时间.</p>
+<p>JS 发展了这么多年, 已经可以运行在多种环境中, 例如浏览器, 服务器, 机器人, 甚至电灯泡等等, 但处于统治地位的依然是浏览器. TC39 制定的 JS 标准, 和运行在浏览器的 JS 几乎是一样的, 但也有一些区别.</p>
+<p>有时候 TC39 为 JS 制定了某条标准, 但可能会影响老旧网站的运行, 这时候浏览器可能会选择不遵守这条标准. 而有时候, TC39 想制定的某条标准可能和已有网站使用的 JS 冲突, 那 TC39 可能会更改这个标准. 例如 Array 的一个叫 <code class="language-text">includes()</code> 的方法本来想叫 <code class="language-text">contains()</code>, 但一些老旧网站所使用的框架已经占用了 <code class="language-text">contains()</code>, 所以才改为 includes. 类似地, 本来想叫 <code class="language-text">flatter()</code> 的方法后来改成了 <code class="language-text">flat()</code>.</p>
+<p>为了避免老旧网站无法正常运行, 浏览器并不会完全遵守 ECMAScript 标准, 于是 TC39 在 ECMAScript 标准上添加了一个 Appendix B 的附录, 即 "Additional ECMAScript Features for Web Browsers". 在 Appendix B 列出的 JS 功能特性并不属于 ECMAScript 的核心标准, 如果可以, 我们应该避免写那些只适用于某个运行环境的 js 代码.</p>
+<p>所有浏览器都支持 <code class="language-text">alert()</code>, 但它并不属于 ECMAScript 标准的一部分, 并且, 也没有出现在 Appendix B. 为什么呢? </p>
+<p>因为 <code class="language-text">alert()</code> 只是浏览器提供的一个 api, 这个 api 是浏览器在全局环境下提供的, 是浏览器才支持的 api, 这些 api 通常称为 web api, <code class="language-text">fetch()</code>, <code class="language-text">getCurrentLocation()</code> 等等都是 web api.</p>
+<p>Node.js 也有自己的 api, 例如 <code class="language-text">fs.write()</code> 等等.</p>
+<p><code class="language-text">console.log()</code> 也不是 ECMAScript 标准的一部分, 但几乎所有 JS 运行环境, 包括浏览器, Node.js 等等, 都支持 <code class="language-text">console.log()</code> 甚至整个 <code class="language-text">console</code> 对象, 但是不同环境下, <code class="language-text">console.log()</code> 的表现不完全一致.</p>
+<p>以上 api 虽然不属于 ECMAScript 的官方标准, 但它们都是各自的运行环境使用 JS 的官方语法定义的 api, 它们本质都是 js 代码, 否则也不能正常运行, 它们只是不属于 js 官方定义的标准.</p>
+<p>不要以为浏览器控制台看到的信息完全符合 js 标准.</p>
+<p>编程语言的范式大概有 3 种, 分别是 procedural, OO, FP. 一些语言很明显偏向于某种范式, 例如 C 是 procedural, Java 是 OO, Haskell 是 FP, 但 JS 是多范式语言, 我们可以用 procedural 或 OO 或 FP 或三者结合写 JS 代码.</p>
+<p>JS 是一门向后兼容的语言, 某些标准一旦被加入 ECMAScript 中, 那未来对 ECMAScript 的任何更新几乎都不会导致这个标准失效或作废, 当然也有例外, 但很少见. 所以 1995 年的网站所写的 js 代码, 如无意外至今还能运行, 这意味着作为开发者的我们只要写符合标准的 js 代码, 就可以保证这个网站可以被一直更新迭代的浏览器所支持. </p>
+<p>但 JS 不是一门向前兼容的语言, 这意味着如果用新的 ECMAScript 标准写 js 代码运行在旧的浏览器中, 可能会出错.</p>
+<p>总结下, 兼容性是从运行环境的视觉看, 向后兼容就是新的浏览器可以运行旧的代码, 向前兼容就是旧的浏览器可以运行新的代码, js 只向后兼容, 不向前兼容.</p>
+<p>css 和 html 都是向前兼容但不向后兼容, 旧的浏览器可以打开新的代码, 对于不认识的新的代码, 它会直接忽略, 并不会导致网站出错, 而新的浏览器打开旧的 css/html 代码可能会导致网站出错.</p>
+<p>JS 标准经常进化, 程序员应该用新的标准写代码, 因为新标准往往可以减少代码出错的概率, 甚至减少代码行数, 增加可读性等等. 那如何解决浏览器不向前兼容的问题呢?</p>
+<p>对于新的语法, 可以借助 Babel 这种工具把新标准的代码 transpile 成旧标准的代码, 再交给浏览器运行. 例如有些旧版浏览器可能无法识别 <code class="language-text">let</code> 这个声明变量的词, 于是可以用 Babel 把相关代码自动改写成用 <code class="language-text">var</code> 声明变量.</p>
+<p>对于新的方法或 api, 可以通过所谓的 polyfill 或 shim 解决. 例如 <code class="language-text">finally()</code> 是 ES2019 为 promise 增加的新的方法, 旧的浏览器不认识 <code class="language-text">finally()</code>, 当它遇到这行代码时就会出错. 解决方法是用工具把 <code class="language-text">finally()</code> 自动改写成旧浏览器支持的代码, 通常是重新定义一个名称和新方法名称一样的方法, 对于这个例子, 就是自定义一个叫 finally 的函数, 确保它的作用和 ES2019 的 <code class="language-text">finally()</code> 一致, 然后把这个自定义函数添加到 Promise 的 prototype 中, 这个自定义的名叫 finally 的函数就是所谓的 polyfill.</p>
+<p>很多人认为 JS 是一门解释型 (interpreted) 语言, 但 YDKJS 的作者因为它更偏向于是一门编译型 (compiled) 语言, 他认为区分 js 是解释还是编译, 主要看它是如何处理 error.</p>
+<p>下图是 interpreted 语言的运作模式, 一行一行地执行并马上输出结果, 只有在执行时才能发现 error.
+<figure class="gatsby-resp-image-figure" style="color: grey; margin: 0; padding: 0">
+    <span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 32.49999999999999%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAIAAACHqfpvAAAACXBIWXMAABYlAAAWJQFJUiTwAAAA4UlEQVQY022Q2YqEMBRE8/9fJ7jhvu+KqCi4dc9hbiMNM3kIWapOVaLef8ZxHOu6snj9DhbDMJzn+a2579uyLPX+b7RtK35EzGEYdl0nuMfsOI4iRxSw+77fti1NU03TgiCY53lZFkCGYXCCZt93KHCzLNN1XQGI45iLqqqiKMKJZxxH0jjhapomtiDQlGWZ5zkaoFAU1QnhDicJvu/L8+q6RgeCLtKTQMw0b5pGNMrzPAxJkqCjyWMm1rZt0zTFfF0XaeAww/2YqU0NiaIFFPkCqsJ1XZd3Pl+FhtcWRSHbH3LbiVLFs51MAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <picture>
+        <source
+          srcset="/static/5269b59e57b75dbab4fe051416262eb6/ba381/interpreted.webp 200w,
+/static/5269b59e57b75dbab4fe051416262eb6/7f61c/interpreted.webp 400w,
+/static/5269b59e57b75dbab4fe051416262eb6/d00b9/interpreted.webp 800w,
+/static/5269b59e57b75dbab4fe051416262eb6/92f8c/interpreted.webp 1200w,
+/static/5269b59e57b75dbab4fe051416262eb6/fad48/interpreted.webp 1600w,
+/static/5269b59e57b75dbab4fe051416262eb6/ec92d/interpreted.webp 2356w"
+          sizes="(max-width: 800px) 100vw, 800px"
+          type="image/webp"
+        />
+        <source
+          srcset="/static/5269b59e57b75dbab4fe051416262eb6/772e8/interpreted.png 200w,
+/static/5269b59e57b75dbab4fe051416262eb6/e17e5/interpreted.png 400w,
+/static/5269b59e57b75dbab4fe051416262eb6/5a190/interpreted.png 800w,
+/static/5269b59e57b75dbab4fe051416262eb6/c1b63/interpreted.png 1200w,
+/static/5269b59e57b75dbab4fe051416262eb6/29007/interpreted.png 1600w,
+/static/5269b59e57b75dbab4fe051416262eb6/ab98c/interpreted.png 2356w"
+          sizes="(max-width: 800px) 100vw, 800px"
+          type="image/png"
+        />
+        <img
+          class="gatsby-resp-image-image"
+          src="/static/5269b59e57b75dbab4fe051416262eb6/5a190/interpreted.png"
+          alt="interpreted language"
+          title="interpreted language"
+          loading="lazy"
+          style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        />
+      </picture>
+    </span>
+    <figcaption class="gatsby-resp-image-figcaption">interpreted language</figcaption>
+  </figure></p>
+<p>下图是 compiled 语言的运作模式, 代码先 parsed, 即由一种形式转变成另一种形式, 最后转变成 0 1 这种二进制代码, 然后再执行输出结果.
+<figure class="gatsby-resp-image-figure" style="color: grey; margin: 0; padding: 0">
+    <span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 21%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAIAAAABPYjBAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAmklEQVQI11WPwQqEIBiEff/XsvLWJeiQmabEQqAQeBAt3aGfPewcfmX8RkdmjNm2DfN5nvbquq77vttPOefPqxBC+xejpHPOe9/3PSxr7XEc2IzjuO87wvCHYZjnGSbnHLfHGKWUTCmFBRDCIEopWmu8A26aJhxRuOs6CgshQOpXbF3XZVkwUbXWivKg6Qs0U0qEnudJJjCq/QUMSdxO/LubLAAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <picture>
+        <source
+          srcset="/static/6fc251ed25b9a24af6a4e4b215722806/ba381/compiled.webp 200w,
+/static/6fc251ed25b9a24af6a4e4b215722806/7f61c/compiled.webp 400w,
+/static/6fc251ed25b9a24af6a4e4b215722806/d00b9/compiled.webp 800w,
+/static/6fc251ed25b9a24af6a4e4b215722806/92f8c/compiled.webp 1200w,
+/static/6fc251ed25b9a24af6a4e4b215722806/fad48/compiled.webp 1600w,
+/static/6fc251ed25b9a24af6a4e4b215722806/12983/compiled.webp 2348w"
+          sizes="(max-width: 800px) 100vw, 800px"
+          type="image/webp"
+        />
+        <source
+          srcset="/static/6fc251ed25b9a24af6a4e4b215722806/772e8/compiled.png 200w,
+/static/6fc251ed25b9a24af6a4e4b215722806/e17e5/compiled.png 400w,
+/static/6fc251ed25b9a24af6a4e4b215722806/5a190/compiled.png 800w,
+/static/6fc251ed25b9a24af6a4e4b215722806/c1b63/compiled.png 1200w,
+/static/6fc251ed25b9a24af6a4e4b215722806/29007/compiled.png 1600w,
+/static/6fc251ed25b9a24af6a4e4b215722806/dc0c1/compiled.png 2348w"
+          sizes="(max-width: 800px) 100vw, 800px"
+          type="image/png"
+        />
+        <img
+          class="gatsby-resp-image-image"
+          src="/static/6fc251ed25b9a24af6a4e4b215722806/5a190/compiled.png"
+          alt="compiled language"
+          title="compiled language"
+          loading="lazy"
+          style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        />
+      </picture>
+    </span>
+    <figcaption class="gatsby-resp-image-figcaption">compiled language</figcaption>
+  </figure></p>
+<p>YDKJS 的作者认为 js 的运行模式属于第二种, js 是所谓的 compiled 语言.</p>
+<p>JS 的 parsing/compilation 过程影响了它的工作效率, 后来出了 Web Assembly 解决这个问题, Web Assembly 的 parsing/compilation 这个步骤在交给 js 引擎执行之前就已经完成, js 引擎拿到的是不再需要编译的 binary-packed 程序.</p>
+<p>strict mode 在 2009 年就出现了, 但直到现在还没有成为默认模式. 这是因为 js 是向后兼容的, 默认 strict mode 可能会导致旧代码无法运行在新的浏览器中, 所以 strict mode 需要开发者主动开启. 由于 ES6 模块已经默认使用 strict mode, 所以越来越多的 js 代码向 strict mode 看齐. strict mode 并不是一种限制, 而是一种让程序员写出更好的代码的指引.</p></section></article><section id="isso-thread" data-title="YDKJS 2nd 1-1 笔记" data-isso-id="blog/you-don&#x27;t-know-js-2-edition-get-started-chapter-1-notes/"></section></main></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script>
+  
+  
+  if(true) {
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  }
+  if (typeof ga === "function") {
+    ga('create', 'UA-60007929-1', 'auto', {});
+      
+      
+      
+      
+      
+      }</script><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/blog/you-don't-know-js-2-edition-get-started-chapter-1-notes/";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"app":["/app-b69741a13bfa09202ab5.js"],"component---cache-caches-gatsby-plugin-offline-app-shell-js":["/component---cache-caches-gatsby-plugin-offline-app-shell-js-c25716df4fbb2532700a.js"],"component---src-pages-404-js":["/component---src-pages-404-js-c9e1966a23ace7c826bc.js"],"component---src-pages-about-js":["/component---src-pages-about-js-59b4230bb74996afac49.js"],"component---src-pages-apple-features-availability-js":["/component---src-pages-apple-features-availability-js-7187e05c1cd638c24dad.js"],"component---src-pages-index-js":["/component---src-pages-index-js-6b51ff9be05ac468a25d.js"],"component---src-pages-ios-beta-profile-js":["/component---src-pages-ios-beta-profile-js-50caa60c6d9f937c1549.js"],"component---src-pages-ios-version-history-js":["/component---src-pages-ios-version-history-js-156ae75be694ec01ebf5.js"],"component---src-template-blog-post-template-js":["/component---src-template-blog-post-template-js-6a6182f37d130d433ff4.js"]};/*]]>*/</script><script src="/component---src-template-blog-post-template-js-6a6182f37d130d433ff4.js" async=""></script><script src="/3dec524e950c0aa58708094517bbdd0d717e6b54-51a8ce17e82345bd5e2f.js" async=""></script><script src="/app-b69741a13bfa09202ab5.js" async=""></script><script src="/styles-09367947dddffb36886c.js" async=""></script><script src="/framework-59a9ef51c55d9b62f7de.js" async=""></script><script src="/webpack-runtime-e1be408938727f9afbd0.js" async=""></script></body></html>
