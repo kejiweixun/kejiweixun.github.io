@@ -166,7 +166,14 @@ thi<span class="token punctuation">.</span><span class="token function">setData<
 <span class="token punctuation">)</span></code></pre></div>
 <p>另一种解决方法是, 可以像第一种写法那样, 给 canvas 设定一个固定的尺寸. 既然缩略图是 50 x 50, 如果限制用户一次最多只能同时生成 9 张图片的缩略图, 那 canvas 的尺寸可以固定设置为 50 x 450.</p>
 <div class="gatsby-highlight" data-language="html"><pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>canvas</span> <span class="token attr-name">canvas-id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>canvas<span class="token punctuation">"</span></span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value"><span class="token property">width</span><span class="token punctuation">:</span> 450px<span class="token punctuation">;</span> <span class="token property">height</span><span class="token punctuation">:</span> 50px</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>canvas</span><span class="token punctuation">></span></span></code></pre></div>
-<p>这篇文章是关于小程序旧的 canvas api, 新的 api, 即 canvas 2d, 如果没有在 query 之前设置 canvas 的 css 尺寸会导致 ios 端无法成功导出图片, 具体看我<a href="https://kejiweixun.com/blog/wechat-miniprogram-2d-canvas-drawImage-iOS-blank/">之前的文章</a>.</p></section></article><section id="isso-thread" data-title="小程序一个在 canvas 组件画多张图片并导出多张图片的问题" data-isso-id="blog/wechat-miniprogram-canvas-draw-and-export-multiple-images/"></section></main></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script>
+<p>可惜的是, 设置一个更大的 canvas, 最后通过 <code class="language-text">wx.canvasToTempFilePath</code> 导出图片时, 至少 macOS 版的微信会把整个 canvas 导出, 而不是把 <code class="language-text">wx.canvasToTempFilePath</code> 指定的 canvas 的某区域导出, 这应该是小程序的 bug.</p>
+<p>总结一下三种方法:</p>
+<ul>
+<li>设置一个小尺寸的固定大小的 canvas, 然后按顺序获取图片的缩略图, 缺点是有点慢;</li>
+<li>设置一个足够大的大尺寸的固定大小的 canvas, 先把所有图片 draw 进这个 canvas, 然后把不同的区域分别导出, 缺点是 PC 端似乎不能导出 canvas 的某个区域;</li>
+<li>根据收到的图片数量动态设置 canvas 的尺寸, 然后把 draw 函数写在 setData 的回调函数中, 并用 setTimeout 延迟这个 draw 函数, 缺点同上;</li>
+</ul>
+<p>这篇文章是关于小程序旧的 canvas api, 对于新的 api 即 canvas 2d, 如果没有在 query 之前设置 canvas 的 css 尺寸会导致 ios 端无法成功导出图片, 具体看我<a href="https://kejiweixun.com/blog/wechat-miniprogram-2d-canvas-drawImage-iOS-blank/">之前的文章</a>.</p></section></article><section id="isso-thread" data-title="小程序一个在 canvas 组件画多张图片并导出多张图片的问题" data-isso-id="blog/wechat-miniprogram-canvas-draw-and-export-multiple-images/"></section></main></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script>
   
   
   if(true) {
