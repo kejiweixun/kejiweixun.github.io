@@ -12,6 +12,12 @@
 <li>用了 <code class="language-text">ctx.scale()</code> 和 <code class="language-text">ctx.rotate()</code> 之后, 最好习惯性地恢复远原样, ctx.save() 和 ctx.restore();</li>
 <li><code class="language-text">ctx.measureWidth()</code> 要在 <code class="language-text">ctx.font()</code> 之后使用;</li>
 <li>input 有时候输入后结果显示 <code class="language-text">[object Promise]</code>, 可能是因为 input 绑定的事件是一个 async 函数;</li>
+<li><code class="language-text">wx.createSelectorQuery()</code> 真机调试时可能无法进入回调, 所以如果依赖它动态设置元素位置, 那这个元素真机调试时可能显示错位, 预览和开发者工具都可以;</li>
+<li><code class="language-text">wx.getMenuButtonBoundingClientRect()</code> pc 端预览获得的数据都是 0, 但真机调试又没有问题;</li>
+<li>电脑端 <code class="language-text">wx.chooseImage()</code> 选择图片无法选择原图, 电脑端 <code class="language-text">wx.canvasToTempFilePath()</code> 导出的图片长边最多只有 3000, 导致短边可能被压缩过多, 变模糊;</li>
+<li>canvas 2d ios 通过 <code class="language-text">wx.canvasToTempFilePath()</code> 导出的图片清晰度似乎还受 canvas 的 css 尺寸影响, 虽然最后导出的图片分辨率正常, 但图片看起来很多锯齿, 只因这个 canvas 的 css 尺寸设置太低了;</li>
+<li>canvas 2d 修改 css 尺寸之后应该重新 query, query 操作在 setData 的回调函数进行, 不要再用修改前的 ctx 进行处理, 否则可能导致图片变形;</li>
+<li>在修改 canvas 尺寸之前 clear 一下, 可以避免修改过程中短暂的图片显示变形;</li>
 </ul></section></article><section id="isso-thread" data-title="写小程序过程中遇到的一些小问题和小经验" data-isso-id="blog/wechat-miniprogram-little-tricks-and-tips/"></section></main></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script>
   
   

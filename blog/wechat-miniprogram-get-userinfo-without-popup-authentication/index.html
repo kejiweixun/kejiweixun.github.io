@@ -8,7 +8,9 @@
 <p>虽然 <code class="language-text">wx.login + code2session</code> 可以获取 unionId, 但使用 <code class="language-text">wx.login()</code> 的主要目的似乎不是用来获取 unionId, 而是通过获得的 session<em>key 维护用户的登录状态. 这种情况和 <code class="language-text">cloud.getWXContext()</code> 一样, 获取 unionID 既不用授权, 也不会弹出授权窗口. session</em>key 有有效期, 可通过 <code class="language-text">wx.checkSession()</code> 判断当前是否还有效. <code class="language-text">wx.login()</code> 只能获得 code, 所以用户头像, 用户名称等信息依然需要用第一和第二种方法获取, 即需要弹窗授权.</p>
 <p>由此可见, 要想在小程序端获得完整的 userInfo, 必须先获取授权. 如果只是想获得 unionId 和 openId, 可以不授权, 只要关注了公众号&#x26;绑定到微信开放平台就可以了. </p>
 <p>虽然在小程序端获取完整的 userInfo 需要先弹窗授权, 但在公众号获取 userInfo 不需要弹窗授权. 当用户和公众号产生消息交互后, 例如用户订阅了公众号, 就可以通过公众号提供的 api 获取用户的 userInfo, 这些 userInfo 就包括用户头像, 用户名, 地理位置等信息, 如果这个公众号还绑定到微信开放平台, 还会包括 unionId.</p>
-<p>小程序端可以不授权获取 unionId, 公众号可以不授权获取包括 unionId 的 userInfo, 两者对接起来, 就可以实现小程序端不授权就可以获取完整的 userInfo.</p></section></article><section id="isso-thread" data-title="不弹窗授权, 微信小程序获取用户 userInfo 的方法" data-isso-id="blog/wechat-miniprogram-get-userinfo-without-popup-authentication/"></section></main></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script>
+<p>小程序端可以不授权获取 unionId, 公众号可以不授权获取包括 unionId 的 userInfo, 两者对接起来, 就可以实现小程序端不授权就可以获取完整的 userInfo.</p>
+<p>--</p>
+<p>如果只是展示用户数据, 可以用 <code class="language-text">open-data</code> 组件.</p></section></article><section id="isso-thread" data-title="不弹窗授权, 微信小程序获取用户 userInfo 的方法" data-isso-id="blog/wechat-miniprogram-get-userinfo-without-popup-authentication/"></section></main></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script>
   
   
   if(true) {
