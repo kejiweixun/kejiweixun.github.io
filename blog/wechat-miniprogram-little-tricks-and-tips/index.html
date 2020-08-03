@@ -18,6 +18,9 @@
 <li>canvas 2d ios 通过 <code class="language-text">wx.canvasToTempFilePath()</code> 导出的图片清晰度似乎还受 canvas 的 css 尺寸影响, 虽然最后导出的图片分辨率正常, 但图片看起来很多锯齿, 只因这个 canvas 的 css 尺寸设置太低了;</li>
 <li>canvas 2d 修改 css 尺寸之后应该重新 query, query 操作在 setData 的回调函数进行, 不要再用修改前的 ctx 进行处理, 否则可能导致图片变形;</li>
 <li>在修改 canvas 尺寸之前 clear 一下, 可以避免修改过程中短暂的图片显示变形;</li>
+<li>小程序不支持 ctx.filter;</li>
+<li><code class="language-text">&lt;movable-area&gt;</code> 和 <code class="language-text">&lt;movable-view&gt;</code> 的 css 样式必须显式设置 width 和 height, 否则就是 10px * 10px, 可以显式设置为 auto 或 100%, 这样这个 <code class="language-text">&lt;movable-area&gt;</code> 的宽高会自动等于内容的宽高, 事实上对于 block 元素的 height 和 width, 其默认值就是 auto, 但是小程序要求即使是默认值也要显式写出来;</li>
+<li>小程序不支持 <code class="language-text">:last-child</code> 这种选择器;</li>
 </ul></section></article><section id="isso-thread" data-title="写小程序过程中遇到的一些小问题和小经验" data-isso-id="blog/wechat-miniprogram-little-tricks-and-tips/"></section></main></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script>
   
   
