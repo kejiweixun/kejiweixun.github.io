@@ -6,6 +6,7 @@
 <url> <loc>https://kejiweixun.com/blog/run-multiple-docker-container-on-one-server/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://kejiweixun.com/blog/deploy-gatsby-website-with-docker/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://kejiweixun.com/blog/add-commento-to-gatsby/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://kejiweixun.com/blog/how-to-deploy-isso-comment-system/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://kejiweixun.com/blog/some-really-useful-macos-bash-commands/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://kejiweixun.com/blog/wx-request-400-bad-request/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://kejiweixun.com/blog/gatsby-content-security-policy/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -19,7 +20,6 @@
 <url> <loc>https://kejiweixun.com/blog/wechat-miniprogram-get-userinfo-without-popup-authentication/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://kejiweixun.com/blog/getting-started-with-github-action/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://kejiweixun.com/blog/you-don&#039;t-know-js-2-edition-get-started-chapter-1-notes/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://kejiweixun.com/blog/how-to-deploy-isso-comment-system/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://kejiweixun.com/blog/about-wechat-miniprogram-2d-canvas-sizes/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://kejiweixun.com/blog/wechat-miniprogram-2d-canvas-drawImage-iOS-blank/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://kejiweixun.com/blog/wechat-miniprogram-canvas-draw-and-export-multiple-images/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -32,4 +32,5 @@
 <url> <loc>https://kejiweixun.com/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://kejiweixun.com/ios-beta-profile/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://kejiweixun.com/ios-version-history/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://kejiweixun.com/merge-images/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 </urlset>
