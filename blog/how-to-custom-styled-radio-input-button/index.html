@@ -1,0 +1,167 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><style data-href="/styles.3eee66d3bb098c0297bf.css">*,:after,:before{box-sizing:border-box}html{font-size:16px}body,html{min-height:100vh}body{position:relative;margin:0 auto;max-width:800px;padding-bottom:5vh}img{max-width:100%}:root{--color:#639}code[class*=language-],pre[class*=language-]{color:#000;background:none;text-shadow:0 1px #fff;font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;font-size:.9em;text-align:left;white-space:pre;word-spacing:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-ms-hyphens:none;hyphens:none}code[class*=language-]::selection,code[class*=language-] ::selection,pre[class*=language-]::selection,pre[class*=language-] ::selection{text-shadow:none;background:#b3d4fc}@media print{code[class*=language-],pre[class*=language-]{text-shadow:none}}pre[class*=language-]{padding:.4rem .8rem;margin:.2rem 0;overflow:scroll}:not(pre)>code[class*=language-],pre[class*=language-]{background:transparent}:not(pre)>code[class*=language-]{white-space:normal;background:#eee}.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#708090}.token.punctuation{color:#999}.namespace{opacity:.7}.token.boolean,.token.constant,.token.deleted,.token.number,.token.property,.token.symbol,.token.tag{color:#905}.token.attr-name,.token.builtin,.token.char,.token.inserted,.token.selector,.token.string{color:#690}.language-css .token.string,.style .token.string,.token.entity,.token.operator,.token.url{color:#9a6e3a;background:hsla(0,0%,100%,.5)}.token.atrule,.token.attr-value,.token.keyword{color:#07a}.token.class-name,.token.function{color:#dd4a68}.token.important,.token.regex,.token.variable{color:#e90}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}.gatsby-highlight{border:1px solid #ccc;border-radius:.3rem}</style><meta name="generator" content="Gatsby 2.24.32"/><title data-react-helmet="true">科技微讯 - 如何自定义 &lt;input type=&#x27;radio&#x27;&gt; 的样式?</title><meta data-react-helmet="true" name="description"/><link rel="icon" href="/favicon-32x32.png?v=fbe2a7c09efce730ce95fa3630c1b196" type="image/png"/><link rel="manifest" href="/manifest.webmanifest"/><meta name="theme-color" content="#DE5E56"/><link rel="preconnect" href="https://www.google-analytics.com"/><link rel="dns-prefetch" href="https://www.google-analytics.com"/><link rel="sitemap" type="application/xml" href="/sitemap.xml"/><link as="script" rel="preload" href="/webpack-runtime-b3cd6646fcf7cbeb3f05.js"/><link as="script" rel="preload" href="/framework-a38040c4749cf445737f.js"/><link as="script" rel="preload" href="/styles-7573517523cb2796c77b.js"/><link as="script" rel="preload" href="/app-d7aa27b69b62e639b033.js"/><link as="script" rel="preload" href="/9ba78b2a4bb1c73a766a26f9c15557f1bc98f749-4fa9ef365c7ed6c25274.js"/><link as="script" rel="preload" href="/component---src-template-blog-post-template-js-905a97a5dfa8c7a98bd5.js"/><link as="fetch" rel="preload" href="/page-data/blog/how-to-custom-styled-radio-input-button/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/static/d/1518281631.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/app-data.json" crossorigin="anonymous"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><style data-emotion-css="j9vm3q">.css-j9vm3q{font-size:1rem;padding:0.3rem 0;border-bottom:3px solid #af6ec3;background-image:url(/static/logo-fbe2a7c09efce730ce95fa3630c1b196.png);background-size:70px;background-repeat:no-repeat;background-position:-25px -20px;}.css-j9vm3q img{width:80px;border-radius:50%;position:absolute;top:-1.8rem;left:-2rem;}.css-j9vm3q ul{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;list-style-type:none;padding-left:3rem;margin:0;}.css-j9vm3q ul li{margin-right:1rem;}.css-j9vm3q a{-webkit-text-decoration:none;text-decoration:none;color:black;font-weight:900;}</style><nav class="css-j9vm3q"><ul><li><a href="/">首页</a></li><li><a href="/about/">关于</a></li></ul></nav><style data-emotion-css="1sacuq3">.css-1sacuq3{width:95%;margin:1rem auto;}</style><main class="css-1sacuq3"><article><header><style data-emotion-css="1wc3bmm">.css-1wc3bmm{margin:1rem 0 0.5rem 0;font-size:1.3rem;}</style><h1 class="css-1wc3bmm">如何自定义 &lt;input type=&#x27;radio&#x27;&gt; 的样式?</h1><style data-emotion-css="1m84qkl">.css-1m84qkl{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;font-size:0.8rem;color:grey;margin-bottom:1rem;}.css-1m84qkl p:first-of-type{margin-right:1rem;}.css-1m84qkl a{color:grey;}.css-1m84qkl a:hover{-webkit-text-decoration:none;text-decoration:none;}</style><address class="css-1m84qkl"><p>作者: <a href="/about/">科技微讯</a></p><p>日期: <time dateTime="2020/08/15">2020/08/15</time></p></address></header><style data-emotion-css="1cqq9sz">.css-1cqq9sz{line-height:1.5;margin-bottom:5rem;}.css-1cqq9sz h2{margin-top:2rem;font-size:1.2rem;}.css-1cqq9sz h2::before{content:'# ';}.css-1cqq9sz h3{margin-top:2.5rem;font-size:1.1rem;}.css-1cqq9sz h3::before{content:'## ';}.css-1cqq9sz p{text-align:justify;word-break:break-all;}.css-1cqq9sz .task-list-item{list-style-type:none;}.css-1cqq9sz ul{padding-left:0.5rem;list-style-position:inside;}.css-1cqq9sz ul li{margin:0.3rem 0;}.css-1cqq9sz table{margin:2rem auto;border-collapse:collapse;line-height:1.8;}.css-1cqq9sz table td,.css-1cqq9sz table th{border:1px solid black;padding:0 0.4rem;}.css-1cqq9sz table th{background:#ddd;}.css-1cqq9sz blockquote{margin:0;border-left:2px solid grey;}.css-1cqq9sz blockquote p{margin-left:1rem;}.css-1cqq9sz a{color:black;-webkit-text-decoration:underline;text-decoration:underline;}.css-1cqq9sz a:hover{-webkit-text-decoration:none;text-decoration:none;}</style><section class="css-1cqq9sz"><p>radio 按钮的默认样式并不好看, 它在不同浏览器上的默认外观也不一样, 且尺寸不能根据 label 的字体大小进行自适应. 下面以下图为例子, 记录我学习到的自定义 radio 样式的方法.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; color: grey; margin: 0; padding: 0"
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 10.999999999999998%; position: relative; bottom: 0; left: 0; background-image: url('data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAACABQDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAX/xAAUAQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIQAxAAAAG4AD//xAAUEAEAAAAAAAAAAAAAAAAAAAAQ/9oACAEBAAEFAn//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/AT//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/AT//xAAUEAEAAAAAAAAAAAAAAAAAAAAQ/9oACAEBAAY/An//xAAWEAEBAQAAAAAAAAAAAAAAAAAAEUH/2gAIAQEAAT8hYr//2gAMAwEAAgADAAAAEAAP/8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPxA//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPxA//8QAGxAAAgIDAQAAAAAAAAAAAAAAAREAIVGRwfH/2gAIAQEAAT8QBKAdexlg6XI2Tuf/2Q=='); background-size: cover; display: block;"
+  ></span>
+  <picture>
+        <source
+          srcset="/static/e8e1b39837baf6311e417a0e1e0cad27/ba381/radio_button.webp 200w,
+/static/e8e1b39837baf6311e417a0e1e0cad27/7f61c/radio_button.webp 400w,
+/static/e8e1b39837baf6311e417a0e1e0cad27/d00b9/radio_button.webp 800w,
+/static/e8e1b39837baf6311e417a0e1e0cad27/92f8c/radio_button.webp 1200w,
+/static/e8e1b39837baf6311e417a0e1e0cad27/fad48/radio_button.webp 1600w,
+/static/e8e1b39837baf6311e417a0e1e0cad27/83c5b/radio_button.webp 1646w"
+          sizes="(max-width: 800px) 100vw, 800px"
+          type="image/webp"
+        />
+        <source
+          srcset="/static/e8e1b39837baf6311e417a0e1e0cad27/e07e9/radio_button.jpg 200w,
+/static/e8e1b39837baf6311e417a0e1e0cad27/066f9/radio_button.jpg 400w,
+/static/e8e1b39837baf6311e417a0e1e0cad27/4b190/radio_button.jpg 800w,
+/static/e8e1b39837baf6311e417a0e1e0cad27/e5166/radio_button.jpg 1200w,
+/static/e8e1b39837baf6311e417a0e1e0cad27/b17f8/radio_button.jpg 1600w,
+/static/e8e1b39837baf6311e417a0e1e0cad27/93f30/radio_button.jpg 1646w"
+          sizes="(max-width: 800px) 100vw, 800px"
+          type="image/jpeg"
+        />
+        <img
+          class="gatsby-resp-image-image"
+          src="/static/e8e1b39837baf6311e417a0e1e0cad27/4b190/radio_button.jpg"
+          alt="radio button"
+          title="radio button"
+          loading="lazy"
+          style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        />
+      </picture>
+    </span></p>
+<h2>代码</h2>
+<p>上图有 3 组 radio 按钮, 第一第二组都是自定义样式, 中间那个按钮分别是没有 focus 和被 focus 的按钮, 第三组是 radio 的默认样式, 方便大家对比效果.</p>
+<p>代码如下:</p>
+<div class="gatsby-highlight" data-language="html"><pre class="language-html"><code class="language-html"><span class="token doctype">&lt;!DOCTYPE html></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation">=</span>en</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>Examples of using the ondrag Global Event Attribute<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>width=device-width<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style"><span class="token language-css">
+  <span class="token selector">:root</span> <span class="token punctuation">{</span>
+    <span class="token property">--color</span><span class="token punctuation">:</span> <span class="token function">rgb</span><span class="token punctuation">(</span>27<span class="token punctuation">,</span> 178<span class="token punctuation">,</span> 10<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token selector">*,
+  *:before,
+  *:after</span> <span class="token punctuation">{</span>
+    <span class="token property">box-sizing</span><span class="token punctuation">:</span> border-box<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token selector">.radio_title</span> <span class="token punctuation">{</span>
+    <span class="token property">font-size</span><span class="token punctuation">:</span> 1em<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token selector">.radio_container</span> <span class="token punctuation">{</span>
+    <span class="token property">display</span><span class="token punctuation">:</span> grid<span class="token punctuation">;</span>
+    <span class="token property">grid-template-columns</span><span class="token punctuation">:</span> <span class="token function">repeat</span><span class="token punctuation">(</span>auto-fill<span class="token punctuation">,</span> <span class="token function">minmax</span><span class="token punctuation">(</span>100px<span class="token punctuation">,</span> 1fr<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token selector">.radio</span> <span class="token punctuation">{</span>
+    <span class="token property">display</span><span class="token punctuation">:</span> grid<span class="token punctuation">;</span>
+    <span class="token property">grid-template-columns</span><span class="token punctuation">:</span> min-content auto<span class="token punctuation">;</span>
+    <span class="token property">grid-gap</span><span class="token punctuation">:</span> 0.5em<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token selector">.radio_input</span> <span class="token punctuation">{</span>
+    <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token selector">.radio_input span</span> <span class="token punctuation">{</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 1em<span class="token punctuation">;</span>
+    <span class="token property">height</span><span class="token punctuation">:</span> 1em<span class="token punctuation">;</span>
+    <span class="token property">color</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--color<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token property">border</span><span class="token punctuation">:</span> 0.1em solid currentColor<span class="token punctuation">;</span>
+    <span class="token property">border-radius</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token selector">.radio_input input</span> <span class="token punctuation">{</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 0em<span class="token punctuation">;</span>
+    <span class="token property">height</span><span class="token punctuation">:</span> 0em<span class="token punctuation">;</span>
+    <span class="token property">opacity</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+    <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token selector">.radio_input input:checked+span</span> <span class="token punctuation">{</span>
+    <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">radial-gradient</span><span class="token punctuation">(</span>currentcolor 50%<span class="token punctuation">,</span> <span class="token function">rgba</span><span class="token punctuation">(</span>255<span class="token punctuation">,</span> 0<span class="token punctuation">,</span> 0<span class="token punctuation">,</span> 0<span class="token punctuation">)</span> 51%<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token selector">.radio_input input:focus+span</span> <span class="token punctuation">{</span>
+    <span class="token property">box-shadow</span><span class="token punctuation">:</span> 0 0 0 0.05em #fff<span class="token punctuation">,</span> 0 0 0.15em 0.1em currentColor<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token selector">.radio_input input:disabled+span</span> <span class="token punctuation">{</span>
+    <span class="token property">border</span><span class="token punctuation">:</span> 0.1em solid grey<span class="token punctuation">;</span>
+    <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">radial-gradient</span><span class="token punctuation">(</span>grey 50%<span class="token punctuation">,</span> <span class="token function">rgba</span><span class="token punctuation">(</span>255<span class="token punctuation">,</span> 0<span class="token punctuation">,</span> 0<span class="token punctuation">,</span> 0<span class="token punctuation">)</span> 51%<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token selector">.radio_text</span> <span class="token punctuation">{</span>
+    <span class="token property">line-height</span><span class="token punctuation">:</span> 1<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>radio_title<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>请选择?<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>radio_container<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>radio<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>radio_input<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>radio<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>radio<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>radio_text<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>选项1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>radio<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>radio_input<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>radio<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>radio<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>radio_text<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>选项2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>radio<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>radio_input<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>radio<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>radio<span class="token punctuation">"</span></span> <span class="token attr-name">disabled</span> <span class="token punctuation">/></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>radio_text<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>选项3<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span></code></pre></div>
+<h2>解释</h2>
+<p>学习了以下新知识点.</p>
+<h3>:root</h3>
+<p><code class="language-text">:root</code> 选择器相当于 <code class="language-text">html</code> 选择器, 区别是前者的 specificity 更高.</p>
+<h3>--</h3>
+<p>可以通过 <code class="language-text">--*</code> 自定义 css 变量, 这个变量对应的其值可以通过 <code class="language-text">var()</code> 用在其他地方, 但只能用在声明这个变量的元素及其子元素之中. 可以这样用:</p>
+<div class="gatsby-highlight" data-language="css"><pre class="language-css"><code class="language-css"><span class="token selector">:root</span> <span class="token punctuation">{</span>
+  <span class="token property">--somecolor</span><span class="token punctuation">:</span> grey<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre></div>
+<h3>min-content</h3>
+<p><code class="language-text">min-content</code> 可以用来定义一个元素的高度和宽度, 表示尽量缩小这个元素的高度和宽度, 直到这个元素刚好没有产生 overflow, 其明确的定义是:</p>
+<blockquote>
+<p>The smallest size a box could take that doesn’t lead to overflow that could be avoided by choosing a larger size.</p>
+</blockquote>
+<p>注意 "overflow that could be avoided by choosing a larger size" 这句话, 所以上面那句话应该更改为: 直到这个元素刚好没有产生可以通过增加这个元素的尺寸就可以避免的 overflow, 如果在这个元素添加 <code class="language-text">overflow: auto</code> 或在其父元素添加 <code class="language-text">overflow: auto</code>, 那这个元素并不会为了避免这种 overflow 而改变它的宽度或高度.</p>
+<h3>max-content</h3>
+<p><code class="language-text">max-content</code> 用来设置元素的宽度, 意思是: 给予该元素无限延伸宽度的自由, 在不产生多余的宽度的情况下, 该元素所能占据的最大宽度, 其明确定义如下:</p>
+<blockquote>
+<p>A box’s “ideal” size in a given axis when given infinite available space. Usually this is the smallest size the box could take in that axis while still fitting around its contents, i.e. minimizing unfilled space while avoiding overflow.</p>
+</blockquote>
+<p>"when given infinite available space" 是关键, 所以这个元素的宽度可能会超过其父元素的宽度, 如果父元素设置了 <code class="language-text">overflow: auto</code>, 该元素的宽度虽然会超过父元素的宽度, 但会在水平方向上 overflow, 所以布局上不会突破父元素的范围.</p>
+<h3>currentColor</h3>
+<p><code class="language-text">currentColor</code> 是 css 的一个变量, 它的值是当前这个元素的 color 属性的值, 如果当前元素没有 color 属性, 就找父元素, 如果父元素也没有, 再找父元素的父元素, 一路找上去.</p></section></article><section id="isso-thread" data-title="如何自定义 &lt;input type=&#x27;radio&#x27;&gt; 的样式?" data-isso-id="blog/how-to-custom-styled-radio-input-button/"></section></main></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script>
+  
+  
+  if(true) {
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  }
+  if (typeof ga === "function") {
+    ga('create', 'UA-60007929-1', 'auto', {});
+      
+      
+      
+      
+      
+      }</script><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/blog/how-to-custom-styled-radio-input-button/";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-68528c3be76e45e09e78.js"],"app":["/app-d7aa27b69b62e639b033.js"],"component---cache-caches-gatsby-plugin-offline-app-shell-js":["/component---cache-caches-gatsby-plugin-offline-app-shell-js-b81c43cf3b4ef9854106.js"],"component---src-pages-404-js":["/component---src-pages-404-js-530dc74f3729567ff566.js"],"component---src-pages-about-js":["/component---src-pages-about-js-1a3d0ff1c240266832fc.js"],"component---src-pages-add-watermark-js":["/component---src-pages-add-watermark-js-66d8d13085d8d3be1819.js"],"component---src-pages-apple-features-availability-js":["/component---src-pages-apple-features-availability-js-2d379a64e73d5fa6eee7.js"],"component---src-pages-index-js":["/component---src-pages-index-js-d7b5aabf6576197f9975.js"],"component---src-pages-ios-beta-profile-js":["/component---src-pages-ios-beta-profile-js-c4b28110272c21e2e966.js"],"component---src-pages-ios-version-history-js":["/component---src-pages-ios-version-history-js-9917134ee9fea67b67e2.js"],"component---src-pages-merge-images-js":["/component---src-pages-merge-images-js-51a541ac7a0f3ed69668.js"],"component---src-template-blog-post-template-js":["/component---src-template-blog-post-template-js-905a97a5dfa8c7a98bd5.js"]};/*]]>*/</script><script src="/polyfill-68528c3be76e45e09e78.js" nomodule=""></script><script src="/component---src-template-blog-post-template-js-905a97a5dfa8c7a98bd5.js" async=""></script><script src="/9ba78b2a4bb1c73a766a26f9c15557f1bc98f749-4fa9ef365c7ed6c25274.js" async=""></script><script src="/app-d7aa27b69b62e639b033.js" async=""></script><script src="/styles-7573517523cb2796c77b.js" async=""></script><script src="/framework-a38040c4749cf445737f.js" async=""></script><script src="/webpack-runtime-b3cd6646fcf7cbeb3f05.js" async=""></script></body></html>
