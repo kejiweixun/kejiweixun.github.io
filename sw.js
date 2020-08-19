@@ -33,7 +33,7 @@ self.__precacheManifest = [
     "url": "framework-a38040c4749cf445737f.js"
   },
   {
-    "url": "styles.bbd8c14532ad0d423f18.css"
+    "url": "styles.63e788305104a3e4c7af.css"
   },
   {
     "url": "styles-7573517523cb2796c77b.js"
@@ -43,7 +43,7 @@ self.__precacheManifest = [
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "60d4efeb9c4651facf39b37f3c6569b5"
+    "revision": "5ad0adf8c551b5dba75b190cfa9e0d5b"
   },
   {
     "url": "component---cache-caches-gatsby-plugin-offline-app-shell-js-b81c43cf3b4ef9854106.js"
