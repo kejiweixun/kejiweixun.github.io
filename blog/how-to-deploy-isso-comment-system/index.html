@@ -41,7 +41,7 @@
       </picture>
     </span></p>
 <h2>如何部署 isso 评论系统</h2>
-<p>记录一下我部署 isso 评论系统的方法. 和部署 commento 一样, 我也是通过 <a href="https://hub.docker.com/r/wonderfall/isso">isso 的 docker</a> 镜像部署的, 建议先了解 docker 怎么用, 也可以先看我之前写的这篇文章: <a href="https://kejiweixun.com/blog/deploy-gatsby-website-with-docker/">如何把 gatsbyjs 网站通过 docker 部署到云服务器</a></p>
+<p>记录一下我部署 isso 评论系统的方法. 和部署 commento 一样, 我也是通过 <a href="https://github.com/posativ/isso/blob/master/Dockerfile">isso 的 docker</a> 镜像部署的, 建议先了解 docker 怎么用, 也可以先看我之前写的这篇文章: <a href="https://kejiweixun.com/blog/deploy-gatsby-website-with-docker/">如何把 gatsbyjs 网站通过 docker 部署到云服务器</a></p>
 <h3>第一步: 准备相应文件</h3>
 <p>新建一个叫 test 的文件夹, 在里面添加 docker-compose.yml 以及 index.html 文件, 再添加 isso 文件夹, 接着在这个文件夹创建两个子文件夹, 分别是 config 和 db, config 文件夹再创建一个叫 isso.config 的文件. 最后 test 的目录结构如下:</p>
 <div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">test
@@ -56,7 +56,7 @@
 <div class="gatsby-highlight" data-language="yml"><pre class="language-yml"><code class="language-yml"><span class="token key atrule">version</span><span class="token punctuation">:</span> <span class="token string">"3.7"</span>
 <span class="token key atrule">services</span><span class="token punctuation">:</span>
   <span class="token key atrule">isso</span><span class="token punctuation">:</span>
-    <span class="token key atrule">image</span><span class="token punctuation">:</span> wonderfall/isso
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> isso
     <span class="token key atrule">environment</span><span class="token punctuation">:</span>
       <span class="token punctuation">-</span> GID=1000
       <span class="token punctuation">-</span> UID=1000
@@ -107,7 +107,39 @@
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>section</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>isso-thread<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>section</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span></code></pre></div>
-<h3>第二步: 在本地电脑运行 isso</h3>
+<h3>第二步: 创建 isso image</h3>
+<p>创建一个名为 Dockerfile 的文件, 把以下内容复制过去. 以下内容来自 <a href="https://github.com/posativ/isso/blob/master/Dockerfile">isso 的 github repo</a>, 但是倒数第二行要从官方的 <code class="language-text">ENV ISSO_SETTINGS /config/isso.cfg</code> 改为 <code class="language-text">ENV ISSO_SETTINGS /config/isso.conf</code>.</p>
+<div class="gatsby-highlight" data-language="dockerfile"><pre class="language-dockerfile"><code class="language-dockerfile"><span class="token comment"># First, compile JS stuff</span>
+<span class="token keyword">FROM</span> node<span class="token punctuation">:</span>dubnium<span class="token punctuation">-</span>buster
+<span class="token keyword">WORKDIR</span> /src/
+<span class="token keyword">COPY</span> . .
+<span class="token keyword">RUN</span> npm install <span class="token punctuation">-</span>g requirejs uglify<span class="token punctuation">-</span>js jade bower \
+ &amp;&amp; make init js
+
+<span class="token comment"># Second, create virtualenv</span>
+<span class="token keyword">FROM</span> python<span class="token punctuation">:</span>3.8<span class="token punctuation">-</span>buster
+<span class="token keyword">WORKDIR</span> /src/
+<span class="token keyword">COPY</span> <span class="token punctuation">-</span><span class="token punctuation">-</span>from=0 /src .
+<span class="token keyword">RUN</span> python3 <span class="token punctuation">-</span>m venv /isso \
+ &amp;&amp; . /isso/bin/activate \
+ &amp;&amp; pip3 install <span class="token punctuation">-</span><span class="token punctuation">-</span>no<span class="token punctuation">-</span>cache<span class="token punctuation">-</span>dir <span class="token punctuation">-</span><span class="token punctuation">-</span>upgrade pip \
+ &amp;&amp; pip3 install <span class="token punctuation">-</span><span class="token punctuation">-</span>no<span class="token punctuation">-</span>cache<span class="token punctuation">-</span>dir gunicorn cffi flask \
+ &amp;&amp; python setup.py install \
+ &amp;&amp; rm <span class="token punctuation">-</span>rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+<span class="token comment"># Third, create final repository</span>
+<span class="token keyword">FROM</span> python<span class="token punctuation">:</span>3.8<span class="token punctuation">-</span>slim<span class="token punctuation">-</span>buster
+<span class="token keyword">WORKDIR</span> /isso/
+<span class="token keyword">COPY</span> <span class="token punctuation">-</span><span class="token punctuation">-</span>from=1 /isso .
+
+<span class="token comment"># Configuration</span>
+<span class="token keyword">VOLUME</span> /db /config
+<span class="token keyword">EXPOSE</span> 8080
+<span class="token keyword">ENV</span> ISSO_SETTINGS /config/isso.conf
+<span class="token keyword">CMD</span> <span class="token punctuation">[</span><span class="token string">"/isso/bin/gunicorn"</span><span class="token punctuation">,</span> <span class="token string">"-b"</span><span class="token punctuation">,</span> <span class="token string">"0.0.0.0:8080"</span><span class="token punctuation">,</span> <span class="token string">"-w"</span><span class="token punctuation">,</span> <span class="token string">"4"</span><span class="token punctuation">,</span> <span class="token string">"--preload"</span><span class="token punctuation">,</span> <span class="token string">"isso.run"</span><span class="token punctuation">,</span> <span class="token string">"--worker-tmp-dir"</span><span class="token punctuation">,</span> <span class="token string">"/dev/shm"</span><span class="token punctuation">]</span></code></pre></div>
+<p>根据这个 Dockerfile 创建一个名叫 isso 的 docker image:</p>
+<div class="gatsby-highlight" data-language="shell"><pre class="language-shell"><code class="language-shell">docker build -t isso <span class="token builtin class-name">.</span></code></pre></div>
+<h3>第三步: 在本地电脑运行 isso</h3>
 <p>命令行工具进入 test 目录, 然后执行下面这条命令, 把 docker-compose.yml 文件的 $PWD 赋值为 PWD:</p>
 <div class="gatsby-highlight" data-language="shell"><pre class="language-shell"><code class="language-shell"><span class="token assign-left variable"><span class="token environment constant">PWD</span></span><span class="token operator">=</span><span class="token environment constant">$PWD</span> docker-compose up -d</code></pre></div>
 <p>接着执行如下命令, 开启一个本地服务器, 以访问 index.html 文件:</p>
@@ -151,7 +183,7 @@
       </picture>
     </span></p>
 <p>评论系统已经出现了.</p>
-<h3>第三步: 部署到服务器</h3>
+<h3>第四步: 部署到服务器</h3>
 <p>通常的做法是, 网站和 isso 都部署在同一个服务器, 分别通过不同的域名访问, 比如科技微讯这个网站, 网站本身的域名是 kejiweixun.com, isso 的域名是 comment.kejiweixun.com, 这两个域名都解析到同一个服务器的 ip 地址.</p>
 <p>这就需要通过 nginx 这样的代理服务器把流量根据域名转发给相应的程序执行, kejiweixun.com 就转向 kejiweixun.com 背后的程序执行, comment.kejiweixun.com 就转向 isso 执行.</p>
 <p>网上有一些配置好了的 nginx 镜像可供选择, 我用的是 <a href="https://hub.docker.com/r/jwilder/nginx-proxy/dockerfile">jwilder/nginx-proxy</a>, 当然不一定选择镜像, 也不一定用 nginx-proxy 这个版本的 nginx.</p>
@@ -170,7 +202,7 @@
       <span class="token punctuation">-</span> nginx<span class="token punctuation">-</span>proxy
     <span class="token key atrule">restart</span><span class="token punctuation">:</span> always
   <span class="token key atrule">isso</span><span class="token punctuation">:</span> <span class="token comment">#镜像二</span>
-    <span class="token key atrule">image</span><span class="token punctuation">:</span> wonderfall/isso
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> isso
     <span class="token key atrule">container_name</span><span class="token punctuation">:</span> isso
     <span class="token key atrule">networks</span><span class="token punctuation">:</span>
       <span class="token punctuation">-</span> nginx<span class="token punctuation">-</span>proxy
