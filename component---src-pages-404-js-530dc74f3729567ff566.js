@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[6],{w2l6:function(n,t,e){"use strict";e.r(t);e("q1tI");var l=e("XuZe"),c=e("TJpk"),u=e.n(c),d=e("qKvR"),a={name:"6j5xfm",styles:"margin-top:calc(50vh - 200px);"};t.default=function(){return Object(d.d)(l.a,null,Object(d.d)(u.a,null,Object(d.d)("title",null,"404")),Object(d.d)("div",{css:a},Object(d.d)("h1",null,"404"),Object(d.d)("p",null,"不好意思, 你访问的链接已经不存在, 2019年9月我重建了这个网站, 之前的内容不打算迁移到这里, 就让它消失吧.")))}}}]);
-//# sourceMappingURL=component---src-pages-404-js-530dc74f3729567ff566.js.map

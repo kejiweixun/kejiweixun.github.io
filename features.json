@@ -1,109 +1,669 @@
 {
   "iPhone/iPad": {
-    "features": [
-      "App Store：App",
-      "App Store：游戏",
-      "Apple CarPlay 车载",
-      "Apple Music",
-      "Apple Pay",
-      "Apple TV App",
-      "Siri",
-      "Siri：体育",
-      "Siri：餐厅信息",
-      "Siri：餐厅评论",
-      "Siri：词典",
-      "Siri：计算和换算",
-      "地图：标准",
-      "地图：卫星图像",
-      "地图：方向指引",
-      "地图：逐向导航",
-      "地图：路况信息",
-      "地图：车道导航",
-      "地图：公共交通",
-      "地图：附近",
-      "超宽频"
+    "available": [
+      {
+        "feature": "地图：标准",
+        "remark": [
+          "中国(大陆地区)"
+        ]
+      },
+      {
+        "feature": "地图：卫星图像",
+        "remark": [
+          "中国(大陆地区)"
+        ]
+      },
+      {
+        "feature": "地图：逐向导航",
+        "remark": [
+          "中国(大陆地区)"
+        ]
+      },
+      {
+        "feature": "地图：路况信息",
+        "remark": [
+          "中国(大陆地区)"
+        ]
+      },
+      {
+        "feature": "地图：车道导航",
+        "remark": [
+          "中国(大陆地区)"
+        ]
+      },
+      {
+        "feature": "地图：限速",
+        "remark": [
+          "中国(大陆地区)"
+        ]
+      },
+      {
+        "feature": "地图：公共交通",
+        "remark": [
+          "中国(大陆地区)"
+        ]
+      },
+      {
+        "feature": "地图：实时公交信息",
+        "remark": [
+          "中国大陆北京",
+          "中国大陆广州",
+          "中国大陆深圳"
+        ]
+      },
+      {
+        "feature": "地图：骑行",
+        "remark": [
+          "中国(大陆地区)"
+        ]
+      },
+      {
+        "feature": "地图：附近",
+        "remark": [
+          "中国(大陆地区)"
+        ]
+      },
+      {
+        "feature": "地图：机场室内地图",
+        "remark": [
+          "北京首都国际机场(PEK)",
+          "长沙黄花国际机场(CSX)",
+          "成都双流国际机场(CTU)",
+          "重庆江北国际机场(CKG)",
+          "重庆万州五桥机场(WXN)",
+          "广州白云国际机场(CAN)",
+          "杭州萧山国际机场(HGH)",
+          "合肥新桥国际机场(HFE)",
+          "香港国际机场(HKG)",
+          "昆明长水国际机场(KMG)",
+          "南京禄口国际机场(NKG)",
+          "宁波栎社国际机场(NGB)",
+          "青岛流亭国际机场(TAO)",
+          "上海虹桥国际机场(SHA)",
+          "上海浦东国际机场(PVG)",
+          "沈阳桃仙国际机场(SHE)",
+          "深圳宝安国际机场(SZX)",
+          "苏南硕放国际机场(WUX)",
+          "台湾桃园国际机场(TPE)",
+          "天津滨海国际机场(TSN)",
+          "西安咸阳国际机场(XIY)",
+          "郑州新郑国际机场(CGO)"
+        ]
+      },
+      {
+        "feature": "Apple CarPlay 车载",
+        "remark": [
+          "中国(大陆地区)"
+        ]
+      },
+      {
+        "feature": "Apple TV App",
+        "remark": [
+          "中国(大陆地区)"
+        ]
+      },
+      {
+        "feature": "Siri",
+        "remark": [
+          "中国大陆(粤语、中文普通话)"
+        ]
+      },
+      {
+        "feature": "Siri：神经网络文本转语音",
+        "remark": [
+          "中国大陆(中文普通话)"
+        ]
+      },
+      {
+        "feature": "Siri：翻译",
+        "remark": [
+          "中文普通话(中国大陆)至英语、西班牙语、德语、法语、意大利语、日语、韩语"
+        ]
+      },
+      {
+        "feature": "Siri：体育",
+        "remark": [
+          "中国大陆(粤语、中文普通话)"
+        ]
+      },
+      {
+        "feature": "Siri：餐厅信息",
+        "remark": [
+          "中国大陆(粤语、中文普通话)"
+        ]
+      },
+      {
+        "feature": "Siri：餐厅评论",
+        "remark": [
+          "中国大陆(粤语、中文普通话)"
+        ]
+      },
+      {
+        "feature": "Siri：词典",
+        "remark": [
+          "中国大陆(中文普通话)"
+        ]
+      },
+      {
+        "feature": "Siri：计算和换算",
+        "remark": [
+          "中国大陆(粤语、中文普通话)"
+        ]
+      },
+      {
+        "feature": "Apple Pay",
+        "remark": [
+          "中国(大陆地区)"
+        ]
+      },
+      {
+        "feature": "快速输入键盘：语言支持",
+        "remark": [
+          "中文(简体)—手写",
+          "中文(简体)—拼音-全键盘",
+          "中文(简体)—拼音-九宫格",
+          "中文(简体)—双拼",
+          "中文(简体)—笔画",
+          "中文(简体)—五笔"
+        ]
+      },
+      {
+        "feature": "快速输入键盘：自动校正",
+        "remark": [
+          "中文(简体)—拼音-全键盘"
+        ]
+      },
+      {
+        "feature": "快速输入键盘：文本键入预测",
+        "remark": [
+          "简体中文"
+        ]
+      },
+      {
+        "feature": "快速输入键盘：多语言输入",
+        "remark": [
+          "简体中文(拼音)"
+        ]
+      },
+      {
+        "feature": "快速输入键盘：语境建议",
+        "remark": [
+          "简体中文"
+        ]
+      },
+      {
+        "feature": "快速输入键盘：听写功能",
+        "remark": [
+          "普通话(中国大陆)",
+          "粤语(中国大陆)"
+        ]
+      },
+      {
+        "feature": "速滑",
+        "remark": [
+          "简体中文"
+        ]
+      },
+      {
+        "feature": "词典：释义",
+        "remark": [
+          "简体中文"
+        ]
+      },
+      {
+        "feature": "词典：双语",
+        "remark": [
+          "简体中文-英语",
+          "日语-简体中文"
+        ]
+      },
+      {
+        "feature": "Apple Music",
+        "remark": [
+          "中国(大陆地区)"
+        ]
+      },
+      {
+        "feature": "App Store：App",
+        "remark": [
+          "中国(大陆地区)"
+        ]
+      },
+      {
+        "feature": "App Store：游戏",
+        "remark": [
+          "中国(大陆地区)"
+        ]
+      },
+      {
+        "feature": "备忘录：可搜索图像和扫描件中的文本",
+        "remark": [
+          "简体中文"
+        ]
+      },
+      {
+        "feature": "Apple Pencil：可搜索手写内容",
+        "remark": [
+          "简体中文"
+        ]
+      },
+      {
+        "feature": "Apple Pencil：复制手写内容为文本",
+        "remark": [
+          "简体中文"
+        ]
+      },
+      {
+        "feature": "Apple Pencil：数据检测器",
+        "remark": [
+          "简体中文"
+        ]
+      },
+      {
+        "feature": "Apple Pencil：随手写",
+        "remark": [
+          "简体中文"
+        ]
+      }
     ],
     "unavailable": [
-      "Apple Arcade",
-      "Apple News",
-      "Apple News+",
-      "Siri：Twitter 整合",
-      "Siri：餐厅预订",
-      "Siri：电影",
-      "Siri：电影放映时间",
-      "iTunes Store：音乐",
-      "iTunes Store：电影",
-      "iTunes Store：电视节目",
-      "地图：限速",
-      "地图：俯瞰",
-      "地图：商场室内地图",
-      "聚焦搜索建议"
+      {
+        "feature": "地图：方向指引"
+      },
+      {
+        "feature": "地图：测速摄像头"
+      },
+      {
+        "feature": "地图：交通拥堵区"
+      },
+      {
+        "feature": "地图：四处看看"
+      },
+      {
+        "feature": "地图：细化位置"
+      },
+      {
+        "feature": "地图：俯瞰"
+      },
+      {
+        "feature": "地图：商场室内地图"
+      },
+      {
+        "feature": "Apple TV+"
+      },
+      {
+        "feature": "Apple Arcade"
+      },
+      {
+        "feature": "Siri：Twitter 整合"
+      },
+      {
+        "feature": "Siri：餐厅预订"
+      },
+      {
+        "feature": "Siri：电影"
+      },
+      {
+        "feature": "Siri：电影放映时间"
+      },
+      {
+        "feature": "Apple Card"
+      },
+      {
+        "feature": "提醒事项：优化的 Siri 智能技术"
+      },
+      {
+        "feature": "提醒事项：Siri 建议的提醒事项"
+      },
+      {
+        "feature": "聚焦搜索建议"
+      },
+      {
+        "feature": "Apple News"
+      },
+      {
+        "feature": "Apple News+"
+      },
+      {
+        "feature": "Apple News Audio"
+      },
+      {
+        "feature": "词典：同义词库"
+      },
+      {
+        "feature": "iTunes Store：音乐"
+      },
+      {
+        "feature": "iTunes Store：电影"
+      },
+      {
+        "feature": "iTunes Store：电视节目"
+      }
     ]
   },
   "Mac": {
-    "features": [
-      "Mac App Store：App",
-      "Mac App Store：游戏",
-      "Apple Music",
-      "Siri",
-      "Siri：体育",
-      "Siri：餐厅信息",
-      "Siri：餐厅评论",
-      "Siri：词典",
-      "Siri：计算和换算",
-      "地图：标准",
-      "地图：卫星图像",
-      "地图：方向指引",
-      "地图：路况信息",
-      "地图：公交"
+    "available": [
+      {
+        "feature": "地图：标准",
+        "remark": [
+          "中国大陆"
+        ]
+      },
+      {
+        "feature": "地图：卫星图像",
+        "remark": [
+          "中国大陆"
+        ]
+      },
+      {
+        "feature": "地图：方向指引",
+        "remark": [
+          "中国大陆"
+        ]
+      },
+      {
+        "feature": "地图：路况信息",
+        "remark": [
+          "中国大陆"
+        ]
+      },
+      {
+        "feature": "地图：公交",
+        "remark": [
+          "中国大陆"
+        ]
+      },
+      {
+        "feature": "主动助理：建议的联系信息",
+        "remark": [
+          "简体中文"
+        ]
+      },
+      {
+        "feature": "聚焦：自然语言搜索",
+        "remark": [
+          "简体中文"
+        ]
+      },
+      {
+        "feature": "Siri",
+        "remark": [
+          "中国大陆"
+        ]
+      },
+      {
+        "feature": "Siri：体育",
+        "remark": [
+          "中国大陆(粤语、普通话)"
+        ]
+      },
+      {
+        "feature": "Siri：餐厅信息",
+        "remark": [
+          "中国大陆(普通话、粤语)"
+        ]
+      },
+      {
+        "feature": "Siri：餐厅评论",
+        "remark": [
+          "中国大陆(普通话、粤语)"
+        ]
+      },
+      {
+        "feature": "Siri：词典",
+        "remark": [
+          "中国大陆(普通话)"
+        ]
+      },
+      {
+        "feature": "Siri：计算和换算",
+        "remark": [
+          "中国大陆(普通话、粤语)"
+        ]
+      },
+      {
+        "feature": "词典",
+        "remark": [
+          "简体中文",
+          "简体中文-英语"
+        ]
+      },
+      {
+        "feature": "Mac App Store：App",
+        "remark": [
+          "中国大陆"
+        ]
+      },
+      {
+        "feature": "Mac App Store：游戏",
+        "remark": [
+          "中国大陆"
+        ]
+      },
+      {
+        "feature": "Apple Music",
+        "remark": [
+          "中国大陆"
+        ]
+      }
     ],
     "unavailable": [
-      "Apple News",
-      "Apple News+",
-      "Apple Pay",
-      "Mac App Store: Apple Arcade",
-      "iTunes Store：音乐",
-      "iTunes Store：电影",
-      "iTunes Store：电视节目",
-      "Siri: 赛车",
-      "Siri：Twitter 整合",
-      "Siri：Facebook 整合",
-      "Siri：餐厅预订",
-      "Siri：电影信息",
-      "Siri：电影评论",
-      "Siri：电影放映时间",
-      "地图：俯瞰",
-      "地图：附近",
-      "聚焦：搜索建议",
-      "股市: Apple 新闻和热门报道"
+      {
+        "feature": "Apple News"
+      },
+      {
+        "feature": "Apple News+"
+      },
+      {
+        "feature": "股市: Apple 新闻和热门报道"
+      },
+      {
+        "feature": "地图：俯瞰"
+      },
+      {
+        "feature": "地图：附近*"
+      },
+      {
+        "feature": "主动助理：建议的事件"
+      },
+      {
+        "feature": "聚焦：搜索建议"
+      },
+      {
+        "feature": "iTunes Store：音乐"
+      },
+      {
+        "feature": "iTunes Store：电影"
+      },
+      {
+        "feature": "iTunes Store：电视节目"
+      },
+      {
+        "feature": "Siri: 赛车"
+      },
+      {
+        "feature": "Siri：Twitter 整合"
+      },
+      {
+        "feature": "Siri：Facebook 整合"
+      },
+      {
+        "feature": "Siri：餐厅预订"
+      },
+      {
+        "feature": "Siri：电影信息"
+      },
+      {
+        "feature": "Siri：电影评论"
+      },
+      {
+        "feature": "Siri：电影放映时间"
+      },
+      {
+        "feature": "Siri: 翻译"
+      },
+      {
+        "feature": "词典：同义词词典"
+      },
+      {
+        "feature": "Mac App Store: Apple Arcade"
+      },
+      {
+        "feature": "Apple Pay"
+      }
     ]
   },
   "Apple Watch": {
-    "features": [
-      "Apple Pay：Apple Pay",
-      "Apple Pay：App 内付款",
-      "Apple 地图：导航：附近",
-      "Apple 地图：导航：方向指引",
-      "Apple 地图：导航：逐向导航",
-      "Siri：Siri",
-      "Siri：Siri 语音回应",
-      "Siri：嘿 Siri",
-      "Siri：抬腕对话",
-      "品牌服务：涂文字",
-      "品牌服务：听写功能",
-      "品牌服务：广播",
-      "品牌服务：空气质量指数",
-      "Apple Music：Apple Music",
-      "品牌服务：全球紧急呼救电话",
-      "播客：播客"
+    "available": [
+      {
+        "feature": "Siri： Siri",
+        "remark": [
+          "中国大陆 (粤语、普通话)"
+        ]
+      },
+      {
+        "feature": "Siri：Siri 语音回应",
+        "remark": [
+          "中国大陆 (粤语、普通话)"
+        ]
+      },
+      {
+        "feature": "Siri：嘿 Siri",
+        "remark": [
+          "中国大陆"
+        ]
+      },
+      {
+        "feature": "Siri：抬腕对话",
+        "remark": [
+          "中国大陆"
+        ]
+      },
+      {
+        "feature": "Siri：翻译",
+        "remark": [
+          "中文普通话 (中国大陆) 至英语、西班牙语、德语、法语、意大利语、日语、韩语"
+        ]
+      },
+      {
+        "feature": "品牌服务：血氧 app",
+        "remark": [
+          "中国大陆"
+        ]
+      },
+      {
+        "feature": "品牌服务：查找我的朋友",
+        "remark": [
+          "中国大陆"
+        ]
+      },
+      {
+        "feature": "品牌服务：家人共享设置",
+        "remark": [
+          "中国大陆"
+        ]
+      },
+      {
+        "feature": "品牌服务：涂文字",
+        "remark": [
+          "普通话 (中国大陆)"
+        ]
+      },
+      {
+        "feature": "品牌服务：听写功能",
+        "remark": [
+          "中国大陆 (普通话)"
+        ]
+      },
+      {
+        "feature": "品牌服务：广播",
+        "remark": [
+          "中国大陆"
+        ]
+      },
+      {
+        "feature": "品牌服务：空气质量指数",
+        "remark": [
+          "中国大陆"
+        ]
+      },
+      {
+        "feature": "品牌服务：旁白",
+        "remark": [
+          "普通话 (中国大陆)"
+        ]
+      },
+      {
+        "feature": "Apple Music：Apple Music",
+        "remark": [
+          "中国大陆"
+        ]
+      },
+      {
+        "feature": "播客：播客",
+        "remark": [
+          "中国大陆"
+        ]
+      },
+      {
+        "feature": "Apple Pay：Apple Pay",
+        "remark": [
+          "中国大陆"
+        ]
+      },
+      {
+        "feature": "Apple Pay：App 内付款",
+        "remark": [
+          "中国大陆"
+        ]
+      },
+      {
+        "feature": "Apple 地图：导航：附近",
+        "remark": [
+          "中国大陆"
+        ]
+      },
+      {
+        "feature": "Apple 地图：导航：方向指引",
+        "remark": [
+          "中国大陆"
+        ]
+      },
+      {
+        "feature": "Apple 地图：导航：逐向导航",
+        "remark": [
+          "中国大陆"
+        ]
+      }
     ],
     "unavailable": [
-      "品牌服务：心电图",
-      "品牌服务：心律不齐通知",
-      "品牌服务：对讲机",
-      "品牌服务：新闻",
-      "品牌服务：学生卡",
-      "有声读物：有声读物"
+      {
+        "feature": "Siri：设备端听写"
+      },
+      {
+        "feature": "品牌服务：心电图"
+      },
+      {
+        "feature": "品牌服务：心律不齐通知"
+      },
+      {
+        "feature": "品牌服务：对讲机"
+      },
+      {
+        "feature": "品牌服务：新闻"
+      },
+      {
+        "feature": "品牌服务：学生卡"
+      },
+      {
+        "feature": "品牌服务：全球紧急呼救电话"
+      },
+      {
+        "feature": "有声读物：有声读物"
+      },
+      {
+        "feature": "Apple Maps：骑行路线指引"
+      }
     ]
   }
 }
