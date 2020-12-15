@@ -8,6 +8,15 @@
 <div class="gatsby-highlight" data-language="shell"><pre class="language-shell"><code class="language-shell"><span class="token function">find</span> ./src -name <span class="token string">'*.js'</span> -type f -exec <span class="token function">ls</span> -lh <span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token punctuation">\</span><span class="token punctuation">;</span></code></pre></div>
 <p>再比如下面这条命令, 找到所有 js 文件, 然后用 sed 把这些文件中的 jpg 替换成 webp:</p>
 <div class="gatsby-highlight" data-language="shell"><pre class="language-shell"><code class="language-shell"><span class="token function">find</span> <span class="token builtin class-name">.</span> -type f -name <span class="token string">'*.js'</span> -exec <span class="token function">sed</span> -i <span class="token string">''</span> -e <span class="token string">'s/\(\.jpg\)/<span class="token entity" title="\1">\1</span>\.webp/'</span> <span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token punctuation">\</span><span class="token punctuation">;</span></code></pre></div>
+<h2>egrep 命令</h2>
+<div class="gatsby-highlight" data-language="shell"><pre class="language-shell"><code class="language-shell"><span class="token function">grep</span> -rl <span class="token string">'regex'</span> <span class="token builtin class-name">.</span>
+<span class="token function">grep</span> -rni --color <span class="token string">'regex'</span> <span class="token builtin class-name">.</span></code></pre></div>
+<p>这是我常用的搜索命令，n 显示行数，r 表示对文件夹及其子文件夹进行搜索，i 表示大小写不敏感，l 表示只列出文件名称，color 表示搜索命中的关键词用颜色显示，'regex' 搜索的关键词支持 <a href="http://www.cs.columbia.edu/~tal/3261/fall07/handout/egrep_mini-tutorial.htm">regex</a>，最后面的 . 表示对当前文件夹进行搜索。</p>
+<p>可以写一个简单的搜索脚本：</p>
+<div class="gatsby-highlight" data-language="shell"><pre class="language-shell"><code class="language-shell"><span class="token builtin class-name">echo</span> <span class="token string">"请输入搜索关键词："</span>
+<span class="token builtin class-name">read</span> keywords 
+<span class="token builtin class-name">echo</span> <span class="token string">"搜索结果如下："</span>
+<span class="token function">grep</span> -rl <span class="token string">"<span class="token variable">$keywords</span>"</span> <span class="token builtin class-name">.</span></code></pre></div>
 <h2>常用终端快捷键</h2>
 <p>如何重复执行上一条命令？</p>
 <div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">!!</code></pre></div>
@@ -62,7 +71,9 @@ base64 -d -in 文件  //解密</code></pre></div>
 <p>如何把一个文件复制剪到切板?</p>
 <div class="gatsby-highlight" data-language="shell"><pre class="language-shell"><code class="language-shell">pbcopy <span class="token operator">&lt;</span> a.txt</code></pre></div>
 <p>传输文件到服务器的方法:</p>
-<div class="gatsby-highlight" data-language="shell"><pre class="language-shell"><code class="language-shell"><span class="token function">scp</span> <span class="token punctuation">[</span>本地文件<span class="token punctuation">]</span> userName@ip地址:<span class="token punctuation">[</span>目录<span class="token punctuation">]</span>  //scp 是 Secure Copy Protocol 的简称</code></pre></div></section></article><section id="isso-thread" data-title="一些超好用的 macOS bash 命令" data-isso-id="blog/some-really-useful-macos-bash-commands/"></section></main></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script>
+<div class="gatsby-highlight" data-language="shell"><pre class="language-shell"><code class="language-shell"><span class="token function">scp</span> <span class="token punctuation">[</span>本地文件<span class="token punctuation">]</span> userName@ip地址:<span class="token punctuation">[</span>目录<span class="token punctuation">]</span>  //scp 是 Secure Copy Protocol 的简称</code></pre></div>
+<hr>
+<p>更多：<a href="https://github.com/jlevy/the-art-of-command-line">The Art of Command Line</a></p></section></article><section id="isso-thread" data-title="一些超好用的 macOS bash 命令" data-isso-id="blog/some-really-useful-macos-bash-commands/"></section></main></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script>
   
   
   if(true) {
