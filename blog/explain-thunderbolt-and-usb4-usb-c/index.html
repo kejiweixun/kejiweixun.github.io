@@ -373,6 +373,51 @@
 <p>DFP 中的控制器会根据 CC1 和 CC2 的电压变化判断是否和 DFP 或 cable 完成了连接，以及判断 plug 的正反，知道了正反，就可以进一步让 receptacle 和 plug 的各个 pin 正确地对应起来。</p>
 <p>成功连接后，DFP 还会通过 CC1、CC2 告诉 UFP 它能提供多大功率的电力。USB C 本身支持输出 5V 3A 15W 功率，如果采用了 PD 协议，则最大支持 20V 5A（PD 协议只规定了 5V、9V、15V、20V 四种电压）。UFP 获得这个信息之后，会据此向 DFP 请求电压、电流值。</p>
 <p>苹果 MagSafe 无线充电器宣称搭配 20W 的 USB C 充电头就可以给 iPhone 输出 15W 的无线充电功率，但<a href="https://www.youtube.com/watch?v=woaWYdrih_M">网友发现</a>搭配 Macbook Pro 的 96W 充电头使用，MagSafe 输出功率竟然只有大概 10W。这是因为它们在沟通的过程中，MagSafe 发现这个充电器不支持 9V/2.2A 输出，于是请求了更低的电流。至于苹果为何让 MagSafe 认准了 9V/2.2A，我也不知道。</p>
+<p>PD 协议需要 CC pin 进行握手沟通，而 USB A、USB B 都没有 CC pin，近两年支持 PD 协议的 iPhone 配送的充电线已经改为 C2L 接口。从 iPhone 8 开始支持 PD 协议，有人实测充电功率可达 18 ~ 22W。</p>
+<p>过去 iPhone 配送的充电器都是 5V 1A，而 iPad、Mac 的充电器都支持输出 5V 2.4A，用这些充电器给 iPhone 充电也比 5V 1A 快很多，这是因为 5V 2.4A 是所谓的 Apple 2.4A 快充协议，从 iPhone 6 到 iPhone 12 都支持苹果的 2.4A 充电。</p>
+<p>再说说 PD 协议，它定义了 5V、9V、15V、20V 四种电压，在输出功率低于 60W 的情况下，电流最高不超过 3A。如果当前档位的电压 * 3A 无法满足功率需求，就会进入下一级电压。</p>
+<p><figure class="gatsby-resp-image-figure" style="color: grey; font-size: 0.8rem; text-align: center; margin: 2rem auto; padding: 0; border: 1px solid #eee">
+    <span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 700px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 41.142857142857146%; position: relative; bottom: 0; left: 0; background-image: url('data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAIABQDASIAAhEBAxEB/8QAFwABAAMAAAAAAAAAAAAAAAAAAAECBf/EABQBAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhADEAAAAd2AsD//xAAUEAEAAAAAAAAAAAAAAAAAAAAQ/9oACAEBAAEFAn//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/AT//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/AT//xAAUEAEAAAAAAAAAAAAAAAAAAAAQ/9oACAEBAAY/An//xAAZEAACAwEAAAAAAAAAAAAAAAAAEQEhcYH/2gAIAQEAAT8htyPDp//aAAwDAQACAAMAAAAQ88//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/ED//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/ED//xAAZEAADAQEBAAAAAAAAAAAAAAAAAREhQVH/2gAIAQEAAT8QTm4Yas7dL6h//9k='); background-size: cover; display: block;"
+  ></span>
+  <picture>
+        <source
+          srcset="/static/fc3a9b6c6d2dde9e6569973f34aa74d8/c54d4/usb-pd.webp 175w,
+/static/fc3a9b6c6d2dde9e6569973f34aa74d8/a3432/usb-pd.webp 350w,
+/static/fc3a9b6c6d2dde9e6569973f34aa74d8/426ac/usb-pd.webp 700w,
+/static/fc3a9b6c6d2dde9e6569973f34aa74d8/c139f/usb-pd.webp 1050w,
+/static/fc3a9b6c6d2dde9e6569973f34aa74d8/7f403/usb-pd.webp 1400w,
+/static/fc3a9b6c6d2dde9e6569973f34aa74d8/9ab71/usb-pd.webp 1695w"
+          sizes="(max-width: 700px) 100vw, 700px"
+          type="image/webp"
+        />
+        <source
+          srcset="/static/fc3a9b6c6d2dde9e6569973f34aa74d8/e52aa/usb-pd.jpg 175w,
+/static/fc3a9b6c6d2dde9e6569973f34aa74d8/70ebb/usb-pd.jpg 350w,
+/static/fc3a9b6c6d2dde9e6569973f34aa74d8/29d31/usb-pd.jpg 700w,
+/static/fc3a9b6c6d2dde9e6569973f34aa74d8/9ecec/usb-pd.jpg 1050w,
+/static/fc3a9b6c6d2dde9e6569973f34aa74d8/d165a/usb-pd.jpg 1400w,
+/static/fc3a9b6c6d2dde9e6569973f34aa74d8/a2665/usb-pd.jpg 1695w"
+          sizes="(max-width: 700px) 100vw, 700px"
+          type="image/jpeg"
+        />
+        <img
+          class="gatsby-resp-image-image"
+          src="/static/fc3a9b6c6d2dde9e6569973f34aa74d8/29d31/usb-pd.jpg"
+          alt="USB PD"
+          title="USB PD"
+          loading="lazy"
+          style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        />
+      </picture>
+    </span>
+    <figcaption class="gatsby-resp-image-figcaption">USB PD</figcaption>
+  </figure></p>
 <p>USB C 接口仅仅是一个接口，各种协议也仅仅是协议，USB C 接口背后是控制器，是这些控制器控制着 24 pin 的行为。</p>
 <h4>USB 2.0 模式</h4>
 <p>USB C 拥有 24 pin，但不是所有 pin 都同时参与工作。有些 USB C 接口只支持 USB 2.0，这种情况下只有 CC、Vconn、Gnd、Vbus、D+、D- 这些 pin 在工作。</p>
