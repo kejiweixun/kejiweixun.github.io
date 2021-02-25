@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><style data-href="/styles.63e788305104a3e4c7af.css">*,:after,:before{box-sizing:border-box}body,html{min-height:100vh}body{position:relative;margin:0 auto;max-width:800px;padding-bottom:5vh}img{max-width:100%}:root{--color:#639}code[class*=language-],pre[class*=language-]{color:#000;background:none;text-shadow:0 1px #fff;font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;font-size:.9em;text-align:left;white-space:pre;word-spacing:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-ms-hyphens:none;hyphens:none}code[class*=language-]::selection,code[class*=language-] ::selection,pre[class*=language-]::selection,pre[class*=language-] ::selection{text-shadow:none;background:#b3d4fc}@media print{code[class*=language-],pre[class*=language-]{text-shadow:none}}pre[class*=language-]{padding:.4rem .8rem;margin:.2rem 0;overflow:scroll}:not(pre)>code[class*=language-],pre[class*=language-]{background:transparent}:not(pre)>code[class*=language-]{white-space:normal;background:#eee}.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#708090}.token.punctuation{color:#999}.namespace{opacity:.7}.token.boolean,.token.constant,.token.deleted,.token.number,.token.property,.token.symbol,.token.tag{color:#905}.token.attr-name,.token.builtin,.token.char,.token.inserted,.token.selector,.token.string{color:#690}.language-css .token.string,.style .token.string,.token.entity,.token.operator,.token.url{color:#9a6e3a;background:hsla(0,0%,100%,.5)}.token.atrule,.token.attr-value,.token.keyword{color:#07a}.token.class-name,.token.function{color:#dd4a68}.token.important,.token.regex,.token.variable{color:#e90}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}.gatsby-highlight{border:1px solid #ccc;border-radius:.3rem;background-color:#f5f7fa}</style><meta name="generator" content="Gatsby 2.25.3"/><title data-react-helmet="true">科技微讯 - HandBrake 使用 GPU 转换视频格式，可大幅缩短时间</title><meta data-react-helmet="true" name="description"/><link rel="icon" href="/favicon-32x32.png?v=fbe2a7c09efce730ce95fa3630c1b196" type="image/png"/><link rel="manifest" href="/manifest.webmanifest" crossorigin="anonymous"/><meta name="theme-color" content="#DE5E56"/><link rel="preconnect" href="https://www.google-analytics.com"/><link rel="dns-prefetch" href="https://www.google-analytics.com"/><link rel="sitemap" type="application/xml" href="/sitemap.xml"/><link as="script" rel="preload" href="/webpack-runtime-610a692da559bd0ab495.js"/><link as="script" rel="preload" href="/styles-e8fd4555a67a3390b64e.js"/><link as="script" rel="preload" href="/framework-0d76cc96511f69a85a0c.js"/><link as="script" rel="preload" href="/app-885deb71dbee00344918.js"/><link as="script" rel="preload" href="/9ba78b2a4bb1c73a766a26f9c15557f1bc98f749-840bcf5aa5a27ad282f9.js"/><link as="script" rel="preload" href="/component---src-template-blog-post-template-js-ea2822b6a3eb13afcaea.js"/><link as="fetch" rel="preload" href="/page-data/blog/handbrake-convert-video-with-gpu/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/1518281631.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/app-data.json" crossorigin="anonymous"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><style data-emotion-css="2bale">.css-2bale{font-size:1rem;padding:0.3em 0;border-bottom:3px solid #af6ec3;background-image:url(/static/logo-fbe2a7c09efce730ce95fa3630c1b196.png);background-size:4.5em;background-repeat:no-repeat;background-position:-1.5em -1.2em;}.css-2bale img{width:80px;border-radius:50%;position:absolute;top:-1.8rem;left:-2rem;}.css-2bale ul{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;list-style-type:none;padding-left:3em;margin:0;}.css-2bale ul li{margin-right:1em;}.css-2bale a{-webkit-text-decoration:none;text-decoration:none;color:black;font-weight:bold;}</style><nav class="css-2bale"><ul><li><a href="/">首页</a></li><li><a href="/about/">关于</a></li></ul></nav><style data-emotion-css="1sacuq3">.css-1sacuq3{width:95%;margin:1rem auto;}</style><main class="css-1sacuq3"><article><header><style data-emotion-css="1s1ozbu">.css-1s1ozbu{margin:1rem 0 0.5rem 0;font-size:clamp(1.1rem,1vw + 1.0rem,1.4rem);}</style><h1 class="css-1s1ozbu">HandBrake 使用 GPU 转换视频格式，可大幅缩短时间</h1><style data-emotion-css="yejsjx">.css-yejsjx{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;font-size:clamp(0.6rem,1vw + 0.6rem,0.8rem);color:grey;margin-bottom:1rem;}.css-yejsjx p:first-of-type{margin-right:1rem;}.css-yejsjx a{color:grey;}.css-yejsjx a:hover{-webkit-text-decoration:none;text-decoration:none;}</style><address class="css-yejsjx"><p>作者: <a href="/about/">科技微讯</a></p><p>日期: <time dateTime="2020/12/01">2020/12/01</time></p></address></header><style data-emotion-css="tak58z">.css-tak58z{line-height:1.5;margin-bottom:5rem;font-size:clamp(0.7rem,1vw + 0.7rem,1.0rem);}.css-tak58z h2{margin-top:2rem;font-size:clamp(1.0rem,1vw + 1.0rem,1.3rem);}.css-tak58z h2::before{content:'# ';}.css-tak58z h3{margin-top:2.5rem;font-size:clamp(0.9rem,1vw + 0.9rem,1.2rem);}.css-tak58z h3::before{content:'## ';}.css-tak58z p{text-align:justify;}.css-tak58z .task-list-item{list-style-type:none;}.css-tak58z ul{padding-left:0.5rem;list-style-position:inside;}.css-tak58z ul li{margin:0.3rem 0;}.css-tak58z table{margin:2rem auto;border-collapse:collapse;line-height:1.8;}.css-tak58z table td,.css-tak58z table th{border:1px solid black;padding:0 0.4rem;}.css-tak58z table th{background:#ddd;}.css-tak58z blockquote{margin:0;border-left:2px solid grey;}.css-tak58z blockquote p{margin-left:1rem;}.css-tak58z a{color:black;-webkit-text-decoration:none;text-decoration:none;display:inline-block;position:relative;}.css-tak58z a:after{content:'';display:block;position:absolute;bottom:2px;background-color:rgba(183,28,28,0.25);width:100%;height:0.5rem;}.css-tak58z a:hover:after{-webkit-text-decoration:none;text-decoration:none;background-color:rgba(242,156,56,0.25);}</style><section class="css-tak58z"><p>HandBrake 是一款格式转换工具，我通常用它来把非 mp4 的视频转换成 mp4 格式，顺便压缩体积以方便网络传播。</p>
+<!DOCTYPE html><html lang="zh-CN"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><style data-href="/styles.63e788305104a3e4c7af.css" id="gatsby-global-css">*,:after,:before{box-sizing:border-box}body,html{min-height:100vh}body{position:relative;margin:0 auto;max-width:800px;padding-bottom:5vh}img{max-width:100%}:root{--color:#639}code[class*=language-],pre[class*=language-]{color:#000;background:none;text-shadow:0 1px #fff;font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;font-size:.9em;text-align:left;white-space:pre;word-spacing:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-ms-hyphens:none;hyphens:none}code[class*=language-]::selection,code[class*=language-] ::selection,pre[class*=language-]::selection,pre[class*=language-] ::selection{text-shadow:none;background:#b3d4fc}@media print{code[class*=language-],pre[class*=language-]{text-shadow:none}}pre[class*=language-]{padding:.4rem .8rem;margin:.2rem 0;overflow:scroll}:not(pre)>code[class*=language-],pre[class*=language-]{background:transparent}:not(pre)>code[class*=language-]{white-space:normal;background:#eee}.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#708090}.token.punctuation{color:#999}.namespace{opacity:.7}.token.boolean,.token.constant,.token.deleted,.token.number,.token.property,.token.symbol,.token.tag{color:#905}.token.attr-name,.token.builtin,.token.char,.token.inserted,.token.selector,.token.string{color:#690}.language-css .token.string,.style .token.string,.token.entity,.token.operator,.token.url{color:#9a6e3a;background:hsla(0,0%,100%,.5)}.token.atrule,.token.attr-value,.token.keyword{color:#07a}.token.class-name,.token.function{color:#dd4a68}.token.important,.token.regex,.token.variable{color:#e90}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}.gatsby-highlight{border:1px solid #ccc;border-radius:.3rem;background-color:#f5f7fa}</style><meta name="generator" content="Gatsby 2.32.6"/><title data-react-helmet="true">科技微讯 - HandBrake 使用 GPU 转换视频格式，可大幅缩短时间</title><meta data-react-helmet="true" name="description"/><link rel="icon" href="/favicon-32x32.png?v=fbe2a7c09efce730ce95fa3630c1b196" type="image/png"/><link rel="manifest" href="/manifest.webmanifest" crossorigin="anonymous"/><meta name="theme-color" content="#DE5E56"/><link rel="preconnect" href="https://www.google-analytics.com"/><link rel="dns-prefetch" href="https://www.google-analytics.com"/><link rel="sitemap" type="application/xml" href="/sitemap.xml"/><link as="script" rel="preload" href="/webpack-runtime-a8fbd26350eac10a2c7b.js"/><link as="script" rel="preload" href="/framework-c8d3a5345e3f321d7da5.js"/><link as="script" rel="preload" href="/styles-e8fd4555a67a3390b64e.js"/><link as="script" rel="preload" href="/app-3b411b810cf9f420bb3d.js"/><link as="script" rel="preload" href="/9ba78b2a4bb1c73a766a26f9c15557f1bc98f749-72239ca7d14e48562d96.js"/><link as="script" rel="preload" href="/component---src-template-blog-post-template-js-80bf5a5ec5fb056ef199.js"/><link as="fetch" rel="preload" href="/page-data/blog/handbrake-convert-video-with-gpu/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/1518281631.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/app-data.json" crossorigin="anonymous"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><style data-emotion-css="2bale">.css-2bale{font-size:1rem;padding:0.3em 0;border-bottom:3px solid #af6ec3;background-image:url(/static/logo-fbe2a7c09efce730ce95fa3630c1b196.png);background-size:4.5em;background-repeat:no-repeat;background-position:-1.5em -1.2em;}.css-2bale img{width:80px;border-radius:50%;position:absolute;top:-1.8rem;left:-2rem;}.css-2bale ul{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;list-style-type:none;padding-left:3em;margin:0;}.css-2bale ul li{margin-right:1em;}.css-2bale a{-webkit-text-decoration:none;text-decoration:none;color:black;font-weight:bold;}</style><nav class="css-2bale"><ul><li><a href="/">首页</a></li><li><a href="/about/">关于</a></li></ul></nav><style data-emotion-css="1sacuq3">.css-1sacuq3{width:95%;margin:1rem auto;}</style><main class="css-1sacuq3"><article><header><style data-emotion-css="1s1ozbu">.css-1s1ozbu{margin:1rem 0 0.5rem 0;font-size:clamp(1.1rem,1vw + 1.0rem,1.4rem);}</style><h1 class="css-1s1ozbu">HandBrake 使用 GPU 转换视频格式，可大幅缩短时间</h1><style data-emotion-css="yejsjx">.css-yejsjx{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;font-size:clamp(0.6rem,1vw + 0.6rem,0.8rem);color:grey;margin-bottom:1rem;}.css-yejsjx p:first-of-type{margin-right:1rem;}.css-yejsjx a{color:grey;}.css-yejsjx a:hover{-webkit-text-decoration:none;text-decoration:none;}</style><address class="css-yejsjx"><p>作者: <a href="/about/">科技微讯</a></p><p>日期: <time dateTime="2020/12/01">2020/12/01</time></p></address></header><style data-emotion-css="tak58z">.css-tak58z{line-height:1.5;margin-bottom:5rem;font-size:clamp(0.7rem,1vw + 0.7rem,1.0rem);}.css-tak58z h2{margin-top:2rem;font-size:clamp(1.0rem,1vw + 1.0rem,1.3rem);}.css-tak58z h2::before{content:'# ';}.css-tak58z h3{margin-top:2.5rem;font-size:clamp(0.9rem,1vw + 0.9rem,1.2rem);}.css-tak58z h3::before{content:'## ';}.css-tak58z p{text-align:justify;}.css-tak58z .task-list-item{list-style-type:none;}.css-tak58z ul{padding-left:0.5rem;list-style-position:inside;}.css-tak58z ul li{margin:0.3rem 0;}.css-tak58z table{margin:2rem auto;border-collapse:collapse;line-height:1.8;}.css-tak58z table td,.css-tak58z table th{border:1px solid black;padding:0 0.4rem;}.css-tak58z table th{background:#ddd;}.css-tak58z blockquote{margin:0;border-left:2px solid grey;}.css-tak58z blockquote p{margin-left:1rem;}.css-tak58z a{color:black;-webkit-text-decoration:none;text-decoration:none;display:inline-block;position:relative;}.css-tak58z a:after{content:'';display:block;position:absolute;bottom:2px;background-color:rgba(183,28,28,0.25);width:100%;height:0.5rem;}.css-tak58z a:hover:after{-webkit-text-decoration:none;text-decoration:none;background-color:rgba(242,156,56,0.25);}</style><section class="css-tak58z"><p>HandBrake 是一款格式转换工具，我通常用它来把非 mp4 的视频转换成 mp4 格式，顺便压缩体积以方便网络传播。</p>
 <p>HandBrake 在最近的版本中增加了硬件编码功能，转换格式时可以让 GPU 参与工作，我测试了一下，这样能大幅缩短转换时间。</p>
 <p>打开 HandBrake，在界面中间选择 Video 标签，接着点击 Video Encoder 菜单，这里列出了多种编码方式。</p>
 <p><figure class="gatsby-resp-image-figure" style="color: grey; font-size: 0.8rem; text-align: center; margin: 2rem auto; padding: 0; border: 1px solid #eee">
@@ -8,34 +8,34 @@
     >
       <span
     class="gatsby-resp-image-background-image"
-    style="padding-bottom: 76.57142857142857%; position: relative; bottom: 0; left: 0; background-image: url('data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAECBf/EABQBAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhADEAAAAddsJKD/xAAXEAADAQAAAAAAAAAAAAAAAAABEBEg/9oACAEBAAEFAlBj/8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPwE//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPwE//8QAFBABAAAAAAAAAAAAAAAAAAAAIP/aAAgBAQAGPwJf/8QAGhAAAgIDAAAAAAAAAAAAAAAAAAEQETGR8P/aAAgBAQABPyGlgSRxcaj/2gAMAwEAAgADAAAAEBPP/8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPxA//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPxA//8QAHBAAAgMAAwEAAAAAAAAAAAAAAAERIZFBUWGx/9oACAEBAAE/EIHR16dAm4eiE9Jar4Mw/9k='); background-size: cover; display: block;"
+    style="padding-bottom: 76.57142857142857%; position: relative; bottom: 0; left: 0; background-image: url('data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAECBf/EABQBAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhADEAAAAddjJKD/xAAXEAADAQAAAAAAAAAAAAAAAAABEBEg/9oACAEBAAEFAlBj/8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPwE//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPwE//8QAFBABAAAAAAAAAAAAAAAAAAAAIP/aAAgBAQAGPwJf/8QAGhAAAgIDAAAAAAAAAAAAAAAAABEBMRBRYf/aAAgBAQABPyFRSIWjkXn/2gAMAwEAAgADAAAAEDPP/8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPxA//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPxA//8QAHBAAAgICAwAAAAAAAAAAAAAAABEBITGRYXHh/9oACAEBAAE/ELLK5IAz1Io2Y5xWh9aP/9k='); background-size: cover; display: block;"
   ></span>
   <picture>
-        <source
-          srcset="/static/b56a94a7ad483c9050d3a06231edcce8/c54d4/encoder-list.webp 175w,
+          <source
+              srcset="/static/b56a94a7ad483c9050d3a06231edcce8/c54d4/encoder-list.webp 175w,
 /static/b56a94a7ad483c9050d3a06231edcce8/a3432/encoder-list.webp 350w,
 /static/b56a94a7ad483c9050d3a06231edcce8/426ac/encoder-list.webp 700w,
 /static/b56a94a7ad483c9050d3a06231edcce8/8af20/encoder-list.webp 884w"
-          sizes="(max-width: 700px) 100vw, 700px"
-          type="image/webp"
-        />
-        <source
-          srcset="/static/b56a94a7ad483c9050d3a06231edcce8/e52aa/encoder-list.jpg 175w,
+              sizes="(max-width: 700px) 100vw, 700px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/b56a94a7ad483c9050d3a06231edcce8/e52aa/encoder-list.jpg 175w,
 /static/b56a94a7ad483c9050d3a06231edcce8/70ebb/encoder-list.jpg 350w,
 /static/b56a94a7ad483c9050d3a06231edcce8/29d31/encoder-list.jpg 700w,
 /static/b56a94a7ad483c9050d3a06231edcce8/e3528/encoder-list.jpg 884w"
-          sizes="(max-width: 700px) 100vw, 700px"
-          type="image/jpeg"
-        />
-        <img
-          class="gatsby-resp-image-image"
-          src="/static/b56a94a7ad483c9050d3a06231edcce8/29d31/encoder-list.jpg"
-          alt="Video Encoder"
-          title="Video Encoder"
-          loading="lazy"
-          style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
-        />
-      </picture>
+            sizes="(max-width: 700px) 100vw, 700px"
+            type="image/jpeg"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/b56a94a7ad483c9050d3a06231edcce8/29d31/encoder-list.jpg"
+            alt="Video Encoder"
+            title="Video Encoder"
+            loading="lazy"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
     </span>
     <figcaption class="gatsby-resp-image-figcaption">Video Encoder</figcaption>
   </figure></p>
@@ -54,36 +54,36 @@
     >
       <span
     class="gatsby-resp-image-background-image"
-    style="padding-bottom: 70.28571428571428%; position: relative; bottom: 0; left: 0; background-image: url('data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAOABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAEF/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAH/2gAMAwEAAhADEAAAAdpSFL//xAAXEAADAQAAAAAAAAAAAAAAAAAAAREQ/9oACAEBAAEFAoQWo//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQMBAT8BP//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQIBAT8BP//EABcQAAMBAAAAAAAAAAAAAAAAAAABMSD/2gAIAQEABj8CrK8//8QAGhAAAgIDAAAAAAAAAAAAAAAAAAEhMRARYf/aAAgBAQABPyGbeDUtsps3wSD/2gAMAwEAAgADAAAAEL/P/8QAFREBAQAAAAAAAAAAAAAAAAAAEBH/2gAIAQMBAT8Qh//EABURAQEAAAAAAAAAAAAAAAAAABAR/9oACAECAQE/EKf/xAAcEAEAAgIDAQAAAAAAAAAAAAABACFBURExYeH/2gAIAQEAAT8QOUSt6YVcPsKZzcFqZ3Od7e/IjhP/2Q=='); background-size: cover; display: block;"
+    style="padding-bottom: 70.28571428571428%; position: relative; bottom: 0; left: 0; background-image: url('data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAOABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAEF/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAH/2gAMAwEAAhADEAAAAdpSUL//xAAXEAADAQAAAAAAAAAAAAAAAAAAAREQ/9oACAEBAAEFAoQWo//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQMBAT8BP//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQIBAT8BP//EABcQAAMBAAAAAAAAAAAAAAAAAAABMSD/2gAIAQEABj8CrK8//8QAGRAAAwEBAQAAAAAAAAAAAAAAAAERMRBh/9oACAEBAAE/IVV4bGtljZfDB//aAAwDAQACAAMAAAAQrM//xAAVEQEBAAAAAAAAAAAAAAAAAAAQEf/aAAgBAwEBPxCH/8QAFREBAQAAAAAAAAAAAAAAAAAAEBH/2gAIAQIBAT8Qp//EABwQAAEFAAMAAAAAAAAAAAAAAAEAESFBUTFh4f/aAAgBAQABPxB24UnghA2NJ1PE3moFEvU+dd+ISaL/2Q=='); background-size: cover; display: block;"
   ></span>
   <picture>
-        <source
-          srcset="/static/b83bb37be9eb85a534a807ab6751edd8/c54d4/usage-with-hardware-encoder.webp 175w,
+          <source
+              srcset="/static/b83bb37be9eb85a534a807ab6751edd8/c54d4/usage-with-hardware-encoder.webp 175w,
 /static/b83bb37be9eb85a534a807ab6751edd8/a3432/usage-with-hardware-encoder.webp 350w,
 /static/b83bb37be9eb85a534a807ab6751edd8/426ac/usage-with-hardware-encoder.webp 700w,
 /static/b83bb37be9eb85a534a807ab6751edd8/c139f/usage-with-hardware-encoder.webp 1050w,
 /static/b83bb37be9eb85a534a807ab6751edd8/f13ee/usage-with-hardware-encoder.webp 1072w"
-          sizes="(max-width: 700px) 100vw, 700px"
-          type="image/webp"
-        />
-        <source
-          srcset="/static/b83bb37be9eb85a534a807ab6751edd8/e52aa/usage-with-hardware-encoder.jpg 175w,
+              sizes="(max-width: 700px) 100vw, 700px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/b83bb37be9eb85a534a807ab6751edd8/e52aa/usage-with-hardware-encoder.jpg 175w,
 /static/b83bb37be9eb85a534a807ab6751edd8/70ebb/usage-with-hardware-encoder.jpg 350w,
 /static/b83bb37be9eb85a534a807ab6751edd8/29d31/usage-with-hardware-encoder.jpg 700w,
 /static/b83bb37be9eb85a534a807ab6751edd8/9ecec/usage-with-hardware-encoder.jpg 1050w,
 /static/b83bb37be9eb85a534a807ab6751edd8/67471/usage-with-hardware-encoder.jpg 1072w"
-          sizes="(max-width: 700px) 100vw, 700px"
-          type="image/jpeg"
-        />
-        <img
-          class="gatsby-resp-image-image"
-          src="/static/b83bb37be9eb85a534a807ab6751edd8/29d31/usage-with-hardware-encoder.jpg"
-          alt="H.264(x264)"
-          title="H.264(x264)"
-          loading="lazy"
-          style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
-        />
-      </picture>
+            sizes="(max-width: 700px) 100vw, 700px"
+            type="image/jpeg"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/b83bb37be9eb85a534a807ab6751edd8/29d31/usage-with-hardware-encoder.jpg"
+            alt="H.264(x264)"
+            title="H.264(x264)"
+            loading="lazy"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
     </span>
     <figcaption class="gatsby-resp-image-figcaption">H.264(x264)</figcaption>
   </figure></p>
@@ -95,36 +95,36 @@
     >
       <span
     class="gatsby-resp-image-background-image"
-    style="padding-bottom: 70.28571428571428%; position: relative; bottom: 0; left: 0; background-image: url('data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAOABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAECBf/EABUBAQEAAAAAAAAAAAAAAAAAAAAB/9oADAMBAAIQAxAAAAHtTRKF/8QAFhABAQEAAAAAAAAAAAAAAAAAEQAg/9oACAEBAAEFAiM//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPwE//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPwE//8QAFxAAAwEAAAAAAAAAAAAAAAAAAAExIP/aAAgBAQAGPwKsrz//xAAYEAEBAQEBAAAAAAAAAAAAAAABABExIf/aAAgBAQABPyH3sc0GHW4tsal//9oADAMBAAIAAwAAABDsz//EABURAQEAAAAAAAAAAAAAAAAAABAR/9oACAEDAQE/EIf/xAAVEQEBAAAAAAAAAAAAAAAAAAAQEf/aAAgBAgEBPxCn/8QAGxABAAMAAwEAAAAAAAAAAAAAAQARITFBUZH/2gAIAQEAAT8QE2lvTBlz6xg2vdluQ59gqRCuth6Hk//Z'); background-size: cover; display: block;"
+    style="padding-bottom: 70.28571428571428%; position: relative; bottom: 0; left: 0; background-image: url('data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAOABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAECBf/EABUBAQEAAAAAAAAAAAAAAAAAAAAB/9oADAMBAAIQAxAAAAHtTRKpf//EABcQAAMBAAAAAAAAAAAAAAAAAAABERD/2gAIAQEAAQUChBaj/8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPwE//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPwE//8QAFxAAAwEAAAAAAAAAAAAAAAAAAAExIP/aAAgBAQAGPwKsrz//xAAZEAADAQEBAAAAAAAAAAAAAAAAAREhMWH/2gAIAQEAAT8h3Q5LC62WNl8NI//aAAwDAQACAAMAAAAQ7w//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/ED//xAAVEQEBAAAAAAAAAAAAAAAAAAAQEf/aAAgBAgEBPxCn/8QAGxABAAMBAAMAAAAAAAAAAAAAAQARIUExUZH/2gAIAQEAAT8QE0lr4YMufWBo2bsESu+5ekRXNgbGp//Z'); background-size: cover; display: block;"
   ></span>
   <picture>
-        <source
-          srcset="/static/c2aff4189daab2de918743259333df0d/c54d4/usage-without-hardware-encoder.webp 175w,
+          <source
+              srcset="/static/c2aff4189daab2de918743259333df0d/c54d4/usage-without-hardware-encoder.webp 175w,
 /static/c2aff4189daab2de918743259333df0d/a3432/usage-without-hardware-encoder.webp 350w,
 /static/c2aff4189daab2de918743259333df0d/426ac/usage-without-hardware-encoder.webp 700w,
 /static/c2aff4189daab2de918743259333df0d/c139f/usage-without-hardware-encoder.webp 1050w,
 /static/c2aff4189daab2de918743259333df0d/f13ee/usage-without-hardware-encoder.webp 1072w"
-          sizes="(max-width: 700px) 100vw, 700px"
-          type="image/webp"
-        />
-        <source
-          srcset="/static/c2aff4189daab2de918743259333df0d/e52aa/usage-without-hardware-encoder.jpg 175w,
+              sizes="(max-width: 700px) 100vw, 700px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/c2aff4189daab2de918743259333df0d/e52aa/usage-without-hardware-encoder.jpg 175w,
 /static/c2aff4189daab2de918743259333df0d/70ebb/usage-without-hardware-encoder.jpg 350w,
 /static/c2aff4189daab2de918743259333df0d/29d31/usage-without-hardware-encoder.jpg 700w,
 /static/c2aff4189daab2de918743259333df0d/9ecec/usage-without-hardware-encoder.jpg 1050w,
 /static/c2aff4189daab2de918743259333df0d/67471/usage-without-hardware-encoder.jpg 1072w"
-          sizes="(max-width: 700px) 100vw, 700px"
-          type="image/jpeg"
-        />
-        <img
-          class="gatsby-resp-image-image"
-          src="/static/c2aff4189daab2de918743259333df0d/29d31/usage-without-hardware-encoder.jpg"
-          alt="H.264(VideoToolbox)"
-          title="H.264(VideoToolbox)"
-          loading="lazy"
-          style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
-        />
-      </picture>
+            sizes="(max-width: 700px) 100vw, 700px"
+            type="image/jpeg"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/c2aff4189daab2de918743259333df0d/29d31/usage-without-hardware-encoder.jpg"
+            alt="H.264(VideoToolbox)"
+            title="H.264(VideoToolbox)"
+            loading="lazy"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
     </span>
     <figcaption class="gatsby-resp-image-figcaption">H.264(VideoToolbox)</figcaption>
   </figure></p>
@@ -137,36 +137,36 @@
     >
       <span
     class="gatsby-resp-image-background-image"
-    style="padding-bottom: 100.57142857142858%; position: relative; bottom: 0; left: 0; background-image: url('data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAUABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAIBBP/EABcBAQEBAQAAAAAAAAAAAAAAAAABAgP/2gAMAwEAAhADEAAAAeKozfCQs6SyD//EABgQAAMBAQAAAAAAAAAAAAAAAAEQEQAC/9oACAEBAAEFAucYg6//xAAUEQEAAAAAAAAAAAAAAAAAAAAg/9oACAEDAQE/AR//xAAUEQEAAAAAAAAAAAAAAAAAAAAg/9oACAECAQE/AR//xAAVEAEBAAAAAAAAAAAAAAAAAAAgMf/aAAgBAQAGPwIQ/wD/xAAbEAEBAAEFAAAAAAAAAAAAAAABABEQITFBgf/aAAgBAQABPyHCXB0Iyj0vCGbTZv/aAAwDAQACAAMAAAAQf8i+/8QAFxEBAAMAAAAAAAAAAAAAAAAAEQEgMf/aAAgBAwEBPxAZ2n//xAAWEQADAAAAAAAAAAAAAAAAAAARICH/2gAIAQIBAT8QMT//xAAcEAEAAgMAAwAAAAAAAAAAAAABACERQVEx0eH/2gAIAQEAAT8QKVQa3D+mKZcNRzwFZqOcJXygSGmok3F9n//Z'); background-size: cover; display: block;"
+    style="padding-bottom: 100.57142857142858%; position: relative; bottom: 0; left: 0; background-image: url('data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAUABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAIBBP/EABcBAQEBAQAAAAAAAAAAAAAAAAABAgP/2gAMAwEAAhADEAAAAeG4zfCQsiXAf//EABgQAQEAAwAAAAAAAAAAAAAAAAEQAAIR/9oACAEBAAEFAtcUhe3/xAAUEQEAAAAAAAAAAAAAAAAAAAAg/9oACAEDAQE/AR//xAAUEQEAAAAAAAAAAAAAAAAAAAAg/9oACAECAQE/AR//xAAVEAEBAAAAAAAAAAAAAAAAAAAgMf/aAAgBAQAGPwIQ/wD/xAAbEAEBAAEFAAAAAAAAAAAAAAABABEQITFRgf/aAAgBAQABPyHC4DoRlOl4QzabN//aAAwDAQACAAMAAAAQ38++/8QAFhEBAQEAAAAAAAAAAAAAAAAAEQEg/9oACAEDAQE/EBuP/8QAFhEAAwAAAAAAAAAAAAAAAAAAESAh/9oACAECAQE/EDE//8QAGxABAAMAAwEAAAAAAAAAAAAAAQARITFB0eH/2gAIAQEAAT8QKVQchfGKW1xFdAy8I5qmZ8IEhxxiTuLn/9k='); background-size: cover; display: block;"
   ></span>
   <picture>
-        <source
-          srcset="/static/79d9c7df4a50f1a375d6d2c36d472697/c54d4/comp.webp 175w,
+          <source
+              srcset="/static/79d9c7df4a50f1a375d6d2c36d472697/c54d4/comp.webp 175w,
 /static/79d9c7df4a50f1a375d6d2c36d472697/a3432/comp.webp 350w,
 /static/79d9c7df4a50f1a375d6d2c36d472697/426ac/comp.webp 700w,
 /static/79d9c7df4a50f1a375d6d2c36d472697/c139f/comp.webp 1050w,
 /static/79d9c7df4a50f1a375d6d2c36d472697/bfc0a/comp.webp 1326w"
-          sizes="(max-width: 700px) 100vw, 700px"
-          type="image/webp"
-        />
-        <source
-          srcset="/static/79d9c7df4a50f1a375d6d2c36d472697/e52aa/comp.jpg 175w,
+              sizes="(max-width: 700px) 100vw, 700px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/79d9c7df4a50f1a375d6d2c36d472697/e52aa/comp.jpg 175w,
 /static/79d9c7df4a50f1a375d6d2c36d472697/70ebb/comp.jpg 350w,
 /static/79d9c7df4a50f1a375d6d2c36d472697/29d31/comp.jpg 700w,
 /static/79d9c7df4a50f1a375d6d2c36d472697/9ecec/comp.jpg 1050w,
 /static/79d9c7df4a50f1a375d6d2c36d472697/bbf30/comp.jpg 1326w"
-          sizes="(max-width: 700px) 100vw, 700px"
-          type="image/jpeg"
-        />
-        <img
-          class="gatsby-resp-image-image"
-          src="/static/79d9c7df4a50f1a375d6d2c36d472697/29d31/comp.jpg"
-          alt="comp"
-          title="comp"
-          loading="lazy"
-          style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
-        />
-      </picture>
+            sizes="(max-width: 700px) 100vw, 700px"
+            type="image/jpeg"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/79d9c7df4a50f1a375d6d2c36d472697/29d31/comp.jpg"
+            alt="comp"
+            title="comp"
+            loading="lazy"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
     </span></p>
 <hr>
 <p>参考文章：<a href="https://www.ryananddebi.com/2020/06/26/handbrake-convert-files-with-gpu-nvenc-rather-than-cpu/">HandBrake – Convert Files with GPU/Nvenc Rather than CPU</a></p></section></article><section id="isso-thread" data-title="HandBrake 使用 GPU 转换视频格式，可大幅缩短时间" data-isso-id="blog/handbrake-convert-video-with-gpu/"></section></main></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script>
@@ -185,4 +185,4 @@
       
       
       
-      }</script><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/blog/handbrake-convert-video-with-gpu/";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-450dfa189dbd392c989b.js"],"app":["/app-885deb71dbee00344918.js"],"component---cache-caches-gatsby-plugin-offline-app-shell-js":["/component---cache-caches-gatsby-plugin-offline-app-shell-js-241020a1cf7d0f317bbe.js"],"component---src-pages-404-js":["/component---src-pages-404-js-f87457e88bf7f5344557.js"],"component---src-pages-about-js":["/component---src-pages-about-js-0a4acd869cc8b0efcacc.js"],"component---src-pages-add-watermark-js":["/component---src-pages-add-watermark-js-f7e634eaea0c2793c91e.js"],"component---src-pages-apple-features-availability-js":["/component---src-pages-apple-features-availability-js-c949e187764cd5dc7fe6.js"],"component---src-pages-index-js":["/component---src-pages-index-js-dd19bebe6af796b893d1.js"],"component---src-pages-ios-beta-profile-js":["/component---src-pages-ios-beta-profile-js-758bb263ec4b83d45ba1.js"],"component---src-pages-ios-version-history-js":["/component---src-pages-ios-version-history-js-59e5298ea484238b43c8.js"],"component---src-pages-merge-images-js":["/component---src-pages-merge-images-js-0300bd9a0352707c6d8b.js"],"component---src-template-blog-post-template-js":["/component---src-template-blog-post-template-js-ea2822b6a3eb13afcaea.js"]};/*]]>*/</script><script src="/polyfill-450dfa189dbd392c989b.js" nomodule=""></script><script src="/component---src-template-blog-post-template-js-ea2822b6a3eb13afcaea.js" async=""></script><script src="/9ba78b2a4bb1c73a766a26f9c15557f1bc98f749-840bcf5aa5a27ad282f9.js" async=""></script><script src="/app-885deb71dbee00344918.js" async=""></script><script src="/framework-0d76cc96511f69a85a0c.js" async=""></script><script src="/styles-e8fd4555a67a3390b64e.js" async=""></script><script src="/webpack-runtime-610a692da559bd0ab495.js" async=""></script></body></html>
+      }</script><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/blog/handbrake-convert-video-with-gpu/";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-185e39e3301acef4b312.js"],"app":["/app-3b411b810cf9f420bb3d.js"],"component---cache-caches-gatsby-plugin-offline-app-shell-js":["/component---cache-caches-gatsby-plugin-offline-app-shell-js-5081bfd3b3053fb653b2.js"],"component---src-pages-404-js":["/component---src-pages-404-js-f87457e88bf7f5344557.js"],"component---src-pages-about-js":["/component---src-pages-about-js-aeec7d54372e082d7a24.js"],"component---src-pages-add-watermark-js":["/component---src-pages-add-watermark-js-f7e634eaea0c2793c91e.js"],"component---src-pages-apple-features-availability-js":["/component---src-pages-apple-features-availability-js-96164b84333ffbff9c29.js"],"component---src-pages-index-js":["/component---src-pages-index-js-17cfad731f1d48b0ba36.js"],"component---src-pages-ios-beta-profile-js":["/component---src-pages-ios-beta-profile-js-239e7642a3a28da1ad0f.js"],"component---src-pages-ios-version-history-js":["/component---src-pages-ios-version-history-js-a64d52a840d413b863b1.js"],"component---src-pages-merge-images-js":["/component---src-pages-merge-images-js-0300bd9a0352707c6d8b.js"],"component---src-template-blog-post-template-js":["/component---src-template-blog-post-template-js-80bf5a5ec5fb056ef199.js"]};/*]]>*/</script><script src="/polyfill-185e39e3301acef4b312.js" nomodule=""></script><script src="/component---src-template-blog-post-template-js-80bf5a5ec5fb056ef199.js" async=""></script><script src="/9ba78b2a4bb1c73a766a26f9c15557f1bc98f749-72239ca7d14e48562d96.js" async=""></script><script src="/app-3b411b810cf9f420bb3d.js" async=""></script><script src="/styles-e8fd4555a67a3390b64e.js" async=""></script><script src="/framework-c8d3a5345e3f321d7da5.js" async=""></script><script src="/webpack-runtime-a8fbd26350eac10a2c7b.js" async=""></script></body></html>
