@@ -14,8 +14,8 @@
 <url> <loc>https://kejiweixun.com/blog/wechat-miniprogram-pingchangtu/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://kejiweixun.com/blog/how-to-install-and-use-wireguard/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://kejiweixun.com/blog/just-order-china-made-tesla-model-3-long-range/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://kejiweixun.com/blog/compress-pdf-file-using-ghostscript-or-imagemagick-or-nodejs/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://kejiweixun.com/blog/how-to-schedule-backup-mongodb-docker-data/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://kejiweixun.com/blog/compress-pdf-file-using-ghostscript-or-imagemagick-or-nodejs/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://kejiweixun.com/blog/wechat-miniprogram-cloud-function-timeout-solution/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://kejiweixun.com/blog/wechat-miniprogram-get-userinfo-without-popup-authentication/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://kejiweixun.com/blog/getting-started-with-github-action/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -35,8 +35,9 @@
 <url> <loc>https://kejiweixun.com/blog/audio-recording-guide-about-equipment-and-audacity/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://kejiweixun.com/blog/fund-investment-for-beginners/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://kejiweixun.com/blog/handbrake-convert-video-with-gpu/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://kejiweixun.com/blog/about-ad-blocker-and-tracker-protection/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://kejiweixun.com/blog/explain-thunderbolt-and-usb4-usb-c/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://kejiweixun.com/blog/about-ad-blocker-and-tracker-protection/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://kejiweixun.com/blog/explain-display-color-depth-color-space-hdr/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://kejiweixun.com/about/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://kejiweixun.com/add-watermark/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://kejiweixun.com/apple-features-availability/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
