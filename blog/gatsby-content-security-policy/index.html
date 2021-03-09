@@ -172,6 +172,9 @@
 <p>第一个 server 的作用是把所有带 www 的链接 301 跳转到没有 www 的链接, 所以第二个 server 才是最终起作用的 server.</p>
 <p>第二个 server context 包含了 4 个 location context, 我之所以写了 4 个 location, 是因为我希望给这 4 个 location 分别单独设置 cache-control header. 关于为什么要这样做, 可以参考 gatsby.js 的<a href="https://www.gatsbyjs.org/docs/caching/">官方文档</a>. </p>
 <p>cache-control header 不仅影响浏览器的缓存方式, 也影响 CDN 的缓存方式. gatsby.js 部署到 CDN 时, 可以让整个网站的文件都通过 CDN 提供, 但这样做的话, 以后每次对网站进行修改, 例如添加一篇新的文章等等, 都要手动进行缓存刷新, 否则浏览器可能无法马上看到更新后的内容, 因为如果不刷新, CDN 会继续向浏览器提供旧的缓存. 所以 gatsby 建议我们把 html 文件, sw.js, 和所有位于 page-data 文件夹中的 json 文件, 都设置为每次 request 均从源站获取.</p>
+<p><code class="language-text">max-age=0, must-revalidate</code> <a href="https://httptoolkit.tech/blog/http-wtf/">也可以写成</a> <code class="language-text">no-cache</code>，作用一样。no-cache 的作用并非“不要缓存”，恰恰相反，它要求浏览器或 CDN 缓存它收到的数据，不过在使用这些缓存之前，必须先验证缓存是否还有效，例如发送带有 <code class="language-text">If-Match</code> 或 <code class="language-text">If-Modified-Since</code> header 的请求。</p>
+<p>如果你希望浏览器不要缓存，应该用 <code class="language-text">no-store</code>，这样每一次请求，数据都直接来自服务器。<code class="language-text">no-store</code> 并不能清空已经缓存下来的数据，可以加 <code class="language-text">max-age=0</code>。</p>
+<p>如果你希望缓存设置只对浏览器有效，可以添加 <code class="language-text">private</code> 属性，例如 <code class="language-text">Cache-Control: private, no-cache</code>，意思是内容可以缓存，但只能在浏览器缓存，不能在 CDN 等代理服务器缓存。</p>
 <p>当然, 其实我不需要在 nginx 设置这个 cache-control header, 因为也可以在 CDN 设置, 如下图所示:</p>
 <p><span
       class="gatsby-resp-image-wrapper"
@@ -271,12 +274,13 @@
 <p>X-Frame-Options 可以用来防御 clickjacking, 假设 kejiweixun.com 是一个银行网站, 如果我没有设置 X-Frame-Options, 那坏人就可以搭建一个领取免费奖品的网站, 并用 <code class="language-text">&lt;iframe&gt;</code> 等元素把银行网站的付款页面嵌入这个欺诈网站, 但是这个付款页面用户是看不到的, 这个 <code class="language-text">&lt;iframe&gt;</code> 被领取奖品的页面遮挡在下面了, 当用户点击他能看到的领取按钮时, 实际可能是点了隐藏着的银行页面的转账按钮.</p>
 <p>clickjacking 另一个用途是骗点赞, 骗关注, 例如把银行付款按钮换成微博点赞按钮等等.</p>
 <h3>Referrer-Policy</h3>
-<p>在说 Referrer-Policy 这个 header 之前, 需要先知道 Referrer 这个 header, Referrer 是在发生链接跳转时浏览器发送的 request header, 用来告诉服务器我这个 request 来自哪里.</p>
-<p>例如从 kejiweixun.com 首页点击链接跳转到 <a href="https://kejiweixun.com/ios-beta-profile/">https://kejiweixun.com/ios-beta-profile/</a>, 那浏览器会发送一个带有 Referrer header 的请求, 这个 Referrer 的值就是 kejiweixun.com, 因为是从科技微讯的首页 kejiweixun.com 跳转过去的.</p>
-<p>如果从 kejiweixun.com 跳转到 google.com, 那 google.com 的服务器也可以获得 <code class="language-text">Referrer: kejiweixun.com</code> 这样的 header. </p>
+<p>在说 Referrer-Policy 这个 header 之前, 需要先知道 Referer 这个 header, Referer 是在发生链接跳转时浏览器发送的 request header, 用来告诉服务器我这个 request 来自哪里.</p>
+<p>注意，Referer 是<a href="https://httptoolkit.tech/blog/http-wtf/">错误的英文单词</a>，正确的写法应该是 Referrer，当人们发现这个单词写错的时候，Referer 已被广泛使用，来不及更正。Referrer-Policy 中的 Referrer 没有写错。</p>
+<p>例如从 kejiweixun.com 首页点击链接跳转到 <a href="https://kejiweixun.com/ios-beta-profile/">https://kejiweixun.com/ios-beta-profile/</a>, 那浏览器会发送一个带有 Referer header 的请求, 这个 Referer 的值就是 kejiweixun.com, 因为是从科技微讯的首页 kejiweixun.com 跳转过去的.</p>
+<p>如果从 kejiweixun.com 跳转到 google.com, 那 google.com 的服务器也可以获得 <code class="language-text">Referer: kejiweixun.com</code> 这样的 header. </p>
 <p>这个功能让 google analytic 能统计 A 网站有多少访客来自 B 网站, 但因为 url 中可能包含一些敏感信息, 不加思索地把 url 传给任何一个其他网站可能会泄漏用户的隐私信息.</p>
-<p>Referrer 是浏览器自动添加到 request 中的, 但开发者可以通过 Referrer-Policy 这个 response header 要求浏览器不要乱来. Referrer-Policy 有 8 种值, 具体可以<a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy">参考 MDN</a>. </p>
-<p>科技微讯的 url 其实没有什么敏感信息, 所以我设置为 <code class="language-text">strict-origin-when-cross-origin</code>, 表示从 kejiweixun.com 这个网站的任何页面跳转到 kejiweixun.com 的任何其他页面时, 浏览器会发送一个带上 Referrer header 的 request, 其值是完整的 url, 而跳转到其他通过 https 访问的域名时, 也会带上 Referrer header, 但其值永远是 <a href="https://kejiweixun.com">https://kejiweixun.com</a>, 不是完整的 url, 另外, 如果跳转的 url 是非 https, 而是 http 域名, 那不带上 Referrer header.</p>
+<p>Referer 是浏览器自动添加到 request 中的, 但开发者可以通过 Referrer-Policy 这个 response header 要求浏览器不要乱来. Referrer-Policy 有 8 种值, 具体可以<a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy">参考 MDN</a>. </p>
+<p>科技微讯的 url 其实没有什么敏感信息, 所以我设置为 <code class="language-text">strict-origin-when-cross-origin</code>, 表示从 kejiweixun.com 这个网站的任何页面跳转到 kejiweixun.com 的任何其他页面时, 浏览器会发送一个带上 Referer header 的 request, 其值是完整的 url, 而跳转到其他通过 https 访问的域名时, 也会带上 Referer header, 但其值永远是 <a href="https://kejiweixun.com">https://kejiweixun.com</a>, 不是完整的 url, 另外, 如果跳转的 url 是非 https, 而是 http 域名, 那不带上 Referer header.</p>
 <h3>Strict-Transport-Security</h3>
 <p>简称 HSTS, 用来告诉浏览器, 喂, 以后你访问我这个网站, 麻烦你总是通过 https 访问, 不要用 http.</p>
 <p>所以如果用户输入的是 kejiweixun.com 或 <a href="http://kejiweixun.com">http://kejiweixun.com</a> 这样的网址, 浏览器会自动转换成 <a href="https://kejiweixun.com">https://kejiweixun.com</a>, 然后再向科技微讯的服务器发起请求. </p>
